@@ -2,7 +2,7 @@ package DatabaseHandler;
 import java.sql.*;
 
 /**This class manages connections to MySQL.
- *
+ *test
  * Can be replaced with try-with recources?
  *This class is the modified version of "Opprydder.java" from "programmering
  * i java" by Else Lervik.
