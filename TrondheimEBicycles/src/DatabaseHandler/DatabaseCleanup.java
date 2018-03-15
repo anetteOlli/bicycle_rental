@@ -7,13 +7,14 @@ import java.sql.*;
  *This class is the modified version of "Opprydder.java" from "programmering
  * i java" by Else Lervik.
  *
- * ARRRRH blir torturert av git. HEEEEELP
+ *
  */
 class DatabaseCleanup {
     /**
      *
-     * @param res
-     * @return
+     * @param res res is the Resultset that will be closed
+     * @return the method returns true if it successfully closed the Restultset,
+     * or false if it enocountered a problem.
      */
     static boolean closeResult(ResultSet res) {
         try {
@@ -28,42 +29,50 @@ class DatabaseCleanup {
     }
 
     /**
-     *
-     * @param stm
+     * Method closes statement, this method handles exceptions.
+     * @param stm the statement that should be closed.
+     * @return returns true if it succesfully closed the statement.
      */
-    static void closeSentence(Statement stm) {
+    static boolean closeSentence(Statement stm) {
         try {
             if (stm != null) {
                 stm.close();
+                return true;
             }
         } catch (SQLException e) {
             skrivMelding(e, "lukkSetning()");
+            return false;
         }
+        return false;
     }
 
     /**
      *
-     * @param forbindelse
+     * @param con the Connection that should be closed
+     * @return return true if it succesfully closed a connection
      */
-    static void closeConnection(Connection forbindelse) {
+    static boolean closeConnection(Connection con) {
         try {
-            if (forbindelse != null) {
-                forbindelse.close();
+            if (con != null) {
+                con.close();
+                return true;
+
             }
         } catch (SQLException e) {
-            skrivMelding(e, "lukkForbindelse()");
+            return false;
         }
+        return false;
     }
 
     /**
      *
-     * @param forbindelse
+     * @param con
      * @return
      */
-    static boolean rollback(Connection forbindelse) {
+    static boolean rollback(Connection con) {
         try {
-            if (forbindelse != null && !forbindelse.getAutoCommit()) {
-                forbindelse.rollback();
+            if (con != null && !con.getAutoCommit()) {
+                con.rollback();
                 return true;
             }
             return false;
