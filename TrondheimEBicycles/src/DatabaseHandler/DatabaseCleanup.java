@@ -40,7 +40,6 @@ class DatabaseCleanup {
                 return true;
             }
         } catch (SQLException e) {
-            skrivMelding(e, "lukkSetning()");
             return false;
         }
         return false;
@@ -49,7 +48,7 @@ class DatabaseCleanup {
     /**
      *
      * @param con the Connection that should be closed
-     * @return return true if it succesfully closed a connection
+     * @return return true if it successfully closed the connection
      */
     static boolean closeConnection(Connection con) {
         try {
@@ -66,8 +65,8 @@ class DatabaseCleanup {
 
     /**
      *
-     * @param con
-     * @return
+     * @param con the connection that should be rolled back
+     * @return return true if it successfully rolled back the database
      */
     static boolean rollback(Connection con) {
         try {
@@ -82,9 +81,9 @@ class DatabaseCleanup {
     }
 
     /**
-     *
-     * @param con
-     * @return
+     * This method turns autoCommit back on
+     * @param con the connection that should set autocommit back on
+     * @return return true if it successfully turned autocommit on
      */
     static boolean setAutoCommit(Connection con) {
         try {
@@ -99,9 +98,9 @@ class DatabaseCleanup {
     }
 
     /**
-     *
-     * @param con
-     * @return
+     * commits the changes made
+     * @param con the connection that should become commited
+     * @return return true if it successfully commited
      */
     static boolean commit(Connection con){
         try{
@@ -110,15 +109,5 @@ class DatabaseCleanup {
         }catch (SQLException ex){
             return false;
         }
-    }
-
-    /**
-     *
-     * @param e
-     * @param melding
-     */
-    private static void skrivMelding(Exception e, String melding) {
-        System.err.println("*** Feil oppstått: " + melding + ". ***");
-        e.printStackTrace(System.err);
     }
 }
