@@ -8,9 +8,9 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 
 /**
- * This entire java class is copied entirely from
+ * This entire java class is copied from
  * https://gist.github.com/itarato/abef95871756970a9dad#file-encryption-java-L4
- * WITH HARDLY ANY MODIFICATIONS!
+ * WITH NO MODIFICATIONS!
  * the purpose of this class is to ensure that the "loginCredentials.ser" is not stored in plaintext
  */
 class CryptAES {

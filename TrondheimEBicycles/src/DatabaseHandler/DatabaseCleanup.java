@@ -7,16 +7,15 @@ import java.sql.*;
  *This class is the modified version of "Opprydder.java" from "programmering
  * i java" by Else Lervik.
  *
- *
  */
-class DatabaseCleanup {
+class DatabaseCleanup{
     /**
      *
      * @param res res is the Resultset that will be closed
      * @return the method returns true if it successfully closed the Restultset,
      * or false if it enocountered a problem.
      */
-    static boolean closeResult(ResultSet res) {
+    boolean closeResult(ResultSet res) {
         try {
             if (res != null) {
                 res.close();
@@ -33,7 +32,7 @@ class DatabaseCleanup {
      * @param stm the statement that should be closed.
      * @return returns true if it succesfully closed the statement.
      */
-    static boolean closeSentence(Statement stm) {
+    boolean closeSentence(Statement stm) {
         try {
             if (stm != null) {
                 stm.close();
@@ -50,7 +49,7 @@ class DatabaseCleanup {
      * @param con the Connection that should be closed
      * @return return true if it successfully closed the connection
      */
-    static boolean closeConnection(Connection con) {
+    boolean closeConnection(Connection con) {
         try {
             if (con != null) {
                 con.close();
@@ -68,7 +67,7 @@ class DatabaseCleanup {
      * @param con the connection that should be rolled back
      * @return return true if it successfully rolled back the database
      */
-    static boolean rollback(Connection con) {
+    boolean rollback(Connection con) {
         try {
             if (con != null && !con.getAutoCommit()) {
                 con.rollback();
@@ -85,7 +84,7 @@ class DatabaseCleanup {
      * @param con the connection that should set autocommit back on
      * @return return true if it successfully turned autocommit on
      */
-    static boolean setAutoCommit(Connection con) {
+    boolean setAutoCommit(Connection con) {
         try {
             if (con != null && !con.getAutoCommit()) {
                 con.setAutoCommit(true);
@@ -98,11 +97,68 @@ class DatabaseCleanup {
     }
 
     /**
+     * NON TESTED METHOD
+     * @param con
+     * @return
+     */
+    boolean setReadCommited(Connection con){
+        try {
+            con.setTransactionIsolation(con.TRANSACTION_READ_COMMITTED);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    /**
+     * NON TESTED METHOD
+     * @param con
+     * @return
+     */
+    boolean setReadUnCommited(Connection con){
+        try {
+            con.setTransactionIsolation(con.TRANSACTION_READ_UNCOMMITTED);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    /**
+     * NON TESTED METHOD
+     * @param con
+     * @return
+     */
+    boolean setRepeatableRead(Connection con){
+        try {
+            con.setTransactionIsolation(con.TRANSACTION_REPEATABLE_READ);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    /**
+     * NON TESTED METHOD
+     * @param con
+     * @return
+     */
+    boolean setSerializable(Connection con){
+        try {
+            con.setTransactionIsolation(con.TRANSACTION_SERIALIZABLE);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+
+    /**
      * commits the changes made
      * @param con the connection that should become commited
      * @return return true if it successfully commited
      */
-    static boolean commit(Connection con){
+    boolean commit(Connection con){
         try{
             con.commit();
             return true;

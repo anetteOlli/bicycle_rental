@@ -11,6 +11,7 @@ import java.io.*;
  * implements Serializable in order to read passwords and usernames from file
  * This method of storing password is far from okay, however it's better than storing
  * passwords in the code...
+ * Author: Anette
  */
 class DatabasePasswordKeep implements Serializable {
     private String filepath = "loginCredentials.ser";
@@ -104,10 +105,6 @@ class DatabasePasswordKeep implements Serializable {
             for(int i = 0; i < savedCredentials.length; i++){
                 System.out.println(savedCredentials[i]);
             }
-
         }
-
     }
-
-
 }
