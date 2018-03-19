@@ -6,7 +6,7 @@ import java.sql.*;
  * Can be replaced with try-with recources?
  *This class is the modified version of "Opprydder.java" from "programmering
  * i java" by Else Lervik.
- *
+ * testing
  */
 class DatabaseCleanup{
     /**
