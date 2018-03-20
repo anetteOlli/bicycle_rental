@@ -6,7 +6,7 @@ import java.io.*;
 
 
 /**
- *
+ *b
  * It reads username and password from a file and send it as a String to the DatabaseConnection
  * implements Serializable in order to read passwords and usernames from file
  * This method of storing password is far from okay, however it's better than storing
