@@ -84,10 +84,10 @@ class DatabaseCleanup{
      * @param con the connection that should set autocommit back on
      * @return return true if it successfully turned autocommit on
      */
-    boolean setAutoCommit(Connection con) {
+    boolean setAutoCommit(Connection con, boolean onOrOff) {
         try {
-            if (con != null && !con.getAutoCommit()) {
-                con.setAutoCommit(true);
+            if (con != null) {
+                con.setAutoCommit(onOrOff);
                 return true;
             }
             return false;
