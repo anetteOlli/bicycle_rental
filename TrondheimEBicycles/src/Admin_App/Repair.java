@@ -1,4 +1,5 @@
 package Admin_App;
 
-public class Repair {123
+public class Repair {
+
 }
