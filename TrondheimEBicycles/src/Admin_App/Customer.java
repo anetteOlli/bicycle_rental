@@ -14,7 +14,7 @@ public class Customer {
 
     public Customer(int custId, int custCardNumber, String custFirstName, String custLastName, int custPhone, String custEmail, String custPassword) {
         if(custFirstName == null || custLastName == null || custEmail == null || custPassword == null){
-            throw new IllegalArgumentException("Alle feltene må oppgis");
+            throw new IllegalArgumentException("All fields must be filled out!");
         }
         this.custFirstName = custFirstName.trim();
         this.custLastName = custLastName.trim();

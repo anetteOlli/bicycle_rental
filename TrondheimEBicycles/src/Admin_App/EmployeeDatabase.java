@@ -3,14 +3,14 @@ package Admin_App;
 import java.sql.*;
 import java.util.Random;
 
-public class CustomerDatabase {
+public class EmployeeDatabase {
     private Connection connection;
     private Statement sentence;
     private String databaseDriver;
     private String databaseName;
     private static Random random = new Random();
 
-    public CustomerDatabase(String databaseDriver, String databaseNavn) {
+    public EmployeeDatabase(String databaseDriver, String databaseNavn) {
         this.databaseDriver = databaseDriver;
         this.databaseName = databaseNavn;
         startConnection();
@@ -67,42 +67,21 @@ public class CustomerDatabase {
         return -3;
     }
 
-    public boolean regNewCustomer(Customer newCustomer) {
+    public boolean regNewAdmin(Admin newAdmin){
         PreparedStatement insertSentence;
-        try {
-            connection.setAutoCommit(false);
-            sentence.executeQuery("SET FOREIGN_KEY_CHECKS = 0"); //DETTE SKAL FJERNES! kun til testing
-            int custID = findRandomId();
-            String insertSql = "INSERT INTO Customer(cust_id, cardNumber, first_name, last_name, phone, email, password) VALUES('" + custID + "','" + newCustomer.getCustCardNumber() + "','" + newCustomer.getFirstName() + "','" + newCustomer.getLastName() + "','" + newCustomer.getCustPhone() + "','" + newCustomer.getCustEmail() + "','" + newCustomer.getPassword() + "');";
-            insertSentence = connection.prepareStatement(insertSql);
-            if (insertSentence.executeUpdate() != 0) {
-                connection.commit();
-                return true;
-            } else {
-                connection.rollback();
-                return false;
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                connection.setAutoCommit(true);
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        return false;
-    }
-
-    public boolean deleteCustomer(String email, String password){
-        PreparedStatement deleteSentence;
+        int hired = 0;
         try{
             connection.setAutoCommit(false);
-            String deleteSql = "DELETE FROM Customer WHERE email ='"+email+"' AND password='"+password+"'";
-            deleteSentence = connection.prepareStatement(deleteSql);
-            if(deleteSentence.executeUpdate() != 0){
+            int adminID = findRandomId();
+            if(newAdmin.isHired()){
+                hired = 1;
+            }
+            else{
+                hired = 0;
+            }
+            String insertSql = "INSERT INTO Employee(employee_id, password, email, first_name, last_name, address, phone, isHired, isAdmin) VALUES('" + adminID + "','" + newAdmin.getPassword() + "','" + newAdmin.getEmail() + "','" + newAdmin.getFirstName() + "','" + newAdmin.getLastName() + "','" + newAdmin.getAddress() + "','" + newAdmin.getPhone() + "','" + hired + "','" + 1 + "');";
+            insertSentence = connection.prepareStatement(insertSql);
+            if(insertSentence.executeUpdate() != 0){
                 connection.commit();
                 return true;
             }
@@ -112,17 +91,60 @@ public class CustomerDatabase {
             }
         }catch(SQLException e){
             System.out.println(e.getMessage());
-            return false;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                connection.setAutoCommit(true);
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+            }
         }
+        return false;
     }
 
-    public static void main(String[] args) {
-        CustomerDatabase database = new CustomerDatabase("com.mysql.jdbc.Driver", "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/patrickt?user=patrickt&password=6r1KVxDT");
-        Customer patrick = new Customer(1, 24, "Patrick", "Thorkildsen", 41146453, "patrick.thorkildsen@gmail.com", "Passord123");
-        Customer quan = new Customer(1, 20, "Quan", "Mann", 47867632, "Quan@gmail.com", "Quanpassord123");
-        database.regNewCustomer(patrick);
-        database.regNewCustomer(quan);
-        database.deleteCustomer("patrick.thorkildsen@gmail.com", "Passord123");
+    public boolean regNewTechnician(Technician newTechnician){
+        PreparedStatement insertSentence;
+        int hired = 0;
+        try{
+            connection.setAutoCommit(false);
+            int techID = findRandomId();
+            if(newTechnician.isHired()){
+                hired = 1;
+            }
+            else{
+                hired = 0;
+            }
+            String insertSql = "INSERT INTO Employee(employee_id, password, email, first_name, last_name, address, phone, isHired, isAdmin) VALUES('" + techID + "','" + newTechnician.getPassword() + "','" + newTechnician.getEmail() + "','" + newTechnician.getFirstName() + "','" + newTechnician.getLastName() + "','" + newTechnician.getAddress() + "','" + newTechnician.getPhone() + "','" + hired + "','" + 0 + "');";
+            insertSentence = connection.prepareStatement(insertSql);
+            if(insertSentence.executeUpdate() != 0){
+                connection.commit();
+                return true;
+            }
+            else{
+                connection.rollback();
+                return false;
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                connection.setAutoCommit(true);
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args){
+        EmployeeDatabase database = new EmployeeDatabase("com.mysql.jdbc.Driver", "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/patrickt?user=patrickt&password=6r1KVxDT");
+        Admin patrick1 = new Admin(1, "Patrick", "Thorkildsen", 41146453, "Nedre Lunds Vei 3","Patrick.thorkildsen@gmail.com", "Password123");
+        Technician patrick = new Technician(1, "Patrick", "Thorkildsen", 41146453, "Nedre Lunds Vei 3","Patrick.thorkildsen@gmail.com", "Password123");
+        database.regNewAdmin(patrick1);
+        database.regNewTechnician(patrick);
         database.closeConnection();
     }
 }
