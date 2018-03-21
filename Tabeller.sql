@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS DockingStation, Dock, Bicycle, bicycleStatus, Model, Repair
 SET foreign_key_checks = 1;
 
 CREATE TABLE DockingStation (
-station_id INT,
+station_id INT AUTO_INCREMENT,
 name VARCHAR(100),
 active_status TINYINT(1),
 capacity INT,
