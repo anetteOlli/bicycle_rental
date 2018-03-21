@@ -22,23 +22,22 @@ public class Main {
         //Variabler som brukes flere plasser:
         int bicycle_id = Integer.parseInt(showInputDialog("Type in Bike ID: "));
         int dock_id  = Integer.parseInt(showInputDialog("Dock ID: "));
-        int powerlevel = Integer.parseInt(showInputDialog("Powerlevel: "));
-        String make = showInputDialog("Make ");
-        String model = showInputDialog("Model");
-        int production_date = Integer.parseInt(showInputDialog("ProductionDate"));
+
+
         String bicycleStatus = showInputDialog("BicycleStatus");
-        int totalKM = Integer.parseInt(showInputDialog("TotalKm"));
-        int trips = Integer.parseInt(showInputDialog("trips"));
-        int nr_of_repairs = Integer.parseInt(showInputDialog("nr of repairs"));
+
 
 
         while(valg != AVSLUTT) {
 
             switch(valg) {
                 case REG_BIKE:
+                    int production_date = Integer.parseInt(showInputDialog("ProductionDate"));
+                    String make = showInputDialog("Make ");
+                    String model = showInputDialog("Model");
 
                     //Bicycle newBicycle = new Bicycle(bicycle_id, dock_id, powerlevel, make, model, production_date, bicycleStatus, totalKM, trips, nr_of_repairs);
-                    Bicycle newBicycle = new Bicycle(bicycle_id, dock_id, powerlevel, make, model, production_date, bicycleStatus, 0, 0, 0);
+                    Bicycle newBicycle = new Bicycle(bicycle_id, dock_id, 100, make, model, production_date, bicycleStatus, 0, 0, 0);
                     if(databasen.regNewBicycle(newBicycle)) {
                         showMessageDialog(null, "Bike registered");
                     } else {
@@ -47,6 +46,10 @@ public class Main {
                     break;
 
                 case UPD_BIKE:
+                    int powerlevel = Integer.parseInt(showInputDialog("Powerlevel: "));
+                    int totalKM = Integer.parseInt(showInputDialog("TotalKm"));
+                    int trips = Integer.parseInt(showInputDialog("trips"));
+                    int nr_of_repairs = Integer.parseInt(showInputDialog("nr of repairs"));
                    BicycleUpdate newUpdate = new BicycleUpdate(bicycle_id, dock_id, powerlevel, bicycleStatus, totalKM, trips, nr_of_repairs);
 
                     if(databasen.UpdateBicycle(newUpdate)) {
