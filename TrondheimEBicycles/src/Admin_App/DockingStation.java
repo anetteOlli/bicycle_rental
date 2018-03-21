@@ -2,8 +2,9 @@ package Admin_App;
 
 import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
+import java.util.ArrayList;
 
-import javax.xml.crypto.Data;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,8 +32,6 @@ public class DockingStation {
                 newDockID = oldDockID +1;
                 //checks that the newDockID doesn't exceeds the dockingstation's capacity
                 if(newDockID <= findDockingStationCapacity(dockingStationID)){
-
-
                     String mysql ="INSERT INTO Dock VALUES (?,?, 1)";
                     PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
                     System.out.println("reg Dock: kom seg hit 2");
@@ -45,8 +44,6 @@ public class DockingStation {
                         if(cleaner.commit(con))
                             if (cleaner.closeSentence(sentence)) {
                             }
-
-
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -54,16 +51,11 @@ public class DockingStation {
                     //there's no room for additional docks
                     return -1;
                 }
-                //
                 if (cleaner.setAutoCommit(con, true))if (cleaner.closeConnection(con)){
-
                 }
             }
-
         }
         return newDockID;
-
-
     }
     public int findNumbersOfDocks(int dockingstationID) {
         int res = -1;
@@ -131,6 +123,7 @@ public class DockingStation {
             return -1;
         }
     }
+    
     public int findNumberOfDocingsSations(){
         int res = -1;
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -156,6 +149,9 @@ public class DockingStation {
 
 
     public int registerDockStation(String name, int capacity){
+        //converts the name to lowercase and trims out whitespace from the name
+        //this is done to make searching for dockingStationID easier.
+        String lowName = name.toLowerCase().trim();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -191,7 +187,33 @@ public class DockingStation {
             }
         }return newDockingStationID = largestDockingStationsID();
     }
+
+
+    public ArrayList findDockStationID(String name){
+        String lowName = name.toLowerCase().trim();
+        ArrayList<Integer> idNumbers = new ArrayList<Integer>();
+        DatabaseConnection conection = new DatabaseConnection();
+        Connection con = conection.getConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        String mysql ="SELECT station_id FROM DockingStation WHERE name = ?";
+        PreparedStatement sentence = conection.createPreparedStatement(con, mysql);
+        try{
+            sentence.setString(1, lowName);
+            ResultSet result = sentence.executeQuery();
+            while (result.next()){
+                idNumbers.add(result.getInt(1));
+            }
+            if (cleaner.closeResult(result) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
+            return idNumbers;
+            }
+            return new ArrayList<Integer>();
+        } catch (SQLException e) {
+             return new ArrayList<Integer>();
+        }
+    }
+
     public void editExistingDockStation(String oldName, String newName){
+
 
     }
     public void editExistingDockStation(String name, int activeStatus){
@@ -218,6 +240,10 @@ public class DockingStation {
             System.out.println(dockID);
         }
         */
+        ArrayList<Integer> dockingStationID = ds.findDockStationID("nilsen");
+        for(int i = 0; i< dockingStationID.size(); i++){
+            System.out.println(dockingStationID.get(i));
+        }
 
         
     }
