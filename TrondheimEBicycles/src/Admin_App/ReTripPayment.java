@@ -3,30 +3,23 @@ package Admin_App;
 import java.sql.Time;
 import java.time.LocalTime;
 
-public class TripPayment {
-        private int tripID; // autoincrement
-        private int customerID;
-        private int bikeID;
-        private LocalTime time_received;
-        private int station_id_received;
-        private static final int ANTALL_TIMER = 3;
-        private static final int TIMEPRIS = 150;
+public class ReTripPayment {
+    private int trip_id;
+    private LocalTime time_delivered;
+    private int station_id_delivered;
+    private int tripKM; //antall km turen varte, hentet fra gps simulator
+    private static final int ANTALL_TIMER = 3;
+    private static final int TIMEPRIS = 150;
 
-        //Når sykkel hentes(før)
-        public TripPayment(int customerID, int bikeID, int station_id_received) {
-            this.bikeID = bikeID;
-            this.customerID = customerID;
-            this.station_id_received = station_id_received;
-            this.time_received = LocalTime.now();
-        }
-
-
-    public int getTripID(){
-            return tripID;
-     }
-
-    public Time getTime_received() {
-        return java.sql.Time.valueOf(time_received);
+    //Når sykkel leveres(etter)
+    public ReTripPayment(int trip_id, int station_id_delivered, int tripKM){
+        this.trip_id = trip_id;
+        this.time_delivered = LocalTime.now();
+        this.station_id_delivered = station_id_delivered;
+        this.tripKM = tripKM;
+    }
+    public int getTrip_id(){
+        return trip_id;
     }
 
     public Time getTime_delivered() {
@@ -37,32 +30,18 @@ public class TripPayment {
         return tripKM;
     }
 
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public int getBikeID() {
-        return bikeID;
-    }
-
-    public int getStation_id_received() {
-        return station_id_received;
-    }
 
     public int getStation_id_delivered() {
         return station_id_delivered;
     }
 
-    public int getSumPayment() {
-        return sumPayment;
-    }
 
     public int sumPayment() {
         return TIMEPRIS * ANTALL_TIMER; // hente timepris fra bicycle
     }
 
     public int getTripHours(){
-            return ANTALL_TIMER;
+        return ANTALL_TIMER;
     }
 
 
