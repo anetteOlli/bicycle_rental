@@ -1,7 +1,7 @@
 package Admin_App;
 
 public class BicycleUpdate {
-    public int bicycle_id;
+    public final int bicycle_id;
     public int dock_id;
     public int powerlevel;
     public String bicycleStatus;

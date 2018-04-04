@@ -16,7 +16,7 @@ public class BikeDatabase {
 
             String insert1 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, ?, ?, ?, ?, ?);";
             //String insert2 = "INSERT INTO Bicycle(bicycle_id, dock_id, powerlevel, make, model, production_date, bicycleStatus, totalKM, trips, nr_of_repairs) VALUES('" + newBicycle.getBicycle_id() + "','" + newBicycle.getDock_id() + "','" + newBicycle.getPowerlevel() + "','" + newBicycle.getMake() + "','" + newBicycle.getModel() + "','" + newBicycle.getProduction_date() + "','" + newBicycle.getBicycleStatus() + "');";
-            //RegNewBike = forbindelse.prepareStatement(insert2);
+            //RegNewBike = forbindelse.prepareStatement(insert2); kikk
             PreparedStatement RegNewBicycle = connection.createPreparedStatement(con, insert1);
             //RegNewBicycle.setInt(1, newBicycle.bicycle_id);
             //RegNewBicycle.setInt(1, newBicycle.dock_id);
