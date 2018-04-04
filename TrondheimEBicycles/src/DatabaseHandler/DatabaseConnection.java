@@ -25,7 +25,7 @@ public class DatabaseConnection{
 
     }
 
-    private Connection createConnection(){
+    public Connection createConnection(){
         try{
            Connection con = DriverManager.getConnection(connectionURL);
             Class.forName(databasedriver);
@@ -56,6 +56,7 @@ public class DatabaseConnection{
 
 
     }
+    public Connection getConnection() {return con;}
 
 
 

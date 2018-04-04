@@ -1,22 +1,27 @@
 package Admin_App;
 
+import DatabaseHandler.*;
+
 import java.sql.*;
 import java.util.Random;
 
 public class CustomerDatabase {
-    private Connection connection;
+    static DatabaseCleanup cleaner = new DatabaseCleanup();
+    static DatabaseConnection connection = new DatabaseConnection();
+    private static Connection con = connection.getConnection();
+   /* private Connection connection;
     private Statement sentence;
     private String databaseDriver;
-    private String databaseName;
+    private String databaseName;*/
     private static Random random = new Random();
 
-    public CustomerDatabase(String databaseDriver, String databaseNavn) {
+  /*  public CustomerDatabase(String databaseDriver, String databaseNavn) {
         this.databaseDriver = databaseDriver;
         this.databaseName = databaseNavn;
         startConnection();
-    }
+    }*/
 
-    private void startConnection() {
+   /* private void startConnection() {
         try {
             Class.forName(databaseDriver);
             connection = DriverManager.getConnection(databaseName);
@@ -28,10 +33,10 @@ public class CustomerDatabase {
         } catch (Exception e) {
             System.out.println(3);
         }
-    }
+    }*/
 
 
-    public void closeConnection() {
+ /*   public void closeConnection() {
         try {
             sentence.close();
             connection.close();
@@ -40,15 +45,17 @@ public class CustomerDatabase {
         } catch (Exception e) {
             System.out.println("Error2");
         }
-    }
+    }*/
 
-    public int findRandomId(){
+    private int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
         while(exists){
             randomNum = random.nextInt(9000)+1000;
             try{
-                ResultSet res = sentence.executeQuery("SELECT * FROM Customer WHERE cust_id = '"+randomNum+"';");
+                String sentence = "SELECT * FROM Customer WHERE cust_id = '"+randomNum+"';";
+                PreparedStatement randomID = connection.createPreparedStatement(con, sentence);
+                ResultSet res = randomID.executeQuery();
                 exists=false;
                 while(res.next()){
                     exists = true;
@@ -68,18 +75,23 @@ public class CustomerDatabase {
     }
 
     public boolean regNewCustomer(Customer newCustomer) {
-        PreparedStatement insertSentence;
         try {
-            connection.setAutoCommit(false);
-            sentence.executeQuery("SET FOREIGN_KEY_CHECKS = 0"); //DETTE SKAL FJERNES! kun til testing
-            int custID = findRandomId();
-            String insertSql = "INSERT INTO Customer(cust_id, cardNumber, first_name, last_name, phone, email, password) VALUES('" + custID + "','" + newCustomer.getCustCardNumber() + "','" + newCustomer.getFirstName() + "','" + newCustomer.getLastName() + "','" + newCustomer.getCustPhone() + "','" + newCustomer.getCustEmail() + "','" + newCustomer.getPassword() + "');";
-            insertSentence = connection.prepareStatement(insertSql);
-            if (insertSentence.executeUpdate() != 0) {
-                connection.commit();
+            cleaner.setAutoCommit(con, false);
+            String insertSql = "INSERT INTO Customer(cust_id, cardNumber, first_name, last_name, phone, email, password) VALUES(?, ?, ?, ?, ?, ?, ?);";
+            PreparedStatement RegNewCustomer = connection.createPreparedStatement(con, insertSql);
+            RegNewCustomer.executeQuery("SET FOREIGN_KEY_CHECKS = 0");
+            RegNewCustomer.setInt(1, findRandomId());
+            RegNewCustomer.setInt(2, newCustomer.getCustCardNumber());
+            RegNewCustomer.setString(3, newCustomer.getFirstName());
+            RegNewCustomer.setString(4, newCustomer.getLastName());
+            RegNewCustomer.setInt(5, newCustomer.getCustPhone());
+            RegNewCustomer.setString(6, newCustomer.getCustEmail());
+            RegNewCustomer.setString(7, newCustomer.getPassword());
+            if (RegNewCustomer.executeUpdate() != 0) {
+                cleaner.commit(con);
                 return true;
             } else {
-                connection.rollback();
+                cleaner.rollback(con);
                 return false;
             }
         } catch (SQLException e) {
@@ -88,8 +100,8 @@ public class CustomerDatabase {
             System.out.println(e.getMessage());
         } finally {
             try {
-                connection.setAutoCommit(true);
-            } catch (SQLException e) {
+                cleaner.setAutoCommit(con, true);
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -97,17 +109,18 @@ public class CustomerDatabase {
     }
 
     public boolean deleteCustomer(String email, String password){
-        PreparedStatement deleteSentence;
         try{
-            connection.setAutoCommit(false);
-            String deleteSql = "DELETE FROM Customer WHERE email ='"+email+"' AND password='"+password+"'";
-            deleteSentence = connection.prepareStatement(deleteSql);
-            if(deleteSentence.executeUpdate() != 0){
-                connection.commit();
+            cleaner.setAutoCommit(con, false);
+            String deleteSql = "DELETE FROM Customer WHERE email = ? AND password = ?";
+            PreparedStatement deleteCustomer = connection.createPreparedStatement(con, deleteSql);
+            deleteCustomer.setString(1, email);
+            deleteCustomer.setString(2, password);
+            if(deleteCustomer.executeUpdate() != 0){
+                cleaner.commit(con);
                 return true;
             }
             else{
-                connection.rollback();
+                cleaner.rollback(con);
                 return false;
             }
         }catch(SQLException e){
@@ -117,12 +130,13 @@ public class CustomerDatabase {
     }
 
     public static void main(String[] args) {
-        CustomerDatabase database = new CustomerDatabase("com.mysql.jdbc.Driver", "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/patrickt?user=patrickt&password=6r1KVxDT");
+        CustomerDatabase database = new CustomerDatabase();
+        connection.getConnection();
         Customer patrick = new Customer(1, 24, "Patrick", "Thorkildsen", 41146453, "patrick.thorkildsen@gmail.com", "Passord123");
         Customer quan = new Customer(1, 20, "Quan", "Mann", 47867632, "Quan@gmail.com", "Quanpassord123");
         database.regNewCustomer(patrick);
         database.regNewCustomer(quan);
         database.deleteCustomer("patrick.thorkildsen@gmail.com", "Passord123");
-        database.closeConnection();
+        cleaner.closeConnection(con);
     }
 }
