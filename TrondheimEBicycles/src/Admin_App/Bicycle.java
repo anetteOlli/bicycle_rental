@@ -9,10 +9,10 @@ public class Bicycle {
     public final int production_date;
     public String bicycleStatus;
 
-    public Bicycle(int bicycle_id, int powerlevel, String make, String model, int production_date, String bicycleStatus) {
+    public Bicycle(int bicycle_id, String make, String model, int production_date, String bicycleStatus) {
         this.bicycle_id = bicycle_id;
         //this.dock_id = dock_id;
-        this.powerlevel = powerlevel;
+        //this.powerlevel = powerlevel;
         this.make = make;
         this.model = model;
         this.production_date = production_date;
@@ -29,9 +29,9 @@ public class Bicycle {
         return dock_id;
     }*/
 
-    public int getPowerlevel() {
+    /*ublic int getPowerlevel() {
         return powerlevel;
-    }
+    }*/
 
     public String getMake() {
         return make;
