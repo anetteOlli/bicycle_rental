@@ -7,8 +7,9 @@ station_id INT AUTO_INCREMENT,
 name VARCHAR(100) NOT NULL,
 active_status BOOLEAN,
 capacity INT,
-longitue DOUBLE,
+longitude DOUBLE,
 latitude DOUBLE,
+powerUsage DOUBLE,
 PRIMARY KEY(station_id)
 );
 
@@ -133,7 +134,14 @@ INSERT INTO DockingStation(name, active_status, capacity) VALUES  ( 'Munkegata',
 
 INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'Prinsen', false, 20);
 INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'HJEM', true, 20);
+INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'nova', false, 20);
 
 SELECT * FROM DockingStation;
 
 UPDATE DockingStation SET name='munkegata' WHERE name='Munkegata';
+
+UPDATE DockingStation SET latitude=23, longitude=24 WHERE station_id=43;
+
+SELECT * FROM DockingStation;
+
+SELECT station_id FROM DockingStation WHERE active_status=TRUE
