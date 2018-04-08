@@ -16,8 +16,7 @@ import java.sql.SQLException;
 public class DockingStation {
     //todo
     /*
-    review the database integrity levels, most likely serialize is a overkill for this
-    and will slow the database down
+    review the database integrity levels,
      */
 
     /**
@@ -32,12 +31,7 @@ public class DockingStation {
         Connection con = connection.getConnection();
         DatabaseCleanup cleaner = new DatabaseCleanup();
         //tries to turn off autocommit
-        System.out.println("er i metoden");
         if(cleaner.setAutoCommit(con, false)){
-            System.out.println("reg DOck: kom seg hit 0");
-            //tries to set connection to serialize
-
-            System.out.println("reg DOck: kom seg hit 1");
             //the code below will check that there is room for more docks at the given dockingstation
             int oldNumberOfDocks = getNumbersOfDocks(dockingStationID);
             int newNumberOfDocks = oldNumberOfDocks +1;
@@ -47,12 +41,9 @@ public class DockingStation {
                 //will be available
                   String mysql ="INSERT INTO Dock (dock_id, station_id, isAvailable) VALUES (DEFAULT,?, true)";
                   PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
-                  System.out.println("reg Dock: kom seg hit 2");
                   try{
                       sentence.setInt(1,dockingStationID);
-                      System.out.println("kom seg hit 3");
                       sentence.execute();
-                      System.out.println("kom seg hit 4");
                       if(cleaner.closeSentence(sentence)) {
 
                       }
@@ -355,6 +346,131 @@ public class DockingStation {
 
     }
 
+    /**
+     * Method tested 2018.04.08
+     * This method returns an int depending on what the activity_status is on the given dockingStation
+     * @param dockingStationID
+     * @return -1 if the dockingstation does not exist, or if the method encountered a problem
+     * @return 0 if the dockingstation is inactive
+     * @return 1 if the dockingstation is active
+     */
+    public int getDockingStationStatus(int dockingStationID){
+        boolean status;
+        int statusResult = 0;
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        String mysql = "SELECT active_status FROM DockingStation WHERE station_id=?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+        try{
+            sentence.setInt(1, dockingStationID);
+            ResultSet result = sentence.executeQuery();
+            if(result.next()){
+                status = result.getBoolean(1);
+                if(status){
+                    statusResult = +1;
+                }else{
+                    statusResult = 0;
+                }
+                if(cleaner.closeResult(result) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
+
+                }
+            }else{
+                statusResult = -1;
+            }
+        }catch (SQLException e){
+            return -1;
+        }
+        return  statusResult;
+    }
+
+    /**
+     * method tested 2018.04.08
+     *
+     * @param dockingStationID
+     * @return powerUsage as double
+     * @return 0 if the powerUsage is not set in the database
+     * @return -1 in case of database errors
+     */
+    public double getPowerUsage(int dockingStationID){
+        double powerUsage = 0;
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        String mysql = "SELECT powerUsage FROM DockingStation WHERE station_id=?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+        try{
+            sentence.setDouble(1, dockingStationID);
+            ResultSet resultSet = sentence.executeQuery();
+            if(resultSet.next()){
+                powerUsage = resultSet.getDouble(1);
+            }
+            if(cleaner.closeResult(resultSet) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)){
+
+            }
+            return powerUsage;
+        }catch (SQLException e){
+            return -1;
+        }
+    }
+
+    /**
+     * Method tested 2018.04.08
+     * finds the number of bikes that is at a given dockinstation
+     * @param dockingStationID
+     * @return bikenumber
+     * @return -1 in case of databaseerrors
+     */
+    public int getNumberOfBikesCheckedIn(int dockingStationID){
+        int bike = 0;
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        String mysql = "SELECT COUNT(*) FROM Bicycle NATURAL JOIN Dock WHERE station_id=?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+        try{
+            sentence.setInt(1,dockingStationID);
+            ResultSet resultSet = sentence.executeQuery();
+            if(resultSet.next()){
+                bike = resultSet.getInt(1);
+            }
+            if(cleaner.closeResult(resultSet) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)){
+
+            }
+            return bike;
+
+        }catch (SQLException e) {
+            return -1;
+        }
+    }
+
+    /**
+     *
+     * @param dockingstationID
+     * @return
+     */
+    public ArrayList getBikeIDAtDockingStation(int dockingstationID){
+        ArrayList<Integer> bike = new ArrayList<Integer>();
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        String mysql = "SELECT bicycle_id FROM Bicycle NATURAL JOIN Dock WHERE station_id=?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+        try{
+            sentence.setInt(1, dockingstationID);
+            ResultSet resultSet = sentence.executeQuery();
+            while(resultSet.next()){
+                bike.add(resultSet.getInt(1));
+            }
+            if(cleaner.closeResult(resultSet) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)){
+
+            }
+            return bike;
+        }catch (SQLException e){
+            return null;
+        }
+    }
+
 
 
     /*
@@ -608,6 +724,13 @@ public class DockingStation {
         }while(plass);
 
         System.out.println("getNumberOfDocks(1): " + ds.getNumbersOfDocks(1));
+        System.out.println("getDockingStationStatus(1) og (4)" + ds.getDockingStationStatus(1) + " " + ds.getDockingStationStatus(4));
+        System.out.println("getPowerUsage(3): "+ ds.getPowerUsage(1));
+        System.out.println("getNumberOfBikesCheckedIn(1): " + ds.getNumberOfBikesCheckedIn(1));
+        ArrayList<Integer> bikes = ds.getBikeIDAtDockingStation(1);
+        for(int i = 0;i < bikes.size(); i++){
+            System.out.println("bikeID: " + bikes.get(i));
+        }
     }
 
 }

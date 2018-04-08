@@ -140,8 +140,14 @@ SELECT * FROM DockingStation;
 
 UPDATE DockingStation SET name='munkegata' WHERE name='Munkegata';
 
+UPDATE DockingStation SET powerUsage = 2356.56 WHERE station_id= 1;
+
 UPDATE DockingStation SET latitude=23, longitude=24 WHERE station_id=43;
 
 SELECT * FROM DockingStation;
 
-SELECT station_id FROM DockingStation WHERE active_status=TRUE
+SELECT station_id FROM DockingStation WHERE active_status=TRUE;
+
+INSERT INTO Bicycle (bicycle_id, dock_id) VALUE (2,1);
+
+SELECT COUNT(*) FROM Bicycle NATURAL JOIN Dock WHERE station_id=1;
