@@ -82,6 +82,7 @@ public class DatabaseCleanup{
     /**
      * This method turns autoCommit back on
      * @param con the connection that should set autocommit back on
+     * @param b
      * @return return true if it successfully turned autocommit on
      */
     public boolean setAutoCommit(Connection con, boolean onOrOff) {
@@ -129,7 +130,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-    boolean setRepeatableRead(Connection con){
+    public boolean setRepeatableRead(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_REPEATABLE_READ);
             return true;
