@@ -1,23 +1,17 @@
 package Admin_App;
 
 public class Family {
-    public final int bicycle_id;
+
     public final String make;
     public final int production_date;
     public String bicycleStatus;
 
-    public Family(int bicycle_id, String make, int production_date, String bicycleStatus) {
-        this.bicycle_id = bicycle_id;
+    public Family(String make, int production_date, String bicycleStatus) {
         this.make = make;
         this.production_date = production_date;
         this.bicycleStatus = bicycleStatus;
     }
 
-
-
-    public int getBicycle_id() {
-        return bicycle_id;
-    }
 
     public String getMake() {
         return make;

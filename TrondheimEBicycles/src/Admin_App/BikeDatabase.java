@@ -3,36 +3,12 @@ package Admin_App;
 import java.sql.*;
 import DatabaseHandler.*;
 
-import javax.xml.bind.annotation.XmlType;
-
 public class BikeDatabase {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
+    Statement stm;
 
-    public boolean regNewBicycle(Bicycle newBicycle) {
-        try {
-            cleaner.setAutoCommit(con, false);
-
-            String insert1 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, ?, ?, ?);";
-            PreparedStatement RegNewBicycle = connection.createPreparedStatement(con, insert1);
-            RegNewBicycle.setString(1, newBicycle.make);
-            RegNewBicycle.setString(2, newBicycle.model);
-            RegNewBicycle.setInt(3, newBicycle.production_date);
-            RegNewBicycle.setString(4, newBicycle.bicycleStatus);
-            //RegNewBicycle.executeUpdate();
-            for (int i = 0; i < 25; i++){
-                    RegNewBicycle.addBatch();
-                }
-
-            int [] results = RegNewBicycle.executeBatch();
-            cleaner.commit(con);
-            cleaner.setAutoCommit(con, true);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 
     public boolean regFamily(Family newFamily) {
         try {
@@ -48,7 +24,7 @@ public class BikeDatabase {
                 RegNewFamily.addBatch();
             }
 
-            int [] results = RegNewFamily.executeBatch();
+            RegNewFamily.executeBatch();
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
         } catch (SQLException e) {
@@ -71,7 +47,7 @@ public class BikeDatabase {
                 RegNewCargo.addBatch();
             }
 
-            int [] results = RegNewCargo.executeBatch();
+            RegNewCargo.executeBatch();
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
         } catch (SQLException e) {
@@ -94,7 +70,7 @@ public class BikeDatabase {
                 RegNewRegular.addBatch();
             }
 
-            int [] results = RegNewRegular.executeBatch();
+            RegNewRegular.executeBatch();
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
         } catch (SQLException e) {
@@ -124,33 +100,92 @@ public class BikeDatabase {
         return true;
     }
 
-    public int UpdateKM (totalKM newKM){
-        String KM = "UPDATE Bicycle SET totalKM=(Bicycle.totalKM + TripPayment.tripKM) WHERE (Bicycle.bicycle_id = TripPayment.bicycle_id)= 1 & trip_id = 1;";
+    public void UpdateKM (totalKM newKM){
+        String KM = "UPDATE Bicycle SET totalKM = (SELECT tripKM FROM TripPayment WHERE bicycle_id = ?) + totalKM WHERE (SELECT trip_id FROM TripPayment) = ? AND bicycle_id = ?;";
         PreparedStatement Mileage = connection.createPreparedStatement(con, KM);
         try {
-            Mileage.executeUpdate();
+        Mileage.setInt(1, newKM.bicycle_id);
+        Mileage.setInt(2, newKM.trip_id);
+        Mileage.setInt(3, newKM.bicycle_id);
+
+        Mileage.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
     }
+
+    public void CheckRep(int bicycle_id){
+        String checkR = "SELECT COUNT bicycle_id FROM Repairs WHERE bicycle_id=?;";
+        PreparedStatement RepCheck = connection.createPreparedStatement(con, checkR);
+        try{
+            RepCheck.setInt(1, bicycle_id);
+            ResultSet RC = stm.executeQuery(checkR);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int CheckTrip(int bicycle_id){
+        int checked = -1;
+        String checkT = "SELECT COUNT(trip_id) FROM TripPayment WHERE bicycle_id=?";
+        PreparedStatement TripCheck = connection.createPreparedStatement(con, checkT);
+        try{
+            TripCheck.setInt(1, bicycle_id);
+            ResultSet result = TripCheck.executeQuery();
+            if (result.next()){
+                checked = result.getInt(1);
+            }
+            if (cleaner.closeSentence(TripCheck) && (cleaner.closeResult(result)));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return checked;
+    }
+
+    public void RegRepairs (Nr_of_repairs repairs){
+        String RegNrReps = "Update Bicycle SET nr_of_repairs = ? WHERE bicycle_id = ?;";
+        PreparedStatement Reps = connection.createPreparedStatement(con, RegNrReps);
+        try {
+            Reps.setInt(1, repairs.nr_of_repairs);
+            Reps.setInt(2, repairs.bicycle_id);
+            Reps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void RegTrips (Trips trips){
+        String trippe = "Update Bicycle SET trips=? WHERE bicycle_id=?;";
+        PreparedStatement trip = connection.createPreparedStatement(con, trippe);
+        try{
+            trip.setInt(1, trips.trips);
+            trip.setInt(2, trips.bicycle_id);
+            trip.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
    public static void main(String[] args) {
         BikeDatabase database = new BikeDatabase();
         connection.getConnection();
 
-       //Bicycle test = new Bicycle(1, "DBS", "family", 19940815, "lost");
-       Family test1 = new Family(1, "DBS", 19940815, "DBR");
-       Cargo test2 = new Cargo(1, "DBS", 19940815, "DBR");
-       Regular test3 = new Regular(1, "DBS", 19940815, "DBR");
-       //database.regNewBicycle(test);
-       database.regFamily(test1);
-       database.regCargo(test2);
-       database.regRegular(test3);
-       //database.regFamily(Quan);
-       //BicycleUpdate test4 = new BicycleUpdate(8, 2, 50, "DBR", 50, 20, 5);
-       //database.UpdateBicycle(test4);
-
-      cleaner.closeConnection(con);
+       //Family test1 = new Family("DBS", 19940815, "DBR");
+       //Cargo test2 = new Cargo("DBS", 19940815, "DBR");
+       //Regular test3 = new Regular("DBS", 19940815, "DBR");
+       //totalKM test4 = new totalKM(3,1);
+       //BicycleUpdate test5 = new BicycleUpdate(8, 2, 50, "DBR", 50, 20, 5);
+       //Nr_of_repairs test6 = new Nr_of_repairs(1, 20);
+       //Trips test7 = new Trips(1,3);
+       //database.regFamily(test1);
+       //database.regCargo(test2);
+       //database.regRegular(test3);
+       //database.UpdateKM(test4);
+       //database.UpdateBicycle(test5);
+       //database.RegRepairs(test6);
+       //database.RegTrips(test7);
+       System.out.println("Nr of trips for bicycle " + database.CheckTrip(1));
+       cleaner.closeConnection(con);
     }
 }
