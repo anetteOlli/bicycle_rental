@@ -27,7 +27,7 @@ public class DatabaseConnection{
 
     public Connection createConnection(){
         try{
-           Connection con = DriverManager.getConnection(connectionURL);
+            Connection con = DriverManager.getConnection(connectionURL);
             Class.forName(databasedriver);
             return con;
 
@@ -38,6 +38,10 @@ public class DatabaseConnection{
         }
         return null;
     }
+    public Connection getConnection(){
+        return con;
+    }
+
     public PreparedStatement createPreparedStatement(Connection con, String sentence){
         try {
             PreparedStatement statement = con.prepareStatement(sentence);
@@ -61,5 +65,9 @@ public class DatabaseConnection{
 
 
 
-
 }
+
+
+
+
+
