@@ -1,59 +1,26 @@
 package Admin_App;
 import java.sql.*;
+
 import DatabaseHandler.*;
 
 public class TripPaymentDatabase {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
-    private Connection forbindelse;
-    private Statement setning;
-    private String databaseDriver;
-    private String databaseNavn;
+    private static final int ANTALL_TIMER = 1;
+    private static final int TIMEPRIS = 150;//hentes fra sykkel
 
-    /*public TripPaymentDatabase(String databaseDriver, String databaseNavn) {
-        this.databaseDriver = databaseDriver;
-        this.databaseNavn = databaseNavn;
-        startForbindelse();*/
-
-    /*private void startForbindelse() {
-        try {
-            Class.forName(databaseDriver);
-            forbindelse = DriverManager.getConnection(databaseNavn);
-            setning = forbindelse.createStatement();
-        } catch (ClassNotFoundException classEx) {
-            System.out.println("1" + classEx.getMessage());
-        } catch (SQLException sqlEx) {
-            System.out.println("2" + sqlEx.getMessage());
-        } catch (Exception e) {
-            System.out.println(3);
-        }
-    }
-
-
-    public void lukkForbindelse() {
-        try {
-            setning.close();
-            forbindelse.close();
-        } catch (SQLException sqlEx) {
-            System.out.println("Error1");
-        } catch (Exception e) {
-            System.out.println("Error2");
-        }
-    }
-*/
     public boolean startNewTrip(TripPayment newTripPayment){
 
         try{
             cleaner.setAutoCommit(con, false);
 
             String insert = "INSERT INTO TripPayment(trip_id, cust_id, bicycle_id, time_received, station_id_received) VALUES(DEFAULT, ?, ?, ?, ?);";
-           PreparedStatement startNewTrip = connection.createPreparedStatement(con, insert);
+            PreparedStatement startNewTrip = connection.createPreparedStatement(con, insert);
             startNewTrip.setInt(1, newTripPayment.getCustomerID());
             startNewTrip.setInt(2, newTripPayment.getBikeID());
             startNewTrip.setTime(3, newTripPayment.getTime_received());
             startNewTrip.setInt(4, newTripPayment.getStation_id_received());
-            //startNewTrip.executeUpdate();
 
 
             if (startNewTrip.executeUpdate() != 0) {
@@ -71,13 +38,14 @@ public class TripPaymentDatabase {
     public boolean endTrip(ReTripPayment newTripPayment){
         try{
             cleaner.setAutoCommit(con, false);
-           // public TripPayment(int bikeID, int customerID, LocalTime time_received, int station_id_received, int station_id_delivered, int tripKM)
-            String insert2 = "UPDATE TripPayment SET time_delivered=?, station_id_delivered=?, tripKM=? WHERE trip_id=?;";
+            String insert2 = "UPDATE TripPayment SET time_delivered=?, station_id_delivered=?, tripKM=?, sumPayment=? WHERE trip_id=?;";
             PreparedStatement endTrip = connection.createPreparedStatement(con, insert2);
             endTrip.setTime(1, newTripPayment.getTime_delivered());
             endTrip.setInt(2, newTripPayment.getStation_id_delivered());
             endTrip.setInt(3, newTripPayment.getTripKM());
-            endTrip.setInt(4, newTripPayment.getTrip_id());
+            endTrip.setInt(4, newTripPayment.sumPayment());
+            endTrip.setInt(5, newTripPayment.getTrip_id());
+
 
 
 
@@ -94,13 +62,60 @@ public class TripPaymentDatabase {
         }
 
     }
+
+    public long getNoOfHours(TripPayment startTrip, ReTripPayment sluttTrip) {
+        return sluttTrip.getTime_delivered().getHours() - startTrip.getTime_received().getHours();
+    }
+
+    public boolean isLate(TripPayment startTrip, ReTripPayment sluttTrip){
+        if(getNoOfHours(startTrip, sluttTrip) > ANTALL_TIMER){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public int sumPayment(){
+        return ANTALL_TIMER * TIMEPRIS;//skal hente pris fra bicycle
+    }
+
+
+    public int findTripID(TripPayment start){
+        int trip_id = -1;
+        String query = "SELECT trip_id FROM TripPayment WHERE cust_id =? AND bicycle_id = ? AND time_delivered IS NULL";
+        PreparedStatement sentence = connection.createPreparedStatement(con, query);
+
+        try {
+            sentence.setInt(1, start.getCustomerID());
+            sentence.setInt(2, start.getBikeID());
+            ResultSet rs = sentence.executeQuery();
+            if (rs.next()) {
+                trip_id = rs.getInt(1);
+            }
+            return trip_id;
+        }
+        catch(SQLException e){
+            System.out.println(e.getMessage());
+            return -1;
+        }
+        }
+
     public static void main(String[] args) {
         connection.getConnection();
         TripPaymentDatabase database = new TripPaymentDatabase();
-        //TripPayment start = new TripPayment(123, 1, 3);
-       // database.startNewTrip(start);
-        ReTripPayment slutt = new ReTripPayment(3, 2, 10);
+        TripPayment start = new TripPayment(1, 123, 2);
+        TripPayment start2 = new TripPayment(2, 123, 1);
+        database.startNewTrip(start);
+        database.startNewTrip(start2);
+        ReTripPayment slutt2 = new ReTripPayment(database.findTripID(start2), 3, 30);
+        ReTripPayment slutt = new ReTripPayment(database.findTripID(start), 1, 10);
+        database.endTrip(slutt2);
         database.endTrip(slutt);
+        System.out.println(database.getNoOfHours(start, slutt));
+
+        System.out.println(database.isLate(start, slutt) + ", Pris: " + database.sumPayment());
+
+
         cleaner.closeConnection(con);
 
     }
