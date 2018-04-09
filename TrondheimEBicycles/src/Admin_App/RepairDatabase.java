@@ -18,20 +18,20 @@ public class RepairDatabase {
 
     DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 
-    public RepairDatabase(String databaseDriver, String databaseNavn){
+    public RepairDatabase(String databaseDriver, String databaseNavn) {
         this.databaseDriver = databaseDriver;
         this.databaseNavn = databaseNavn;
         startForbindelse();
     }
 
     private void startForbindelse() {
-        try{
+        try {
             Class.forName(databaseDriver);
             forbindelse = DriverManager.getConnection(databaseNavn);
             setning = forbindelse.createStatement();
         } catch (ClassNotFoundException classEx) {
             System.out.println(classEx.getMessage());
-        } catch (SQLException sqlEx){
+        } catch (SQLException sqlEx) {
             System.out.println(sqlEx.getMessage());
         } catch (Exception e) {
             System.out.println(3);
@@ -49,7 +49,7 @@ public class RepairDatabase {
         }
     }
 
-    public boolean regNewRepair(String description,  int bicycleID){
+    public boolean regNewRepair(String description, int bicycleID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -57,15 +57,15 @@ public class RepairDatabase {
         PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
         Calendar calendar = Calendar.getInstance();
         java.sql.Date ourJavaDate = new java.sql.Date(calendar.getTime().getTime());
-        try{
-            sentence.setString(1,description);
-            sentence.setDate(2,ourJavaDate);
-            sentence.setInt(3,bicycleID);
+        try {
+            sentence.setString(1, description);
+            sentence.setDate(2, ourJavaDate);
+            sentence.setInt(3, bicycleID);
             sentence.execute();
         } catch (SQLException e) {
             return false;
         }
-        if(cleaner.closeSentence(sentence) && cleaner.closeConnection(con)){
+        if (cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
             return true;
         }
         return false;
@@ -78,7 +78,7 @@ public class RepairDatabase {
         Connection con = connection.getConnection();
 
         //Sjekker at repairID finnes i tabellen
-        if(repairIDExist(repairID) > 0) {
+        if (repairIDExist(repairID) > 0) {
             String mysql = "UPDATE Repair SET date_received = ? , repair_cost = ? , repair_description_after = ? , employee_id = ? WHERE repair_id = ? ";
             PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
             Calendar calendar = Calendar.getInstance();
@@ -102,12 +102,12 @@ public class RepairDatabase {
         return false;
     }
 
-    public int repairIDExist(int repairID){
+    public int repairIDExist(int repairID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
 
-        String mysql = "SELECT repair_id, description_before, date_sent FROM Repair WHERE repair_id = '"+repairID+"';";
+        String mysql = "SELECT repair_id, description_before, date_sent FROM Repair WHERE repair_id = '" + repairID + "';";
         PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
         try {
             ResultSet res = sentence.executeQuery();
@@ -150,7 +150,7 @@ public class RepairDatabase {
    }
    */
 
-    public String showAllRepairs(){
+    public String showAllRepairs() {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -180,7 +180,7 @@ public class RepairDatabase {
         PreparedStatement sentence7 = connection.createPreparedStatement(con, mysqlEmp);
         PreparedStatement sentence8 = connection.createPreparedStatement(con, mysqlBicycle);
         */
-        try{
+        try {
             ResultSet res1 = sentence1.executeQuery();
             /*
             ResultSet res2 = sentence2.executeQuery();
@@ -197,7 +197,7 @@ public class RepairDatabase {
             //row1.add(str1);
 
 
-            while(res1.next()){
+            while (res1.next()) {
                 String ID = res1.getObject(1).toString();
                 String DescrB = res1.getObject(2).toString();
                 String DateS = res1.getObject(3).toString();
@@ -226,7 +226,7 @@ public class RepairDatabase {
         } catch (SQLException e) {
             return null;
         }
-        if(cleaner.closeSentence(sentence1) &&
+        if (cleaner.closeSentence(sentence1) &&
                 /*cleaner.closeSentence(sentence2) &&
                 cleaner.closeSentence(sentence3) &&
                 cleaner.closeSentence(sentence4) &&
@@ -234,7 +234,7 @@ public class RepairDatabase {
                 cleaner.closeSentence(sentence6) &&
                 cleaner.closeSentence(sentence7) &&
                 cleaner.closeSentence(sentence8) &&*/
-                cleaner.closeConnection(con)){
+                cleaner.closeConnection(con)) {
             //return repairs
             return theTable;
         }
@@ -242,9 +242,37 @@ public class RepairDatabase {
 
     }
 
+    public int nrRepairs(int bicycleID) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
+
+        int antRepairs = -1;
+
+        String mysql = "SELECT COUNT(*) as 'Antall repairs' FROM Repair WHERE bicycle_id LIKE ?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+
+        try {
+            sentence.setInt(1, bicycleID);
+            ResultSet res = sentence.executeQuery();
+            if(res.next()){
+                antRepairs = res.getInt(1);
+            }
+
+        }catch(SQLException e){
+            System.out.println("Error");
+            return antRepairs;
+        }
+        if(cleaner.closeSentence(sentence)&&cleaner.closeConnection(con)){
+            return antRepairs;
+        }
+        System.out.println("ikke Error");
+        return antRepairs;
+    }
+
 
     //test
-
+    /*
     public static void main(String[]args) {
         String databaseNavn = "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/elisamop?user=elisamop&password=q9rmRFsi";
         RepairDatabase databasen = new RepairDatabase("com.mysql.jdbc.Driver", databaseNavn);
@@ -253,13 +281,14 @@ public class RepairDatabase {
         //System.out.println(databasen.regNewRepair("This bike is dangerous!", 2));
         //System.out.println(databasen.regNewRepair("The handle is broken.", 1));
         //System.out.println(databasen.regNewRepair("This is crap.", 3));
-        System.out.println(databasen.regNewRepair("This is super crap.", 2));
+        //System.out.println(databasen.regNewRepair("This is super crap.", 2));
         //System.out.println(databasen.regFinishRepair(3, "Skriftet bremsene.", 550, 1));
         //System.out.println(databasen.regFinishRepair(1, "Grøt.", 50, 2));
         //System.out.println(databasen.regFinishRepair(2, "Meh.", 50, 2));
         //System.out.println(databasen.showAllRepairs());
+        //System.out.println(databasen.nrRepairs(2));
 
 
         databasen.lukkForbindelse();
-    }
+    }*/
 }
