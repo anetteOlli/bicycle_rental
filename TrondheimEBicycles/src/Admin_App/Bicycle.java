@@ -1,12 +1,12 @@
 package Admin_App;
 
-public class Family {
+public class Bicycle {
 
     public final String make;
     public final int production_date;
-    public String bicycleStatus;
+    public String bicycleStatus; 
 
-    public Family(String make, int production_date, String bicycleStatus) {
+    public Bicycle(String make, int production_date, String bicycleStatus) {
         this.make = make;
         this.production_date = production_date;
         this.bicycleStatus = bicycleStatus;
