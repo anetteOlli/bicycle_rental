@@ -3,17 +3,20 @@ DROP TABLE IF EXISTS DockingStation, Dock, Bicycle, bicycleStatus, Model, Repair
 SET foreign_key_checks = 1;
 
 CREATE TABLE DockingStation (
-station_id INT,
-name VARCHAR(100),
-active_status TINYINT(1),
+station_id INT AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+active_status BOOLEAN,
 capacity INT,
+longitude DOUBLE,
+latitude DOUBLE,
+powerUsage DOUBLE,
 PRIMARY KEY(station_id)
 );
 
 CREATE TABLE Dock (
-dock_id INT,
+dock_id INT AUTO_INCREMENT,
 station_id INT,
-isAvailable TINYINT(1),
+isAvailable BOOLEAN,
 PRIMARY KEY(dock_id)
 );
 
@@ -127,10 +130,24 @@ INSERT INTO bicycleStatus VALUES('in dock'), ('DBR'), ('lost'), ('need repair'),
 
 INSERT INTO Model VALUES('family', 100), ('cargo', 150), ('regular', 100) ;
 
-INSERT INTO DockingStation VALUES  (2, 'Munkegata', 1, 20);
+INSERT INTO DockingStation(name, active_status, capacity) VALUES  ( 'Munkegata', true, 20);
 
-INSERT INTO DockingStation VALUES (1, 'Prinsen', 0, 20);
-INSERT INTO DockingStation VALUES (3, 'HJEM', 3, 20);
+INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'Prinsen', false, 20);
+INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'HJEM', true, 20);
+INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'nova', false, 20);
 
 SELECT * FROM DockingStation;
 
+UPDATE DockingStation SET name='munkegata' WHERE name='Munkegata';
+
+UPDATE DockingStation SET powerUsage = 2356.56 WHERE station_id= 1;
+
+UPDATE DockingStation SET latitude=23, longitude=24 WHERE station_id=43;
+
+SELECT * FROM DockingStation;
+
+SELECT station_id FROM DockingStation WHERE active_status=TRUE;
+
+INSERT INTO Bicycle (bicycle_id, dock_id) VALUE (2,1);
+
+SELECT COUNT(*) FROM Bicycle NATURAL JOIN Dock WHERE station_id=1;
