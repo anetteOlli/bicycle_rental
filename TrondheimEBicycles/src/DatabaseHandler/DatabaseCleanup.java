@@ -15,7 +15,7 @@ public class DatabaseCleanup{
      * @return the method returns true if it successfully closed the Restultset,
      * or false if it enocountered a problem.
      */
-    boolean closeResult(ResultSet res) {
+   public boolean closeResult(ResultSet res) {
         try {
             if (res != null) {
                 res.close();
@@ -32,7 +32,7 @@ public class DatabaseCleanup{
      * @param stm the statement that should be closed.
      * @return returns true if it succesfully closed the statement.
      */
-    boolean closeSentence(Statement stm) {
+    public boolean closeSentence(Statement stm) {
         try {
             if (stm != null) {
                 stm.close();
@@ -49,7 +49,7 @@ public class DatabaseCleanup{
      * @param con the Connection that should be closed
      * @return return true if it successfully closed the connection
      */
-    boolean closeConnection(Connection con) {
+    public boolean closeConnection(Connection con) {
         try {
             if (con != null) {
                 con.close();
@@ -67,7 +67,7 @@ public class DatabaseCleanup{
      * @param con the connection that should be rolled back
      * @return return true if it successfully rolled back the database
      */
-    boolean rollback(Connection con) {
+    public boolean rollback(Connection con) {
         try {
             if (con != null && !con.getAutoCommit()) {
                 con.rollback();
@@ -84,10 +84,10 @@ public class DatabaseCleanup{
      * @param con the connection that should set autocommit back on
      * @return return true if it successfully turned autocommit on
      */
-    boolean setAutoCommit(Connection con) {
+    public boolean setAutoCommit(Connection con, boolean onOrOff) {
         try {
-            if (con != null && !con.getAutoCommit()) {
-                con.setAutoCommit(true);
+            if (con != null) {
+                con.setAutoCommit(onOrOff);
                 return true;
             }
             return false;
@@ -101,7 +101,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-    boolean setReadCommited(Connection con){
+    public boolean setReadCommited(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_READ_COMMITTED);
             return true;
@@ -115,7 +115,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-    boolean setReadUnCommited(Connection con){
+    public boolean setReadUnCommited(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_READ_UNCOMMITTED);
             return true;
@@ -143,7 +143,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-    boolean setSerializable(Connection con){
+    public boolean setSerializable(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_SERIALIZABLE);
             return true;
@@ -158,7 +158,7 @@ public class DatabaseCleanup{
      * @param con the connection that should become commited
      * @return return true if it successfully commited
      */
-    boolean commit(Connection con){
+    public boolean commit(Connection con){
         try{
             con.commit();
             return true;

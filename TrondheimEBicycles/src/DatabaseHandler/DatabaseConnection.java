@@ -25,9 +25,9 @@ public class DatabaseConnection{
 
     }
 
-    private Connection createConnection(){
+    public Connection createConnection(){
         try{
-           Connection con = DriverManager.getConnection(connectionURL);
+            Connection con = DriverManager.getConnection(connectionURL);
             Class.forName(databasedriver);
             return con;
 
@@ -37,6 +37,9 @@ public class DatabaseConnection{
             System.out.println("error with databaseconstructor 2");
         }
         return null;
+    }
+    public Connection getConnection(){
+        return con;
     }
     public PreparedStatement createPreparedStatement(Connection con, String sentence){
         try {
@@ -61,3 +64,8 @@ public class DatabaseConnection{
 
 
 }
+
+
+
+
+
