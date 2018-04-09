@@ -244,22 +244,22 @@ public class RepairDatabase {
 
 
     //test
-    /*
+
     public static void main(String[]args) {
         String databaseNavn = "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/elisamop?user=elisamop&password=q9rmRFsi";
         RepairDatabase databasen = new RepairDatabase("com.mysql.jdbc.Driver", databaseNavn);
 
-
-        //Repair repair3 = new Repair(0, "This bike is dangerous!", 20180410, 3, 5);
         //System.out.println(databasen.regNewRepair("This bike is dangerous!", 3));
         //System.out.println(databasen.regNewRepair("This bike is dangerous!", 2));
         //System.out.println(databasen.regNewRepair("The handle is broken.", 1));
         //System.out.println(databasen.regNewRepair("This is crap.", 3));
+        System.out.println(databasen.regNewRepair("This is super crap.", 2));
         //System.out.println(databasen.regFinishRepair(3, "Skriftet bremsene.", 550, 1));
         //System.out.println(databasen.regFinishRepair(1, "Grøt.", 50, 2));
-        System.out.println(databasen.showAllRepairs());
+        //System.out.println(databasen.regFinishRepair(2, "Meh.", 50, 2));
+        //System.out.println(databasen.showAllRepairs());
 
 
         databasen.lukkForbindelse();
-    }*/
+    }
 }
