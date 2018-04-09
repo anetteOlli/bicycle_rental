@@ -4,7 +4,7 @@ public class Bicycle {
 
     public final String make;
     public final int production_date;
-    public String bicycleStatus;
+    public String bicycleStatus; 
 
     public Bicycle(String make, int production_date, String bicycleStatus) {
         this.make = make;
