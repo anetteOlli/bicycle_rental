@@ -8,7 +8,7 @@ import java.sql.*;
  * i java" by Else Lervik.
  * testing
  */
-class DatabaseCleanup{
+public class DatabaseCleanup{
     /**
      *
      * @param res res is the Resultset that will be closed
