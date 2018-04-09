@@ -100,13 +100,12 @@ public class BikeDatabase {
         return true;
     }
 
-    public void UpdateKM (totalKM newKM){
-        String KM = "UPDATE Bicycle SET totalKM = (SELECT tripKM FROM TripPayment WHERE bicycle_id = ?) + totalKM WHERE (SELECT trip_id FROM TripPayment) = ? AND bicycle_id = ?;";
+    public void UpdateKM (int bicycle_id){
+        String KM = "UPDATE Bicycle SET totalKM = (SELECT SUM(tripKM) FROM TripPayment WHERE bicycle_id = ?) WHERE bicycle_id = ?;";
         PreparedStatement Mileage = connection.createPreparedStatement(con, KM);
         try {
-        Mileage.setInt(1, newKM.bicycle_id);
-        Mileage.setInt(2, newKM.trip_id);
-        Mileage.setInt(3, newKM.bicycle_id);
+        Mileage.setInt(1, bicycle_id);
+        Mileage.setInt(2, bicycle_id);
 
         Mileage.executeUpdate();
         } catch (SQLException e) {
@@ -114,16 +113,6 @@ public class BikeDatabase {
         }
     }
 
-    public void CheckRep(int bicycle_id){
-        String checkR = "SELECT COUNT bicycle_id FROM Repairs WHERE bicycle_id=?;";
-        PreparedStatement RepCheck = connection.createPreparedStatement(con, checkR);
-        try{
-            RepCheck.setInt(1, bicycle_id);
-            ResultSet RC = stm.executeQuery(checkR);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     public int CheckTrip(int bicycle_id){
         int checked = -1;
@@ -142,24 +131,22 @@ public class BikeDatabase {
         return checked;
     }
 
-    public void RegRepairs (Nr_of_repairs repairs){
-        String RegNrReps = "Update Bicycle SET nr_of_repairs = ? WHERE bicycle_id = ?;";
+    public void RegRepairs (int bicycle_id){
+        String RegNrReps = "Update Bicycle SET nr_of_repairs = (SELECT COUNT(repair_id) FROM Repair) WHERE bicycle_id = ?;";
         PreparedStatement Reps = connection.createPreparedStatement(con, RegNrReps);
         try {
-            Reps.setInt(1, repairs.nr_of_repairs);
-            Reps.setInt(2, repairs.bicycle_id);
+            Reps.setInt(2, bicycle_id);
             Reps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void RegTrips (Trips trips){
-        String trippe = "Update Bicycle SET trips=? WHERE bicycle_id=?;";
+    public void RegTrips (int bicycle_id){
+        String trippe = "Update Bicycle SET trips=(SELECT COUNT(trip_id) FROM TripPayment) WHERE bicycle_id=?;";
         PreparedStatement trip = connection.createPreparedStatement(con, trippe);
         try{
-            trip.setInt(1, trips.trips);
-            trip.setInt(2, trips.bicycle_id);
+            trip.setInt(1, bicycle_id);
             trip.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -174,17 +161,15 @@ public class BikeDatabase {
        //Family test1 = new Family("DBS", 19940815, "DBR");
        //Cargo test2 = new Cargo("DBS", 19940815, "DBR");
        //Regular test3 = new Regular("DBS", 19940815, "DBR");
-       //totalKM test4 = new totalKM(3,1);
        //BicycleUpdate test5 = new BicycleUpdate(8, 2, 50, "DBR", 50, 20, 5);
        //Nr_of_repairs test6 = new Nr_of_repairs(1, 20);
-       //Trips test7 = new Trips(1,3);
        //database.regFamily(test1);
        //database.regCargo(test2);
        //database.regRegular(test3);
-       //database.UpdateKM(test4);
+       database.UpdateKM(1);
        //database.UpdateBicycle(test5);
        //database.RegRepairs(test6);
-       //database.RegTrips(test7);
+       database.RegTrips(1);
        System.out.println("Nr of trips for bicycle " + database.CheckTrip(1));
        cleaner.closeConnection(con);
     }
