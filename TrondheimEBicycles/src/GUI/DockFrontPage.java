@@ -1,46 +1,99 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class DockFrontPage extends JFrame {
-    private JPanel panel1;
-    private JPanel dockFront;
+public class DockFrontPage {
+
     private JButton regNewDockButton;
     private JButton editDockButton;
     private JButton dockStatusButton;
     private JButton backButton;
+    public JPanel dockFront;
 
-    public JPanel getPanel1() {
-        return panel1;
-    }
 
-    public JPanel getDockFront() {
-        return dockFront;
-    }
+    public DockFrontPage() {
+        regNewDockButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-    public JButton getRegNewDockButton() {
-        return regNewDockButton;
-    }
 
-    public JButton getEditDockButton() {
-        return editDockButton;
-    }
+                JFrame frame = new JFrame("Register New Dock");
+                frame.setContentPane(new DockReg().dockRegPanel);
+                frame.pack();
+                frame.setVisible(true);
 
-    public JButton getDockStatusButton() {
-        return dockStatusButton;
-    }
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
 
-    public JButton getBackButton() {
-        return backButton;
-    }
+                    }
+                }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("DockFrontPage");
-        frame.setContentPane(new DockFrontPage().dockFront);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+
+            }
+        });
+        editDockButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Edit existing dock");
+
+                frame.setContentPane(new DockEdit().dockEditPanel);
+                frame.pack();
+                frame.setVisible(true);
+
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
+
+            }
+        });
+        dockStatusButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     {
@@ -60,7 +113,9 @@ public class DockFrontPage extends JFrame {
     private void $$$setupUI$$$() {
         dockFront = new JPanel();
         dockFront.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 3, new Insets(0, 0, 0, 0), -1, -1));
-        dockFront.setBorder(BorderFactory.createTitledBorder("Dockingstation menu"));
+        Font dockFrontFont = this.$$$getFont$$$(null, -1, -1, dockFront.getFont());
+        if (dockFrontFont != null) dockFront.setFont(dockFrontFont);
+        dockFront.setBorder(BorderFactory.createTitledBorder(null, "Dockingstation menu", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, this.$$$getFont$$$(null, -1, -1, dockFront.getFont())));
         regNewDockButton = new JButton();
         regNewDockButton.setText("Register new dockinstation");
         dockFront.add(regNewDockButton, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -73,6 +128,25 @@ public class DockFrontPage extends JFrame {
         backButton = new JButton();
         backButton.setText("Back");
         dockFront.add(backButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
+        if (currentFont == null) return null;
+        String resultName;
+        if (fontName == null) {
+            resultName = currentFont.getName();
+        } else {
+            Font testFont = new Font(fontName, Font.PLAIN, 10);
+            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
+                resultName = fontName;
+            } else {
+                resultName = currentFont.getName();
+            }
+        }
+        return new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
     }
 
     /**

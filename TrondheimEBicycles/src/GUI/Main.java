@@ -4,10 +4,14 @@ import javax.swing.*;
 
 public class Main extends JFrame {
 
-    static DockFrontPage frontPage = new DockFrontPage();
 
     public static void main(String[] args) {
-        JPanel front=  frontPage.getDockFront();
+        JFrame frame = new JFrame("Dock front page");
+        frame.setContentPane(new DockFrontPage().dockFront);
+        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
 
 
 
