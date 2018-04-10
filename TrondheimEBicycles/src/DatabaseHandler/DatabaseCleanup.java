@@ -32,7 +32,7 @@ public class DatabaseCleanup{
      * @param stm the statement that should be closed.
      * @return returns true if it succesfully closed the statement.
      */
-   public boolean closeSentence(Statement stm) {
+    public boolean closeSentence(Statement stm) {
         try {
             if (stm != null) {
                 stm.close();
@@ -49,7 +49,7 @@ public class DatabaseCleanup{
      * @param con the Connection that should be closed
      * @return return true if it successfully closed the connection
      */
-   public boolean closeConnection(Connection con) {
+    public boolean closeConnection(Connection con) {
         try {
             if (con != null) {
                 con.close();
@@ -67,7 +67,7 @@ public class DatabaseCleanup{
      * @param con the connection that should be rolled back
      * @return return true if it successfully rolled back the database
      */
-   public boolean rollback(Connection con) {
+    public boolean rollback(Connection con) {
         try {
             if (con != null && !con.getAutoCommit()) {
                 con.rollback();
@@ -82,9 +82,9 @@ public class DatabaseCleanup{
     /**
      * This method turns autoCommit back on
      * @param con the connection that should set autocommit back on
+     * @param b
      * @return return true if it successfully turned autocommit on
      */
-
     public boolean setAutoCommit(Connection con, boolean onOrOff) {
         try {
             if (con != null) {
@@ -102,7 +102,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-   public boolean setReadCommited(Connection con){
+    public boolean setReadCommited(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_READ_COMMITTED);
             return true;
@@ -116,7 +116,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-   public boolean setReadUnCommited(Connection con){
+    public boolean setReadUnCommited(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_READ_UNCOMMITTED);
             return true;
@@ -130,7 +130,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-   public boolean setRepeatableRead(Connection con){
+    public boolean setRepeatableRead(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_REPEATABLE_READ);
             return true;
@@ -144,7 +144,7 @@ public class DatabaseCleanup{
      * @param con
      * @return
      */
-   public boolean setSerializable(Connection con){
+    public boolean setSerializable(Connection con){
         try {
             con.setTransactionIsolation(con.TRANSACTION_SERIALIZABLE);
             return true;
@@ -159,7 +159,7 @@ public class DatabaseCleanup{
      * @param con the connection that should become commited
      * @return return true if it successfully commited
      */
-   public boolean commit(Connection con){
+    public boolean commit(Connection con){
         try{
             con.commit();
             return true;
