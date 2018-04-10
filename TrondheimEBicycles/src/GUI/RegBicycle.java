@@ -1,10 +1,13 @@
 package GUI;
 
+import Admin_App.*;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
-
+import java.time.*;
+import java.util.*;
 public class RegBicycle {
     public JPanel regBike;
     private JComboBox comboBox1;
@@ -53,6 +56,25 @@ public class RegBicycle {
                         frame2.dispose();
 
                     }
+                }
+            }
+        });
+        confirmButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Date date = new Date();
+
+                BikeDatabase database = new BikeDatabase();
+                Integer currentValue = (Integer)spinner1.getValue();
+                String make = textField1.getText();
+                String model = comboBox1.getSelectedItem().toString();
+                Bicycle bicycle = new Bicycle(make, "not employed");
+                if(model=="Regular") {
+                    database.regRegular(bicycle, currentValue);
+                }else if (model=="Cargo") {
+                    database.regCargo(bicycle, currentValue);
+                }else{
+                    database.regFamily(bicycle, currentValue);
                 }
             }
         });

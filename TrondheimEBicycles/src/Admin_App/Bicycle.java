@@ -1,14 +1,17 @@
 package Admin_App;
 
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Bicycle {
-
+    Calendar calendar = Calendar.getInstance();
+    java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
     public final String make;
-    public final int production_date;
-    public String bicycleStatus; 
+    public String bicycleStatus;
 
-    public Bicycle(String make, int production_date, String bicycleStatus) {
+    public Bicycle(String make, String bicycleStatus) {
         this.make = make;
-        this.production_date = production_date;
         this.bicycleStatus = bicycleStatus;
     }
 
@@ -17,8 +20,8 @@ public class Bicycle {
         return make;
     }
 
-    public int getProduction_date() {
-        return production_date;
+    public Date getRegistration_date() {
+        return registration_date;
     }
 
     public String getBicycleStatus() {
