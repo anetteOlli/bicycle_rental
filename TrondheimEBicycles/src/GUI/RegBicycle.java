@@ -61,7 +61,7 @@ public class RegBicycle {
         });
         confirmButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) { 
 
                 BikeDatabase database = new BikeDatabase();
                 Integer currentValue = (Integer)spinner1.getValue();
