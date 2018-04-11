@@ -1,11 +1,14 @@
 package Admin_App;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 import DatabaseHandler.*;
 
 public class BikeDatabase {
+    Bikes bikes = new Bikes();
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
@@ -87,19 +90,15 @@ public class BikeDatabase {
         return false;
     }
 
-    public boolean UpdateBicycle (BicycleUpdate newUpdate) {
-        String updSetning = "UPDATE Bicycle SET dock_id=?, powerlevel=?, bicycleStatus=?, totalKM=?, trips=?, nr_of_repairs=? WHERE bicycle_id=?";
+    public boolean UpdateBicycle (int dock_id, String bicycleStatus, int bicycle_id) {
+        String updSetning = "UPDATE Bicycle SET dock_id=?, bicycleStatus=? WHERE bicycle_id=?";
         PreparedStatement Update = connection.createPreparedStatement(con, updSetning);
 
 
         try {
-            Update.setInt(1, newUpdate.dock_id);
-            Update.setInt(2, newUpdate.powerlevel);
-            Update.setString(3, newUpdate.bicycleStatus);
-            Update.setInt(4, newUpdate.totalKM);
-            Update.setInt(5, newUpdate.trips);
-            Update.setInt(6, newUpdate.nr_of_repairs);
-            Update.setInt(7, newUpdate.bicycle_id);
+            Update.setInt(1, dock_id);
+            Update.setString(2, bicycleStatus);
+            Update.setInt(3, bicycle_id);
 
             Update.executeUpdate();
         } catch (SQLException e) {
@@ -163,22 +162,26 @@ public class BikeDatabase {
     }
 
 
-   public static void main(String[] args) {
+
+
+
+    public static void main(String[] args) {
         BikeDatabase database = new BikeDatabase();
+        Bikes bike = new Bikes();
         connection.getConnection();
 
 
-       Bicycle test3 = new Bicycle("DBS", "not employed");
+       //Bicycle test3 = new Bicycle("DBS", "not employed");
        //BicycleUpdate test5 = new BicycleUpdate(8, 2, 50, "DBR", 50, 20, 5);
        //Nr_of_repairs test6 = new Nr_of_repairs(1, 20);
-       database.regFamily(test3, 11);
+       //database.regFamily(test3, 11);
        //database.regCargo(test3);
-       database.regRegular(test3, 10);
+       //database.regRegular(test3, 10);
        //database.UpdateKM(1);
-       //database.UpdateBicycle(test5);
+       //database.UpdateBicycle(1, "in dock", 1);
        //database.RegRepairs(test6);
        //database.RegTrips(1);
-       System.out.println("Nr of trips for bicycle " + database.CheckTrip(1));
+       //System.out.println("Nr of trips for bicycle " + database.CheckTrip(1));
        cleaner.closeConnection(con);
     }
 }
