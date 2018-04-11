@@ -589,6 +589,7 @@ public class DockingStation {
             PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
             ResultSet result = sentence.executeQuery();
             ArrayList<Integer> dockingStationIDs = new ArrayList<Integer>();
+
             while(result.next()){
                 dockingStationIDs.add(result.getInt(1));
             }
@@ -688,6 +689,38 @@ public class DockingStation {
         return false;
     }
 
+    /**
+     * method gets a specific dockingstation location in longitude and latitude in degrees
+     *
+     * @param dockStnID dockingstation specified
+     * @return index 0: longitude, index 1: latitude
+     */
+    public double[] getDockingStationLocation(int dockStnID){
+        double[] result = new double[2];
+        String sql = "SELECT longitude, latitude FROM DockingStation WHERE station_id = ?";
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        PreparedStatement sentence = connection.createPreparedStatement(con, sql);
+        try{
+            sentence.setInt(1,dockStnID);
+            ResultSet resultSet = sentence.executeQuery();
+            if(resultSet.next()){
+                result[0] = resultSet.getDouble(1);
+                result[1] = resultSet.getDouble(2);
+            }
+            if(cleaner.closeResult(resultSet) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)){
+                return result;
+            }else{
+                return null;
+            }
+        }catch (SQLException e){
+            return null;
+        }
+
+    }
+
+
 
 
 
@@ -732,5 +765,6 @@ public class DockingStation {
             System.out.println("bikeID: " + bikes.get(i));
         }
     }
+
 
 }
