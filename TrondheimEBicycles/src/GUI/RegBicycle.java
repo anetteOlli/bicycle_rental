@@ -83,7 +83,7 @@ public class RegBicycle {
         JFrame frame = new JFrame("Register Bike");
         frame.setContentPane(new RegBicycle().regBike);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack(); 
+        frame.pack();
         frame.setVisible(true);
     }
 }
