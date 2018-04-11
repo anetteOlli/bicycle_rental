@@ -5,4 +5,9 @@ public class Admin extends Employee {
         super(employeeId, firstName, lastName, phone, address, email, password);
         isAdmin = true;
     }
+
+    @Override
+    public String toString() {
+        return getFirstName() +" " + getLastName();
+    }
 }

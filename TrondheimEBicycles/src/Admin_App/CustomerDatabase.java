@@ -13,7 +13,7 @@ public class CustomerDatabase {
 
     /*Finds a random 4-digit number that does not already exist in the customer table.
     * This number is used as the customer ID*/
-    private int findRandomId(){
+    public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
         while(exists){

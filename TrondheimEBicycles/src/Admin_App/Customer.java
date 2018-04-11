@@ -10,6 +10,7 @@ public class Customer {
     private String custEmail;
     private String custPassword;
     private int custCardNumber;
+    private String address;
     private static Random random = new Random();
 
     public Customer(int custId, int custCardNumber, String custFirstName, String custLastName, int custPhone, String custEmail, String custPassword) {
@@ -23,6 +24,7 @@ public class Customer {
         this.custPassword = custPassword.trim();
         this.custId = custId;
         this.custCardNumber = custCardNumber;
+        this.address = address;
     }
 
     public int getCustId(){
