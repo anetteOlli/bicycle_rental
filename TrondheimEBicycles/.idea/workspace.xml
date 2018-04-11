@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="fa44acc8-584e-43f3-a30c-1bbdecb6b905" name="Default" comment="Connected all panels">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/miglayout-core-javadoc.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/miglayout-core-sources.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/miglayout-core.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/miglayout-swing-sources.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/miglayout-swing.jar" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/TrondheimEBicycles.iml" afterPath="$PROJECT_DIR$/TrondheimEBicycles.iml" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java" afterPath="$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegBicycle.java" afterPath="$PROJECT_DIR$/src/GUI/RegBicycle.java" />
+=======
     <list default="true" id="08580399-7db5-4db4-9962-2ef222ee57c6" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/src/Admin_App/PasswordStorage.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -8,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/PaymentCardDatabase.class" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/PaymentCardDatabase.class" />
       <change beforePath="$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java" afterPath="$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java" />
       <change beforePath="$PROJECT_DIR$/src/Admin_App/PaymentCardDatabase.java" afterPath="$PROJECT_DIR$/src/Admin_App/PaymentCardDatabase.java" />
+>>>>>>> master
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,6 +43,43 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
+<<<<<<< HEAD
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="quannt@mysql.stud.iie.ntnu.no" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="quannt@mysql.stud.iie.ntnu.no" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="quannt@mysql.stud.iie.ntnu.no" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="quannt: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="quannt@mysql.stud.iie.ntnu.no" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="quannt: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="Bicycle: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BikeDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Admin_App/BikeDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+=======
     <expand />
     <select />
   </component>
@@ -41,16 +93,32 @@
               <folding>
                 <element signature="e#341#342#0" expanded="true" />
                 <element signature="e#399#400#0" expanded="true" />
+>>>>>>> master
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="EditBike.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/EditBike.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditBike.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/EditBike.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-93">
+              <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+=======
       <file leaf-file-name="AddCustomer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AddCustomer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="41">
               <caret line="54" column="49" lean-forward="true" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+>>>>>>> master
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,6 +126,14 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="BikeMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/BikeMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+              <folding />
+=======
       <file leaf-file-name="AddTechnician.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AddTechnician.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -66,10 +142,19 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="RegBicycle.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="85" column="21" lean-forward="false" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+              <folding />
+=======
       <file leaf-file-name="AdministerAdmins.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,10 +163,29 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditBike2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/EditBike2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-523">
+              <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+              <folding />
+=======
       <file leaf-file-name="AdministerAdmins.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins.form">
           <provider selected="true" editor-type-id="ui-designer">
@@ -98,10 +202,23 @@
                 <element signature="e#5303#5304#0" expanded="true" />
                 <element signature="e#5369#5370#0" expanded="true" />
               </folding>
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Test1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Test1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <marker date="1523460377212" expanded="true" signature="2951:2984" ph="select * fro... student" />
+                <marker date="1523460377212" expanded="true" signature="2951:2991" ph="select * fro... Bicycle" />
+                <marker date="1523460377212" expanded="true" signature="2951:3001" ph="select * fro... Bicycle" />
+                <marker date="1523460377212" expanded="true" signature="2951:3014" ph="select * fro... Bicycle" />
+=======
       <file leaf-file-name="AdminAdmin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/AdminAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,11 +228,20 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#5301#5302#0" expanded="true" />
                 <element signature="e#5367#5368#0" expanded="true" />
+>>>>>>> master
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="HomeButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/HomeButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+=======
       <file leaf-file-name="AdminAdmin.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AdminAdmin.form">
           <provider selected="true" editor-type-id="ui-designer">
@@ -138,6 +264,7 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -147,19 +274,52 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
+=======
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit5 Test Class" />
+>>>>>>> master
         <option value="Class" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>setInt</find>
+      <find>regbike</find>
+      <find>ourJavaDate</find>
+      <find>prod</find>
+      <find>next</find>
+      <find>Search</find>
+      <find>textva</find>
+      <find>table</find>
+      <find>text</find>
+      <find>Jcombo</find>
+      <find>sort</find>
+    </findStrings>
+  </component>
+=======
+>>>>>>> master
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< HEAD
+        <entry key="$PROJECT_DIR$/.." value="Bicycle" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="master" repo="$PROJECT_DIR$/.." source="Bicycle" />
+    </push-targets>
+=======
         <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
+>>>>>>> master
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -169,6 +329,36 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java" />
+        <option value="$PROJECT_DIR$/src/Admin_App/Family.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BicycleFrontPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/BicycleFrontP.java" />
+        <option value="$PROJECT_DIR$/src/GUI/test.java" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBike.form" />
+        <option value="$PROJECT_DIR$/src/GUI/ShowBikeStatus.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegRepair.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ShowBikeStatus.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BikeMain.form" />
+        <option value="$PROJECT_DIR$/src/GUI/regBike.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBikeConfirm.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBike.java" />
+        <option value="$PROJECT_DIR$/src/GUI/EditBike2.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegRepair.form" />
+        <option value="$PROJECT_DIR$/src/GUI/BikeMain.java" />
+        <option value="$PROJECT_DIR$/src/GUI/EditBike2.java" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBikeConfirm.java" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBicycle.form" />
+        <option value="$PROJECT_DIR$/src/Admin_App/Bicycle.java" />
+        <option value="$PROJECT_DIR$/src/Admin_App/Arraytest.java" />
+        <option value="src:table:/373ebcde/3a7b41ef-9723-4f49-ac53-fa4a507993c6/quannt.Bicycle" />
+        <option value="$PROJECT_DIR$/src/Admin_App/BikeDatabase.java" />
+        <option value="$PROJECT_DIR$/src/Admin_App/Bikes.java" />
+        <option value="$PROJECT_DIR$/src/GUI/EditBike.form" />
+        <option value="$PROJECT_DIR$/src/GUI/EditBike.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Test1.java" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBicycle.java" />
+=======
         <option value="$PROJECT_DIR$/src/DatabaseHandler/Main.java" />
         <option value="$PROJECT_DIR$/src/DatabaseHandler/DatabaseConEncrypt.java" />
         <option value="$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeepTest.java" />
@@ -207,6 +397,7 @@
         <option value="$PROJECT_DIR$/src/GUI/AdministerAdmins1.java" />
         <option value="$PROJECT_DIR$/src/GUI/AdminAdmin.form" />
         <option value="$PROJECT_DIR$/src/GUI/AdminAdmin.java" />
+>>>>>>> master
       </list>
     </option>
   </component>
@@ -217,6 +408,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+=======
     <option name="x" value="13" />
     <option name="y" value="-18" />
     <option name="width" value="1938" />
@@ -243,6 +439,7 @@
         </selected-state>
       </profile-state>
     </entry>
+>>>>>>> master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -261,6 +458,12 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+=======
+>>>>>>> master
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,6 +486,9 @@
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="DatabaseHandler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,17 +552,35 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="adminUsersFrontPage" type="e9f4de52:FormNode" />
+>>>>>>> master
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="EditBike" type="e9f4de52:FormNode" />
+=======
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+>>>>>>> master
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="RegBicycle" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="Test" type="462c0819:PsiDirectoryNode" />
               <item name="DatabaseHandler" type="462c0819:PsiDirectoryNode" />
+>>>>>>> master
             </path>
             <path>
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
@@ -366,15 +590,22 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
+>>>>>>> master
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="185" />
+=======
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-5.1.45-20180319T100014Z-001/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -400,6 +631,7 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\patri\OneDrive\Dokumenter\NTNU Data\Bicycle_rental\TrondheimEBicycles\src\GUI" />
     </key>
+>>>>>>> master
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -413,7 +645,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Application.Test1">
+=======
   <component name="RunManager" selected="Application.AdminAdmin">
+>>>>>>> master
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -421,14 +657,41 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
+<<<<<<< HEAD
+    <configuration name="BikeDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Admin_App.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Admin_App.BikeDatabase" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TrondheimEBicycles" />
+      <envs />
+    </configuration>
+    <configuration name="EditBike" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+=======
     <configuration name="AddCustomer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+>>>>>>> master
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+      <option name="MAIN_CLASS_NAME" value="GUI.EditBike" />
+=======
       <option name="MAIN_CLASS_NAME" value="GUI.AddCustomer" />
+>>>>>>> master
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -440,14 +703,22 @@
       <module name="TrondheimEBicycles" />
       <envs />
     </configuration>
+<<<<<<< HEAD
+    <configuration name="EditBike2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+=======
     <configuration name="AdminAdmin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+>>>>>>> master
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+      <option name="MAIN_CLASS_NAME" value="GUI.EditBike2" />
+=======
       <option name="MAIN_CLASS_NAME" value="GUI.AdminAdmin" />
+>>>>>>> master
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -459,14 +730,22 @@
       <module name="TrondheimEBicycles" />
       <envs />
     </configuration>
+<<<<<<< HEAD
+    <configuration name="RegBicycle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+=======
     <configuration name="AdministerAdmins" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+>>>>>>> master
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+      <option name="MAIN_CLASS_NAME" value="GUI.RegBicycle" />
+=======
       <option name="MAIN_CLASS_NAME" value="GUI.AdministerAdmins" />
+>>>>>>> master
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -478,14 +757,22 @@
       <module name="TrondheimEBicycles" />
       <envs />
     </configuration>
+<<<<<<< HEAD
+    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+=======
     <configuration name="AdministerAdmins1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+>>>>>>> master
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+      <option name="MAIN_CLASS_NAME" value="GUI.Test1" />
+=======
       <option name="MAIN_CLASS_NAME" value="GUI.AdministerAdmins1" />
+>>>>>>> master
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -591,6 +878,21 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
+<<<<<<< HEAD
+      <item index="0" class="java.lang.String" itemvalue="Application.RegBicycle" />
+      <item index="1" class="java.lang.String" itemvalue="Application.EditBike2" />
+      <item index="2" class="java.lang.String" itemvalue="Application.EditBike" />
+      <item index="3" class="java.lang.String" itemvalue="Application.BikeDatabase" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Test1" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.Test1" />
+        <item index="1" class="java.lang.String" itemvalue="Application.EditBike" />
+        <item index="2" class="java.lang.String" itemvalue="Application.BikeDatabase" />
+        <item index="3" class="java.lang.String" itemvalue="Application.EditBike2" />
+        <item index="4" class="java.lang.String" itemvalue="Application.RegBicycle" />
+=======
       <item index="0" class="java.lang.String" itemvalue="Application.adminUsersFrontPage" />
       <item index="1" class="java.lang.String" itemvalue="Application.AddCustomer" />
       <item index="2" class="java.lang.String" itemvalue="Application.AdministerAdmins" />
@@ -604,6 +906,7 @@
         <item index="2" class="java.lang.String" itemvalue="Application.AdministerAdmins" />
         <item index="3" class="java.lang.String" itemvalue="Application.AddCustomer" />
         <item index="4" class="java.lang.String" itemvalue="Application.adminUsersFrontPage" />
+>>>>>>> master
       </list>
     </recent_temporary>
   </component>
@@ -619,6 +922,55 @@
       <created>1521547486223</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1521547486223</updated>
+      <workItem from="1521547490044" duration="49000" />
+      <workItem from="1523286338374" duration="994000" />
+      <workItem from="1523346046890" duration="30856000" />
+      <workItem from="1523443775184" duration="8514000" />
+    </task>
+    <task id="LOCAL-00001" summary="Removed redundant constructors">
+      <created>1523276152554</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1523276152554</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Removed redundant constructors">
+      <created>1523276310399</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523276310399</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed redundant constructors">
+      <created>1523276798817</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523276798817</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ALL NEW">
+      <created>1523350584854</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523350584854</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed redundant constructors">
+      <created>1523361923027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1523361923027</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed redundant constructors">
+      <created>1523362412667</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1523362412667</updated>
+=======
       <updated>1521116525385</updated>
       <workItem from="1521116526894" duration="2342000" />
       <workItem from="1521305411724" duration="189000" />
@@ -641,10 +993,82 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1521118208983</updated>
+>>>>>>> master
     </task>
+    <task id="LOCAL-00007" summary="Connected all panels">
+      <created>1523364083745</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1523364083745</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Connected all panels">
+      <created>1523368205481</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1523368205481</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Connected all panels">
+      <created>1523460407296</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1523460407296</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Connected all panels">
+      <created>1523461076190</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1523461076190</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="44019000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.4969743" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.505295" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3267974" sideWeight="0.494705" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3382353" sideWeight="0.49621785" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12405446" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1633888" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="SQL Generator" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+=======
     <option name="totallyTimeSpent" value="125651000" />
   </component>
   <component name="ToolWindowManager">
@@ -705,26 +1129,43 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> master
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> master
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> master
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12254161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281768" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122395836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> master
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -736,8 +1177,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ALL NEW" />
+    <MESSAGE value="GUI" />
+    <MESSAGE value="Removed redundant constructors" />
+    <MESSAGE value="Connected all panels" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected all panels" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
+      <option name="time" value="1" />
+=======
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/AdministerAdmins1.java</url>
@@ -749,10 +1200,17 @@
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="19" />
+>>>>>>> master
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+=======
     <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeepTest.java" />
     <entry file="file://$PROJECT_DIR$/loginCredentials.ser" />
     <entry file="file://$PROJECT_DIR$/out/production/TrondheimEBicycles/DatabaseHandler/CryptAES.class" />
@@ -774,10 +1232,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
           <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConEncrypt.java" />
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeepTest.java" />
+    <entry file="file://$PROJECT_DIR$/loginCredentials.ser">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/TrondheimEBicycles/DatabaseHandler/CryptAES.class" />
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+=======
     <entry file="file://$PROJECT_DIR$/src/Admin_App/Repair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -811,6 +1292,7 @@
     <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeep.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
+>>>>>>> master
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -818,6 +1300,44 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Test/DatabaseHandler/DatabasePasswordKeepTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/CryptAES.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1186">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrondheimEBicycles.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Cargo.java" />
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Regular.java" />
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Trips.java" />
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Nr_of_repairs.java" />
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Repair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -906,15 +1426,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/Reg.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/Reg.jfd" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegNewBike.form" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegNewBike.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/BicycleFrontP.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/BicycleFrontPage.form" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/test.form">
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/DockFrontPage.form">
+>>>>>>> master
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/BikeMain.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBikeConfirm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike2.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegRepair.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegRepair.form" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/ShowBikeStatus.form">
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/DockFrontPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -950,18 +1501,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdm.form">
+>>>>>>> master
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/ShowBikeStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/dsads.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/regBike.form" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBike.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBikeConfirm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/dsads.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -971,10 +1538,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/RepairDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/BicycleUpdate.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.form">
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/BikeTechnicians.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1003,10 +1583,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.form">
+>>>>>>> master
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Arraytest.java" />
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseCleanup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" column="7" lean-forward="true" selection-start-line="141" selection-start-column="7" selection-end-line="141" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Bicycle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+=======
     <entry file="file://$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1027,10 +1625,27 @@
           <caret line="201" column="35" lean-forward="true" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="das://src:table:/373ebcde/3a7b41ef-9723-4f49-ac53-fa4a507993c6/quannt.Bicycle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="true" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Bikes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1523446601317" expanded="true" signature="391:475" ph="SELECT bicyc... Bicycle" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAdmin.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1080,20 +1695,34 @@
           <caret line="47" column="69" lean-forward="false" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/BikeDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="63" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1386">
           <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+>>>>>>> master
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="77" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/AddCustomer.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1103,10 +1732,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-523">
+          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike.form">
+=======
     <entry file="file://$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-546">
@@ -1132,20 +1773,55 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins.form">
+>>>>>>> master
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="54" column="52" lean-forward="true" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+>>>>>>> master
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BikeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <marker date="1523460377212" expanded="true" signature="2951:2984" ph="select * fro... student" />
+            <marker date="1523460377212" expanded="true" signature="2951:2991" ph="select * fro... Bicycle" />
+            <marker date="1523460377212" expanded="true" signature="2951:3001" ph="select * fro... Bicycle" />
+            <marker date="1523460377212" expanded="true" signature="2951:3014" ph="select * fro... Bicycle" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GUI/AddTechnician.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-168">
@@ -1172,10 +1848,26 @@
           <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI/HomeButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="85" column="21" lean-forward="false" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+          <folding />
+=======
     <entry file="file://$PROJECT_DIR$/src/Admin_App/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1217,6 +1909,7 @@
             <element signature="e#5301#5302#0" expanded="true" />
             <element signature="e#5367#5368#0" expanded="true" />
           </folding>
+>>>>>>> master
         </state>
       </provider>
     </entry>
