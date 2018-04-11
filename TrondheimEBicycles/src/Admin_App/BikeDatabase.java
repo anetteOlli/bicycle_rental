@@ -1,6 +1,8 @@
 package Admin_App;
 
 import java.sql.*;
+import java.util.Calendar;
+
 import DatabaseHandler.*;
 
 public class BikeDatabase {
@@ -10,17 +12,19 @@ public class BikeDatabase {
     Statement stm;
 
 
-    public boolean regFamily(Bicycle newBicycle) {
+    public boolean regFamily(Bicycle newBicycle, int nr) {
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
         try {
             cleaner.setAutoCommit(con, false);
 
             String insert2 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, 'family', ?, ?);";
             PreparedStatement RegNewFamily = connection.createPreparedStatement(con, insert2);
             RegNewFamily.setString(1, newBicycle.make);
-            RegNewFamily.setInt(2, newBicycle.production_date);
+            RegNewFamily.setDate(2, registration_date);
             RegNewFamily.setString(3, newBicycle.bicycleStatus);
             //RegNewBicycle.executeUpdate();
-            for (int i = 0; i < 25; i++){
+            for (int i = 0; i < nr; i++){
                 RegNewFamily.addBatch();
             }
 
@@ -33,17 +37,19 @@ public class BikeDatabase {
         return false;
     }
 
-    public boolean regCargo(Bicycle newBicycle) {
+    public boolean regCargo(Bicycle newBicycle, int nr) {
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
         try {
             cleaner.setAutoCommit(con, false);
 
             String insert3 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, 'cargo', ?, ?);";
             PreparedStatement RegNewCargo = connection.createPreparedStatement(con, insert3);
             RegNewCargo.setString(1, newBicycle.make);
-            RegNewCargo.setInt(2, newBicycle.production_date);
+            RegNewCargo.setDate(2, registration_date);
             RegNewCargo.setString(3, newBicycle.bicycleStatus);
             //RegNewBicycle.executeUpdate();
-            for (int i = 0; i < 25; i++){
+            for (int i = 0; i < nr; i++){
                 RegNewCargo.addBatch();
             }
 
@@ -56,17 +62,19 @@ public class BikeDatabase {
         return false;
     }
 
-    public boolean regRegular(Bicycle newBicycle) {
+    public boolean regRegular(Bicycle newBicycle, int nr) {
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
         try {
             cleaner.setAutoCommit(con, false);
 
             String insert4 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, 'regular', ?, ?);";
             PreparedStatement RegNewRegular = connection.createPreparedStatement(con, insert4);
             RegNewRegular.setString(1, newBicycle.make);
-            RegNewRegular.setInt(2, newBicycle.production_date);
+            RegNewRegular.setDate(2, registration_date);
             RegNewRegular.setString(3, newBicycle.bicycleStatus);
             //RegNewBicycle.executeUpdate();
-            for (int i = 0; i < 25; i++){
+            for (int i = 0; i < nr; i++){
                 RegNewRegular.addBatch();
             }
 
@@ -82,6 +90,7 @@ public class BikeDatabase {
     public boolean UpdateBicycle (BicycleUpdate newUpdate) {
         String updSetning = "UPDATE Bicycle SET dock_id=?, powerlevel=?, bicycleStatus=?, totalKM=?, trips=?, nr_of_repairs=? WHERE bicycle_id=?";
         PreparedStatement Update = connection.createPreparedStatement(con, updSetning);
+
 
         try {
             Update.setInt(1, newUpdate.dock_id);
@@ -159,16 +168,16 @@ public class BikeDatabase {
         connection.getConnection();
 
 
-       //Bicycle test3 = new Bicycle("DBS", 19940815, "DBR");
+       Bicycle test3 = new Bicycle("DBS", "not employed");
        //BicycleUpdate test5 = new BicycleUpdate(8, 2, 50, "DBR", 50, 20, 5);
        //Nr_of_repairs test6 = new Nr_of_repairs(1, 20);
-       //database.regFamily(test3);
+       database.regFamily(test3, 11);
        //database.regCargo(test3);
-       //database.regRegular(test3);
-       database.UpdateKM(1);
+       database.regRegular(test3, 10);
+       //database.UpdateKM(1);
        //database.UpdateBicycle(test5);
        //database.RegRepairs(test6);
-       database.RegTrips(1);
+       //database.RegTrips(1);
        System.out.println("Nr of trips for bicycle " + database.CheckTrip(1));
        cleaner.closeConnection(con);
     }
