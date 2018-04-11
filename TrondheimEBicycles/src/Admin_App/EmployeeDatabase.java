@@ -11,7 +11,7 @@ public class EmployeeDatabase {
     private static Connection con = connection.getConnection();
     private static Random random = new Random();
 
-    private int findRandomId(){
+    public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
         while(exists){
@@ -52,7 +52,7 @@ public class EmployeeDatabase {
             PreparedStatement RegNewAdmin = connection.createPreparedStatement(con, insertSql);
             RegNewAdmin.executeQuery("SET FOREIGN_KEY_CHECKS = 0");
             RegNewAdmin.setInt(1, findRandomId());
-            RegNewAdmin.setString(2, newAdmin.getPassword());
+            RegNewAdmin.setString(2, PasswordStorage.createHash(newAdmin.getPassword()));
             RegNewAdmin.setString(3, newAdmin.getEmail());
             RegNewAdmin.setString(4, newAdmin.getFirstName());
             RegNewAdmin.setString(5, newAdmin.getLastName());
@@ -96,7 +96,7 @@ public class EmployeeDatabase {
             PreparedStatement RegNewTechnician = connection.createPreparedStatement(con, insertSql);
             RegNewTechnician.executeQuery("SET FOREIGN_KEY_CHECKS = 0");
             RegNewTechnician.setInt(1, findRandomId());
-            RegNewTechnician.setString(2, newTechnician.getPassword());
+            RegNewTechnician.setString(2, PasswordStorage.createHash(newTechnician.getPassword()));
             RegNewTechnician.setString(3, newTechnician.getEmail());
             RegNewTechnician.setString(4, newTechnician.getFirstName());
             RegNewTechnician.setString(5, newTechnician.getLastName());
