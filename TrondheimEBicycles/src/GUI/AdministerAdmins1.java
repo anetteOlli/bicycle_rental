@@ -24,8 +24,6 @@ public class AdministerAdmins1 {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
-    ArrayList<String> id = new ArrayList<>();
-    int i = 0;
 
     JPanel panel = new JPanel();
     JSplitPane splitpane = new JSplitPane();
@@ -37,7 +35,6 @@ public class AdministerAdmins1 {
     JLabel adminInfo3 = new JLabel();
     JLabel adminInfo4 = new JLabel();
     JLabel adminInfo5 = new JLabel();
-    JLabel adminInfo6 = new JLabel();
 
 
     public AdministerAdmins1(){

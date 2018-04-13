@@ -8,9 +8,10 @@ import javax.swing.*;
 import javax.xml.crypto.Data;
 import java.sql.*;
 
-public class AdminAdmin {
+public class AdministerAdmins2 {
+    private JPanel panel1;
     private JPanel panel;
-    private JList<Admin> list = new JList<>();
+    private JList<Admin> list;
     DefaultListModel<Admin> model = new DefaultListModel<>();
     private JButton backButton;
     private JButton viewAdmin;
@@ -41,10 +42,10 @@ public class AdminAdmin {
     }
 
     public static void main(String[] args) {
-        AdminAdmin administer = new AdminAdmin();
+        AdministerAdmins2 administer = new AdministerAdmins2();
 
         JFrame frame = new JFrame("Administer Admins");
-        frame.setContentPane(administer.splitpane);
+        frame.setContentPane(new AdministerAdmins2().list);
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

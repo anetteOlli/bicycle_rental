@@ -2,6 +2,8 @@ package GUI;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,29 +20,49 @@ import Admin_App.*;
 public class AdministerAdmins {
     private JButton backButton;
     public JPanel panel1;
-    private JButton viewAdminButton;
+    private JButton deleteSelectedAdminButton;
     private JButton addAdminButton;
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
     private static Random random = new Random();
-    JList<String> list1 = new JList<>();
-    DefaultListModel<String> model = new DefaultListModel<>();
+    JList<Admin> list1;
+    private JLabel adminInfo;
+    private JLabel adminInfo2;
+    private JLabel adminInfo3;
+    private JLabel adminInfo4;
+    private JLabel adminInfo5;
+    DefaultListModel<Admin> model = new DefaultListModel<>();
 
     public AdministerAdmins() {
         list1.setModel(model);
         try{
-            String getNames = "SELECT first_name, last_name FROM Employee WHERE isAdmin = 1";
+            String getNames = "SELECT * FROM Employee WHERE isAdmin = 1";
             PreparedStatement names = connection.createPreparedStatement(con, getNames);
             ResultSet res = names.executeQuery();
             while(res.next()){
-                model.addElement(res.getString("first_name") + " " + res.getString("last_name"));
+                Admin admin = new Admin(res.getInt("employee_id"), res.getString("first_name"), res.getString("last_name"), res.getInt("phone"), res.getString("address"), res.getString("email"), res.getString("password"));
+                model.addElement(admin);
             }
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
 
-
+        list1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                try{
+                    Admin admin = list1.getSelectedValue();
+                    adminInfo.setText("Employee ID:"+admin.getEmployeeId());
+                    adminInfo2.setText(admin.getFirstName()+" "+admin.getLastName());
+                    adminInfo3.setText("Email: "+admin.getEmail());
+                    adminInfo4.setText("Address: "+admin.getAddress());
+                    adminInfo5.setText("Phone: "+admin.getPhone());
+                }catch(Exception a){
+                    System.out.println(a.getMessage());
+                }
+            }
+        });
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -95,7 +117,7 @@ public class AdministerAdmins {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Administer Admins");
         frame.setContentPane(new AdministerAdmins().panel1);
-        frame.setContentPane(new AdministerAdmins().list1);
+       // frame.setContentPane(new AdministerAdmins().list1);
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
