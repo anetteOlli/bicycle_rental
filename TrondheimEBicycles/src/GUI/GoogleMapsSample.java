@@ -16,6 +16,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebEvent;
@@ -40,8 +42,9 @@ public class GoogleMapsSample extends JPanel {
     private JButton swingButton;
     private WebEngine webEngine;
     final URL urlGoogleMaps = getClass().getResource("demo.html");
-    double lat;
-    double lon;
+    //trondheim Torg latitude og longitude er satt som default.
+    public double lat = 63.43049;
+    public double lon = 10.39506;
 
 
     public GoogleMapsSample(){
@@ -120,47 +123,40 @@ public class GoogleMapsSample extends JPanel {
                 webEngine.load(urlGoogleMaps.toExternalForm());
                 webEngine.setJavaScriptEnabled(true);
 
-                webEngine.setOnAlert(new EventHandler<WebEvent<String>>() {
-                    @Override
-                    public void handle(WebEvent<String> e) {
-                        System.out.println(e.toString());
-                    }
-                });
 
 
                 ObservableList<Node> children = root.getChildren();
                 children.add(browser);
-                /*
-                lat = 63.254650;
-                lon = 10.238997;
-                String posistion = "var rhodos = {lat:" + lat+ ", lng: " + lon + "}";
-                webEngine.executeScript(posistion);
-                webEngine.executeScript("var marker = new google.maps.Marker({ position: rhodos, map: map });");
-                */
 
 
-                final TextField latitude = new TextField("" + 63.254650 * 1.00007);
-                final TextField longitude = new TextField("" + 10.238997 * 1.00007);
-                Button update = new Button("Update");
-                update.setOnAction(new EventHandler<javafx.event.ActionEvent>() {
-
+                //this bit of code is supposed to listen for webAlerts: (ex. javascript code that
+                // sends a webalert about something. See demo.html
+                webEngine.setOnAlert(new EventHandler<WebEvent<String>>() {
                     @Override
-                    public void handle(javafx.event.ActionEvent arg0) {
-                        lat = Double.parseDouble(latitude.getText());
-                        lon = Double.parseDouble(longitude.getText());
+                    public void handle(WebEvent<String> event) {
+                        String event2 = new String(event.getData());
+                        System.out.println(event.getData());
 
-                        System.out.printf("%.2f %.2f%n", lat, lon);
-
-                        webEngine.executeScript("" +
-                                "window.lat = " + lat + ";" +
-                                "window.lon = " + lon + ";" +
-                                "document.goToLocation(window.lat, window.lon);"
-                        );
+                        //sets the latitude and longitude if the map marker has been moved.
+                        //the webalert that tells us this has happened starts with "location: "
+                        //see demo.html for the webalert code
+                        if(event2.startsWith("location:")){
+                            String[] split = event2.split("[,]");
+                            if(split[0] != null){
+                                String latitude = split[0].replaceAll("[^0-9?!\\.]","");
+                                lat = Double.parseDouble(latitude);
+                            }if(split[1] !=null){
+                                String longitude = split[1].replaceAll("[^0-9?!\\.]","");
+                                lon = Double.parseDouble(longitude);
+                            }
+                        }
                     }
                 });
 
+
+
                 HBox toolbar  = new HBox();
-                toolbar.getChildren().addAll(latitude, longitude, update);
+                //toolbar.getChildren().addAll(latitude, longitude, update);
 
                 boolean add = children.add(toolbar);
 
@@ -172,4 +168,11 @@ public class GoogleMapsSample extends JPanel {
 
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
 }
