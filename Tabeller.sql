@@ -64,7 +64,7 @@ first_name VARCHAR(100),
 last_name VARCHAR(50),
 phone INT,
 email VARCHAR(50),
-password VARCHAR(20),
+password TEXT,
 PRIMARY KEY(cust_id)
 );
 
@@ -78,7 +78,7 @@ PRIMARY KEY(cardNumber)
 
 CREATE TABLE Employee (
 employee_id INT,
-password VARCHAR(20),
+password TEXT,
 email VARCHAR(50),
 first_name VARCHAR(50),
 last_name VARCHAR(50),
