@@ -107,6 +107,9 @@ public class CustomerDatabase {
             if(database.regNewPaymentCard(paymentcard)){
                 cleaner.commit(con);
                 database.setBalance(cust_id, funds); //Adds the funds back to the new card
+                String sentence1 = "UPDATE Customer SET cardNumber = "+paymentcard.getCardNumber()+" WHERE cust_id = "+cust_id;
+                PreparedStatement statement1 = connection.createPreparedStatement(con, sentence1);
+                statement1.executeUpdate();
                 return true;
             }
             else{

@@ -1,7 +1,6 @@
 package GUI;
 
 import javax.swing.*;
-import javax.swing.event.ListDataListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -11,39 +10,38 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Random;
 
 import DatabaseHandler.*;
 import Admin_App.*;
 
-public class AdministerAdmins {
+public class AdministerTechnicians {
     private JButton backButton;
     public JPanel panel1;
-    private JButton setAdminAsInactiveButton;
-    private JButton addAdminButton;
+    private JButton setTechnicianAsInactiveButton;
+    private JButton addTechnicianButton;
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
     private static Random random = new Random();
-    JList<Admin> list1;
-    private JLabel adminInfo;
-    private JLabel adminInfo2;
-    private JLabel adminInfo3;
-    private JLabel adminInfo4;
-    private JLabel adminInfo5;
-    private JLabel adminInfo6;
-    DefaultListModel<Admin> model = new DefaultListModel<>();
+    JList<Technician> list1;
+    private JLabel technicianInfo;
+    private JLabel technicianInfo2;
+    private JLabel technicianInfo3;
+    private JLabel technicianInfo4;
+    private JLabel technicianInfo5;
+    private JLabel technicianInfo6;
+    DefaultListModel<Technician> model = new DefaultListModel<>();
 
-    public AdministerAdmins() {
+    public AdministerTechnicians() {
         list1.setModel(model);
         try{
-            String getNames = "SELECT * FROM Employee WHERE isAdmin = 1";
+            String getNames = "SELECT * FROM Employee WHERE isAdmin = 0";
             PreparedStatement names = connection.createPreparedStatement(con, getNames);
             ResultSet res = names.executeQuery();
             while(res.next()){
-                Admin admin = new Admin(res.getInt("employee_id"), res.getString("first_name"), res.getString("last_name"), res.getInt("phone"), res.getString("address"), res.getString("email"), res.getString("password"));
-                model.addElement(admin);
+                Technician technician = new Technician(res.getInt("employee_id"), res.getString("first_name"), res.getString("last_name"), res.getInt("phone"), res.getString("address"), res.getString("email"), res.getString("password"));
+                model.addElement(technician);
             }
         }catch(SQLException e){
             System.out.println(e.getMessage());
@@ -53,9 +51,9 @@ public class AdministerAdmins {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 try{
-                    Admin admin = list1.getSelectedValue();
+                    Technician technician = list1.getSelectedValue();
                     boolean hired1 = true;
-                    String hiredSentence = "SELECT isHired FROM Employee WHERE employee_id = "+admin.getEmployeeId();
+                    String hiredSentence = "SELECT isHired FROM Employee WHERE employee_id = "+technician.getEmployeeId();
                     PreparedStatement hired = connection.createPreparedStatement(con, hiredSentence);
                     ResultSet res = hired.executeQuery();
                     while(res.next()){
@@ -66,16 +64,16 @@ public class AdministerAdmins {
                             hired1 = false;
                         }
                     }
-                    adminInfo.setText("Employee ID:"+admin.getEmployeeId());
-                    adminInfo2.setText(admin.getFirstName()+" "+admin.getLastName());
-                    adminInfo3.setText("Email: "+admin.getEmail());
-                    adminInfo4.setText("Address: "+admin.getAddress());
-                    adminInfo5.setText("Phone: "+admin.getPhone());
+                    technicianInfo.setText("Employee ID:"+technician.getEmployeeId());
+                    technicianInfo2.setText(technician.getFirstName()+" "+technician.getLastName());
+                    technicianInfo3.setText("Email: "+technician.getEmail());
+                    technicianInfo4.setText("Address: "+technician.getAddress());
+                    technicianInfo5.setText("Phone: "+technician.getPhone());
                     if(hired1){
-                        adminInfo6.setText("This administrator is currently employed");
+                        technicianInfo6.setText("This technician is currently employed");
                     }
                     else{
-                        adminInfo6.setText("This administrator is not currently employed");
+                        technicianInfo6.setText("This technician is not currently employed");
                     }
                 }catch(Exception a){
                     System.out.println(a.getMessage());
@@ -106,11 +104,11 @@ public class AdministerAdmins {
                 }
             }
         });
-        addAdminButton.addActionListener(new ActionListener() {
+        addTechnicianButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Add admin");
-                frame.setContentPane(new AddAdmin().panel1);
+                JFrame frame = new JFrame("Add technician");
+                frame.setContentPane(new AddTechnician().panel1);
                 frame.pack();
                 frame.setSize(700, 500);
                 frame.setLocationRelativeTo(null);
@@ -131,14 +129,14 @@ public class AdministerAdmins {
         });
 
 
-        setAdminAsInactiveButton.addActionListener(new ActionListener() {
+        setTechnicianAsInactiveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    Admin admin = list1.getSelectedValue();
+                    Technician technician = list1.getSelectedValue();
                     String sentence;
                     boolean hired1 = true;
-                    String hiredSentence = "SELECT isHired FROM Employee WHERE employee_id = "+admin.getEmployeeId();
+                    String hiredSentence = "SELECT isHired FROM Employee WHERE employee_id = "+technician.getEmployeeId();
                     PreparedStatement hired = connection.createPreparedStatement(con, hiredSentence);
                     ResultSet res = hired.executeQuery();
                     while(res.next()){
@@ -150,10 +148,10 @@ public class AdministerAdmins {
                         }
                     }
                     if(hired1){
-                        sentence = "UPDATE Employee SET isHired = 0 WHERE employee_id = "+admin.getEmployeeId();
+                        sentence = "UPDATE Employee SET isHired = 0 WHERE employee_id = "+technician.getEmployeeId();
                     }
                     else{
-                        sentence = "UPDATE Employee SET isHired = 1 WHERE employee_id = "+admin.getEmployeeId();
+                        sentence = "UPDATE Employee SET isHired = 1 WHERE employee_id = "+technician.getEmployeeId();
                     }
                     PreparedStatement statement = connection.createPreparedStatement(con, sentence);
                     statement.executeUpdate();
@@ -165,9 +163,9 @@ public class AdministerAdmins {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Administer Admins");
-        frame.setContentPane(new AdministerAdmins().panel1);
-       // frame.setContentPane(new AdministerAdmins().list1);
+        JFrame frame = new JFrame("Administer Technicians");
+        frame.setContentPane(new AdministerTechnicians().panel1);
+        // frame.setContentPane(new AdministerAdmins().list1);
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -204,7 +204,7 @@ public class PaymentCardDatabase {
         //database.regNewPaymentCard(patricksCard);
         //database.setActiveStatus(5416, false);
         //database.setBalance(1274, 300);
-        database.addFunds(8019, 600);
+        database.addFunds(4083, 600);
         //database.deductFunds(1274, 200);
         cleaner.closeConnection(con);
     }

@@ -23,7 +23,7 @@ public class AddTechnician {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Administer technicians");
-                frame.setContentPane(new AdministerBikeTechnicians().panel1);
+                frame.setContentPane(new AdministerTechnicians().panel1);
                 frame.pack();
                 frame.setSize(700, 500);
                 frame.setLocationRelativeTo(null);

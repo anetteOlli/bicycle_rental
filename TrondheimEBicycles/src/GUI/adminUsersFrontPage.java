@@ -18,7 +18,7 @@ public class adminUsersFrontPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Administer Bike Technicians");
-                frame.setContentPane(new AdministerBikeTechnicians().panel1);
+                frame.setContentPane(new AdministerTechnicians().panel1);
                 frame.pack();
                 frame.setSize(700, 500);
                 frame.setLocationRelativeTo(null);
@@ -40,7 +40,13 @@ public class adminUsersFrontPage {
         administerEmployeesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SwingUtilities.invokeLater(AdministerAdmins1::new);
+                JFrame frame = new JFrame("Administer admins");
+                frame.setContentPane(new AdministerAdmins().panel1);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 //gets rid of the previous frame
                 Object source = e.getSource();
