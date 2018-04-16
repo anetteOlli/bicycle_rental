@@ -15,7 +15,7 @@ public class DatabaseCleanup{
      * @return the method returns true if it successfully closed the Restultset,
      * or false if it enocountered a problem.
      */
-   public boolean closeResult(ResultSet res) {
+    public boolean closeResult(ResultSet res) {
         try {
             if (res != null) {
                 res.close();
@@ -82,13 +82,12 @@ public class DatabaseCleanup{
     /**
      * This method turns autoCommit back on
      * @param con the connection that should set autocommit back on
-     * @param b
      * @return return true if it successfully turned autocommit on
      */
-    public boolean setAutoCommit(Connection con, boolean onOrOff) {
+    public boolean setAutoCommit(Connection con, boolean b) {
         try {
-            if (con != null) {
-                con.setAutoCommit(onOrOff);
+            if (con != null && !con.getAutoCommit()) {
+                con.setAutoCommit(b);
                 return true;
             }
             return false;
