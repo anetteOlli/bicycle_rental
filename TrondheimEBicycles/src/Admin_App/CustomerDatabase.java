@@ -4,6 +4,10 @@ import DatabaseHandler.*;
 
 import java.sql.*;
 import java.util.Random;
+import javax.mail.*;
+import javax.activation.*;
+import javax.mail.internet.*;
+import java.util.*;
 
 public class CustomerDatabase {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -40,10 +44,54 @@ public class CustomerDatabase {
         return -3;
     }
 
+    public String generateRandomPassword(){
+        Random random = new Random();
+        String characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+        String password = "";
+        String[] chars = new String[5];
+        for(int i = 0; i < 5; i++){
+            chars[i] = Character.toString(characters.charAt(random.nextInt(characters.length())));
+            password += chars[i];
+        }
+        return password;
+    }
+
+    public boolean emailPassword(Customer customer){
+        try{
+            String password = generateRandomPassword();
+            String sentence = "INSERT INTO Customer(password) VALUES("+password+") WHERE cust_id = "+customer.getCustId();
+            PreparedStatement statement = connection.createPreparedStatement(con, sentence);
+            statement.executeUpdate();
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        String to = customer.getCustEmail();
+        String from = "trondheimbicyclerental@gmail.com";
+        String host = "localhost";
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+        Session session = Session.getDefaultInstance(properties);
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject("Your password for Trondheim Bicycle Rental");
+            message.setText("TestMail");
+            Transport.send(message);
+            System.out.println("Message sent successfully!");
+            return true;
+        }catch(MessagingException e){
+            e.printStackTrace();
+            e.getMessage();
+            return false;
+        }
+    }
+
     /*Creates a new customer, and creates a payment card for that customer*/
     public boolean regNewCustomer(Customer newCustomer) {
         try {
             cleaner.setAutoCommit(con, false);
+            String password = generateRandomPassword();
             String insertSql = "INSERT INTO Customer(cust_id, cardNumber, first_name, last_name, phone, email, password) VALUES(?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement RegNewCustomer = connection.createPreparedStatement(con, insertSql);
             int randCustId = findRandomId();
@@ -58,7 +106,8 @@ public class CustomerDatabase {
             RegNewCustomer.setString(4, newCustomer.getLastName());
             RegNewCustomer.setInt(5, newCustomer.getCustPhone());
             RegNewCustomer.setString(6, newCustomer.getCustEmail());
-            RegNewCustomer.setString(7, PasswordStorage.createHash(newCustomer.getPassword()));
+            RegNewCustomer.setString(7, PasswordStorage.createHash(password));
+            SendMail send = new SendMail(newCustomer.getCustEmail(), "Welcome to Trondheim Bicycle Rental, "+newCustomer.getFirstName(), "Thank you for registering an account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
             if (RegNewCustomer.executeUpdate() != 0) {
                 cleaner.commit(con);
                 return true;
@@ -107,7 +156,7 @@ public class CustomerDatabase {
             if(database.regNewPaymentCard(paymentcard)){
                 cleaner.commit(con);
                 database.setBalance(cust_id, funds); //Adds the funds back to the new card
-                String sentence1 = "UPDATE Customer SET cardNumber = "+paymentcard.getCardNumber()+" WHERE cust_id = "+cust_id;
+                String sentence1 = "UPDATE Customer SET cardNumber = "+paymentcard.getCardNumber()+" WHERE cust_id = " + cust_id;
                 PreparedStatement statement1 = connection.createPreparedStatement(con, sentence1);
                 statement1.executeUpdate();
                 return true;
@@ -160,12 +209,15 @@ public class CustomerDatabase {
         connection.getConnection();
         Customer patrick = new Customer(1, 24, "Patrick", "Thorkildsen", 41146453, "patrick.thorkildsen@gmail.com", "Passord123");
         Customer quan = new Customer(1, 20, "Quan", "Mann", 47867632, "Quan@gmail.com", "Quanpassord123");
-        database.regNewCustomer(patrick);
-        database.regNewCustomer(quan);
+        //database.regNewCustomer(patrick);
+        //database.regNewCustomer(quan);
+        //SendMail send = new SendMail("patrick.thorkildsen@gmail.com", "TEstSubject", "Hello");
         //database.getNewCard(8019);
         try {
-            if (PasswordStorage.verifyPassword("Passord123", "sha1:64000:18:S9JgR8ArOq1rDpyc3AYRdp4RJIARdBV1:R6DD8NPMb/26QxD49RTUwiXB")) {
+            if (PasswordStorage.verifyPassword("hvut2", "sha1:64000:18:faGrbsAEpP12xOUNTqsuukVV+hqJ3zxF:/nXAieiutaJSehpeHHo5nZEd")) {
                 System.out.println("Riktig hash!");
+            }else{
+                System.out.println("Passordet og hashen matcher ikke");
             }
             cleaner.closeConnection(con);
         }catch(PasswordStorage.CannotPerformOperationException e){

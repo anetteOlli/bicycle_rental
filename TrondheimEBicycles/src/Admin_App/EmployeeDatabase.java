@@ -40,6 +40,8 @@ public class EmployeeDatabase {
 
     public boolean regNewAdmin(Admin newAdmin){
         int hired = 0;
+        CustomerDatabase database = new CustomerDatabase();
+        String password = database.generateRandomPassword();
         try{
             cleaner.setAutoCommit(con, false);
             if(newAdmin.isHired()){
@@ -52,7 +54,7 @@ public class EmployeeDatabase {
             PreparedStatement RegNewAdmin = connection.createPreparedStatement(con, insertSql);
             RegNewAdmin.executeQuery("SET FOREIGN_KEY_CHECKS = 0");
             RegNewAdmin.setInt(1, findRandomId());
-            RegNewAdmin.setString(2, PasswordStorage.createHash(newAdmin.getPassword()));
+            RegNewAdmin.setString(2, PasswordStorage.createHash(password));
             RegNewAdmin.setString(3, newAdmin.getEmail());
             RegNewAdmin.setString(4, newAdmin.getFirstName());
             RegNewAdmin.setString(5, newAdmin.getLastName());
@@ -60,6 +62,7 @@ public class EmployeeDatabase {
             RegNewAdmin.setInt(7, newAdmin.getPhone());
             RegNewAdmin.setInt(8, hired);
             RegNewAdmin.setInt(9, 1);
+            SendMail send = new SendMail(newAdmin.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newAdmin.getFirstName(), "Thank you for registering your administrator account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
             if(RegNewAdmin.executeUpdate() != 0){
                 cleaner.commit(con);
                 return true;
@@ -84,6 +87,8 @@ public class EmployeeDatabase {
 
     public boolean regNewTechnician(Technician newTechnician){
         int hired = 0;
+        CustomerDatabase database = new CustomerDatabase();
+        String password = database.generateRandomPassword();
         try{
             cleaner.setAutoCommit(con, false);
             if(newTechnician.isHired()){
@@ -96,7 +101,7 @@ public class EmployeeDatabase {
             PreparedStatement RegNewTechnician = connection.createPreparedStatement(con, insertSql);
             RegNewTechnician.executeQuery("SET FOREIGN_KEY_CHECKS = 0");
             RegNewTechnician.setInt(1, findRandomId());
-            RegNewTechnician.setString(2, PasswordStorage.createHash(newTechnician.getPassword()));
+            RegNewTechnician.setString(2, PasswordStorage.createHash(password));
             RegNewTechnician.setString(3, newTechnician.getEmail());
             RegNewTechnician.setString(4, newTechnician.getFirstName());
             RegNewTechnician.setString(5, newTechnician.getLastName());
@@ -104,6 +109,7 @@ public class EmployeeDatabase {
             RegNewTechnician.setInt(7, newTechnician.getPhone());
             RegNewTechnician.setInt(8, hired);
             RegNewTechnician.setInt(9, 0);
+            SendMail send = new SendMail(newTechnician.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newTechnician.getFirstName(), "Thank you for registering your employee account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
             if(RegNewTechnician.executeUpdate() != 0){
                 cleaner.commit(con);
                 return true;

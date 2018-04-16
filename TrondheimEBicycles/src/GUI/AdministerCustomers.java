@@ -44,7 +44,9 @@ public class AdministerCustomers {
             PreparedStatement names = connection.createPreparedStatement(con, getNames);
             ResultSet res = names.executeQuery();
             while (res.next()) {
+                System.out.println("test1");
                 Customer customer = new Customer(res.getInt("cust_id"), res.getInt("cardNumber"), res.getString("first_name"), res.getString("last_name"), res.getInt("phone"), res.getString("email"), res.getString("password"));
+                System.out.println("Test2");
                 model.addElement(customer);
             }
         } catch (SQLException e) {
