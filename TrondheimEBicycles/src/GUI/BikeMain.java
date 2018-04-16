@@ -40,7 +40,7 @@ public class BikeMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Edit Bike");
-                frame.setContentPane(new EditBike().editBike);
+                frame.setContentPane(new EditBike1().panel);
                 frame.pack();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);

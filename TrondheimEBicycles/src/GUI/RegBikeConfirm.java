@@ -1,24 +1,52 @@
 package GUI;
 
+import Admin_App.*;
+import DatabaseHandler.DatabaseCleanup;
+import DatabaseHandler.DatabaseConnection;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RegBikeConfirm {
-    private JList list1;
+    static DatabaseCleanup cleaner = new DatabaseCleanup();
+    static DatabaseConnection connection = new DatabaseConnection();
+    private static Connection con = connection.getConnection();
+
+
+    private JList<Bicycle> list1;
     private JButton registerMoreBikesButton;
     private JTextArea textArea1;
     private JButton bicycleFrontPageButton;
     public JPanel regBikeConfirm;
+    DefaultListModel<Bicycle> model = new DefaultListModel<>();
+    BikeDatabase database = new BikeDatabase();
+    ArrayList<Bicycle> bicycles = new ArrayList<>();
 
     public RegBikeConfirm() {
-        registerMoreBikesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        RegBicycle regBicycle = new RegBicycle();
+        list1.setModel(model);
 
+        try{
+            String mySQL = "SELECT * FROM Bicycle ORDER BY (bicycle_id) DESC";
+            PreparedStatement SQL = connection.createPreparedStatement(con, mySQL);
+            ResultSet res = SQL.executeQuery();
+            while(res.next()){
+                Bicycle bike = new Bicycle(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("production_date"), res.getInt("dock_id"));
+                model.addElement(bike);
             }
-        });
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
         bicycleFrontPageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

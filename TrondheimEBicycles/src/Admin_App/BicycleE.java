@@ -2,7 +2,7 @@ package Admin_App;
 
 import java.util.Date;
 
-public class Bicycle {
+public class BicycleE {
     public int bicycle_id;
     public String make;
     public String modell;
@@ -10,7 +10,7 @@ public class Bicycle {
     public Date production_date;
     public int dock_id;
 
-    public Bicycle(int bicycle_id, String make, String modell, String bicycleStatus, Date production_date, int dock_id) {
+    public BicycleE(int bicycle_id, String make, String modell, String bicycleStatus, Date production_date, int dock_id) {
         this.bicycle_id = bicycle_id;
         this.make = make;
         this.modell = modell;
@@ -72,7 +72,7 @@ public class Bicycle {
         return  bicycle_id +
                 "       |        " + make + '\'' +
                 "       |        " + modell + '\'' +
-                "       |        " + bicycleStatus + '\'' +
+                //"       |        " + bicycleStatus + '\'' +
                 "       |        " + production_date +
                 "       |        " + dock_id;
     }

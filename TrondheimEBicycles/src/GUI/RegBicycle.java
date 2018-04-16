@@ -61,20 +61,13 @@ public class RegBicycle {
         });
         confirmButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { 
+            public void actionPerformed(ActionEvent e) {
 
                 BikeDatabase database = new BikeDatabase();
                 Integer currentValue = (Integer)spinner1.getValue();
                 String make = textField1.getText();
                 String model = comboBox1.getSelectedItem().toString();
-                Bicycle bicycle = new Bicycle(make, "not employed");
-                if(model=="Regular") {
-                    database.regRegular(bicycle, currentValue);
-                }else if (model=="Cargo") {
-                    database.regCargo(bicycle, currentValue);
-                }else{
-                    database.regFamily(bicycle, currentValue);
-                }
+                database.regBicycle(make, model, "not employed", currentValue);
             }
         });
     }

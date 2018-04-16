@@ -54,9 +54,9 @@
         </constraints>
         <properties>
           <model>
-            <item value="Regular"/>
-            <item value="Family"/>
-            <item value="Cargo"/>
+            <item value="regular"/>
+            <item value="family"/>
+            <item value="cargo"/>
           </model>
         </properties>
       </component>
