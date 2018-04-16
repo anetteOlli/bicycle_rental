@@ -21,7 +21,7 @@ PRIMARY KEY(dock_id)
 );
 
 CREATE TABLE Bicycle (
-bicycle_id INT,
+bicycle_id INT AUTO_INCREMENT,
 dock_id INT,
 powerlevel INT,
 make VARCHAR(20),
@@ -40,7 +40,7 @@ PRIMARY KEY(bicycleStatus)
 );
 
 CREATE TABLE Repair (
-repair_id INT,
+repair_id INT AUTO_INCREMENT,
 description_before VARCHAR(200),
 date_sent DATE,
 date_received DATE,
@@ -90,7 +90,7 @@ PRIMARY KEY(employee_id)
 );
 
 CREATE TABLE TripPayment (
-trip_id INT,
+trip_id INT AUTO_INCREMENT,
 cust_id INT,
 bicycle_id INT,
 time_received TIME,
