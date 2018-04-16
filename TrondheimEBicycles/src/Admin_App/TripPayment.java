@@ -29,14 +29,6 @@ public class TripPayment {
         return java.sql.Time.valueOf(time_received);
     }
 
-    public Time getTime_delivered() {
-        return java.sql.Time.valueOf(time_delivered);
-    }
-
-    public int getTripKM() {
-        return tripKM;
-    }
-
     public int getCustomerID() {
         return customerID;
     }
@@ -49,13 +41,6 @@ public class TripPayment {
         return station_id_received;
     }
 
-    public int getStation_id_delivered() {
-        return station_id_delivered;
-    }
-
-    public int getSumPayment() {
-        return sumPayment;
-    }
 
     public int sumPayment() {
         return TIMEPRIS * ANTALL_TIMER; // hente timepris fra bicycle

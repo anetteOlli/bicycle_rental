@@ -14,7 +14,7 @@ public class ReTripPayment {
     //Når sykkel leveres(etter)
     public ReTripPayment(int trip_id, int station_id_delivered, int tripKM){
         this.trip_id = trip_id;
-        this.time_delivered = LocalTime.now();
+        this.time_delivered = LocalTime.now().plusHours(4);
         this.station_id_delivered = station_id_delivered;
         this.tripKM = tripKM;
     }
