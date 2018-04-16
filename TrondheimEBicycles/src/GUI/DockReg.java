@@ -76,9 +76,9 @@ public class DockReg {
                 int id = station.registerDockStation(dockName, mBike, lon, lat);
                 if (id > 0) {
                     showMessageDialog(null, "dockinstation was registered with ID:" + id);
+                } else {
+                    showMessageDialog(null, "database error");
                 }
-
-
             }
         });
 
