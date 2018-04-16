@@ -51,6 +51,8 @@ public class GoogleMapsSample extends JPanel {
         initComponents();
     }
 
+
+
     public static void main(String ...args){
         // Run this later:
         SwingUtilities.invokeLater(new Runnable() {
@@ -63,6 +65,7 @@ public class GoogleMapsSample extends JPanel {
                 frame.setMinimumSize(new Dimension(640, 600));
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
+
             }
         });
     }
@@ -85,6 +88,8 @@ public class GoogleMapsSample extends JPanel {
                     @Override
                     public void run() {
                         webEngine.reload();
+
+
                     }
                 });
             }
@@ -155,12 +160,15 @@ public class GoogleMapsSample extends JPanel {
 
 
 
+
                 HBox toolbar  = new HBox();
                 //toolbar.getChildren().addAll(latitude, longitude, update);
 
                 boolean add = children.add(toolbar);
 
                 jfxPanel.setScene(scene);
+                //this sets the javaFX thread to exit, once the window is being called exit.
+                Platform.setImplicitExit(false);
 
             }
 
