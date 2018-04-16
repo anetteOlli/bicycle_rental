@@ -1,11 +1,12 @@
 package Admin_App;
 
+import DatabaseHandler.DatabaseCleanup;
+import DatabaseHandler.DatabaseConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-
-import DatabaseHandler.*;
 
 public class BikeDatabase {
     Bikes bikes = new Bikes();
@@ -29,6 +30,7 @@ public class BikeDatabase {
             //RegNewBicycle.executeUpdate();
             for (int i = 0; i < nr; i++){
                 RegNewFamily.addBatch();
+
             }
 
             RegNewFamily.executeBatch();
@@ -54,6 +56,7 @@ public class BikeDatabase {
             //RegNewBicycle.executeUpdate();
             for (int i = 0; i < nr; i++){
                 RegNewCargo.addBatch();
+
             }
 
             RegNewCargo.executeBatch();
@@ -79,6 +82,7 @@ public class BikeDatabase {
             //RegNewBicycle.executeUpdate();
             for (int i = 0; i < nr; i++){
                 RegNewRegular.addBatch();
+
             }
 
             RegNewRegular.executeBatch();
