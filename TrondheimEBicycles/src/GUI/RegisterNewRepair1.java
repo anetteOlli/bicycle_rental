@@ -1,9 +1,18 @@
 package GUI;
 
+import DatabaseHandler.DatabaseCleanup;
+import DatabaseHandler.DatabaseConnection;
+
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class RegisterNewRepair1 {
     public JPanel panel1;
@@ -12,7 +21,100 @@ public class RegisterNewRepair1 {
     private JComboBox sortComboBox;
     private JTable bicycleTable;
 
+
+    static DatabaseCleanup cleaner = new DatabaseCleanup();
+    static DatabaseConnection connection = new DatabaseConnection();
+    private static Connection con = connection.getConnection();
+
+    private String[] columnNames = {"Bicycle ID", "Dock ID", "Powerlevel", "Make", "Model", "Production date", "Bicycle status", "Total Km", "Trips", "Number of repairs"};
+
+    public void showTable() {
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(columnNames);
+        bicycleTable.setModel(model);
+        bicycleTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        bicycleTable.setFillsViewportHeight(true);
+
+        bicycleTable.setCellSelectionEnabled(true);
+        ListSelectionModel cellSelectionModel = bicycleTable.getSelectionModel();
+        cellSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        cellSelectionModel.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+                String selectedData = null;
+
+                int[] selectedRow = bicycleTable.getSelectedRows();
+                int[] selectedColumns = bicycleTable.getSelectedColumns();
+
+                for (int i = 0; i < selectedRow.length; i++) {
+                    //for (int j = 0; j < selectedColumns.length; j++) {
+                        selectedData = (String) bicycleTable.getValueAt(selectedRow[i], selectedColumns[0]);
+                    //}
+                }
+                System.out.println("Selected: " + selectedData);
+            }
+
+        });
+
+
+        String comboBoxvalue = (String) sortComboBox.getSelectedItem();
+        String bicycleID = "";
+        String DockID = "";
+        String PowerLevel = "";
+        String Make = "";
+        String Model = "";
+        String ProductionDate = "";
+        String BicycleStatus = "";
+        String TotalKM = "";
+        String Trips = "";
+        String NrOfRepairs = "";
+
+        try {
+
+            String sql = "select * from Bicycle ORDER BY " + comboBoxvalue;
+            //String sql = "select * from Bicycle;";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            int i = 0;
+            while (rs.next()) {
+                bicycleID = rs.getString("bicycle_id");
+                DockID = rs.getString("dock_id");
+                PowerLevel = rs.getString("powerlevel");
+                Make = rs.getString("make");
+                Model = rs.getString("model");
+                ProductionDate = rs.getString("production_date");
+                BicycleStatus = rs.getString("bicycleStatus");
+                TotalKM = rs.getString("totalKM");
+                Trips = rs.getString("trips");
+                NrOfRepairs = rs.getString("nr_of_repairs");
+                model.addRow(new Object[]{bicycleID, DockID, PowerLevel, Make, Model, ProductionDate, BicycleStatus, TotalKM, Trips, NrOfRepairs});
+                i++;
+            }
+            if (i < 1) {
+                JOptionPane.showMessageDialog(null, "No Record Found", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            if (i == 1) {
+                System.out.println(i + " Record Found");
+            } else {
+                System.out.println(i + " Records Found");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
     public RegisterNewRepair1() {
+
+        sortComboBox.addItem("bicycle_id");
+        sortComboBox.addItem("make");
+        sortComboBox.addItem("model");
+
+        showTable();
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,6 +155,13 @@ public class RegisterNewRepair1 {
 
                     }
                 }
+            }
+        });
+
+        sortComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showTable();
             }
         });
     }
@@ -101,6 +210,8 @@ public class RegisterNewRepair1 {
         label2.setText("Sort table");
         panel2.add(label2, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         sortComboBox = new JComboBox();
+        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        sortComboBox.setModel(defaultComboBoxModel1);
         panel2.add(sortComboBox, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         bicycleTable = new JTable();
         panel2.add(bicycleTable, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));

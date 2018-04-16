@@ -54,9 +54,9 @@ public class RegisterNewRepair2 {
 
                     }
                 }
-
+                /*
                 String desc = descriptionArea.getSelectedText();
-                RepairDatabase.regNewRepair(desc, bicycleID);
+                RepairDatabase.regNewRepair(desc, bicycleID);*/
             }
         });
     }

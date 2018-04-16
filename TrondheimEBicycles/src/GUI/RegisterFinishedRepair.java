@@ -1,18 +1,22 @@
 package GUI;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+
 
 public class RegisterFinishedRepair {
     public JPanel panel1;
     private JButton backButton;
     private JButton editButton;
     private JComboBox sortComboBox;
-    private JTable bisycleTable;
+    private  JTable bisycleTable;
 
 
 
@@ -60,24 +64,34 @@ public class RegisterFinishedRepair {
             }
         });
 
+
+        //JTable:
+        String[] columnNames = {"Bicycle ID", "Dock ID", "Powerlevel", "Make", "Model", "Production date", "Bicycle status", "Total Km", "Trips", "Number of repairs"};
+        //
+        // combobox.addItem();
         sortComboBox.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 Object n = e.getItem();
                 String sort = "default";
-                if(n instanceof String){
+                if (n instanceof String) {
                     sort = (String) n;
                 }
                 //Sortere tabellen etter sort. Metode(sort);
+                //Fyll inn tabellen her. Call vistabellmetode.
             }
         });
         sortComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String s = sortComboBox.getSelectedItem();
+                //midpanel.setVisible(true);
+                String s = (String) sortComboBox.getSelectedItem();
                 //Metode(s); for å få ut tabellen sortert på s.
+
             }
         });
+
+
     }
 
     public static void main(String[] args) {
@@ -123,6 +137,15 @@ public class RegisterFinishedRepair {
         label1.setText("Select bike for register finished repair");
         panel3.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         sortComboBox = new JComboBox();
+        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        defaultComboBoxModel1.addElement("Bike ID");
+        defaultComboBoxModel1.addElement("Make");
+        defaultComboBoxModel1.addElement("Type");
+        defaultComboBoxModel1.addElement("Status");
+        defaultComboBoxModel1.addElement("Date");
+        defaultComboBoxModel1.addElement("Last edited");
+        defaultComboBoxModel1.addElement("Dock");
+        sortComboBox.setModel(defaultComboBoxModel1);
         panel2.add(sortComboBox, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setText("Sort table");
