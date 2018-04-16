@@ -7,17 +7,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import javax.swing.table.DefaultTableModel;
-import java.sql.*;
 
 
 public class RegisterFinishedRepair {
-    public JPanel panel1;
+    public JPanel deePanel;
+    private JPanel midPanel;
+    private JPanel regFinRepairPanel;
+    private JComboBox comboBoxSort;
+    private JList bikeList;
+    private JButton selectButton;
+    private JLabel statusLabel;
     private JButton backButton;
+    private JLabel bikeIdLabel;
+    private JTextField costField;
+    private JComboBox comboBoxStatus;
     private JButton editButton;
+    private JTextArea descriptionArea;
     private JComboBox sortComboBox;
-    private  JTable bisycleTable;
-
 
 
     public RegisterFinishedRepair() {
@@ -45,58 +51,18 @@ public class RegisterFinishedRepair {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("RegisterRepairCosts");
-                frame.setContentPane(new RegisterRepairCosts().panel1);
-                frame.setLocationRelativeTo(null);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                //gets rid of the previous frame
-                Object source = e.getSource();
-                if (source instanceof Component) {
-                    Component c = (Component) source;
-                    Frame frame2 = JOptionPane.getFrameForComponent(c);
-                    if (frame2 != null) {
-                        frame2.dispose();
-
-                    }
-                }
-            }
-        });
-
-
-        //JTable:
-        String[] columnNames = {"Bicycle ID", "Dock ID", "Powerlevel", "Make", "Model", "Production date", "Bicycle status", "Total Km", "Trips", "Number of repairs"};
-        //
-        // combobox.addItem();
-        sortComboBox.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                Object n = e.getItem();
-                String sort = "default";
-                if (n instanceof String) {
-                    sort = (String) n;
-                }
-                //Sortere tabellen etter sort. Metode(sort);
-                //Fyll inn tabellen her. Call vistabellmetode.
-            }
-        });
-        sortComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //midpanel.setVisible(true);
-                String s = (String) sortComboBox.getSelectedItem();
-                //Metode(s); for å få ut tabellen sortert på s.
 
             }
         });
+
+
 
 
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("RegisterFinishedRepair");
-        frame.setContentPane(new RegisterFinishedRepair().panel1);
+        frame.setContentPane(new RegisterFinishedRepair().deePanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -117,11 +83,11 @@ public class RegisterFinishedRepair {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        panel1 = new JPanel();
-        panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        deePanel = new JPanel();
+        deePanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 4, new Insets(0, 0, 0, 0), -1, -1));
-        panel1.add(panel2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        deePanel.add(panel2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         backButton = new JButton();
         backButton.setText("Back");
         panel2.add(backButton, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -158,6 +124,6 @@ public class RegisterFinishedRepair {
      * @noinspection ALL
      */
     public JComponent $$$getRootComponent$$$() {
-        return panel1;
+        return deePanel;
     }
 }

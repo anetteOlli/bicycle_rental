@@ -37,7 +37,7 @@ public class RegisterRepairFrontPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("RegisterFinishedRepair");
-                frame.setContentPane(new RegisterFinishedRepair().panel1);
+                frame.setContentPane(new RegisterFinishedRepair().deePanel);
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
