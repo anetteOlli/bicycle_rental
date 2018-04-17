@@ -730,6 +730,62 @@ public class DockingStation {
 
     }
 
+    /**
+     * method collects all activeDockingstations and places then into a table
+     * @return double[]][], double[row][0] = dockingStationID as a double
+     * double[row][1] = latitude, double[row][2] = longitude
+     */
+    public double[][] getAllDockingStationLocation(){
+        //starts off with a table with space for 5 dockingstations.
+        //we know that horizontally we will only have 3 columns
+        double[][] result = new double[5][3];
+        int noDockStation = 0;
+        String sql = "SELECT station_id, latitude, longitude FROM DockingStation WHERE active_status=TRUE";
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
+        PreparedStatement sentence = connection.createPreparedStatement(con, sql);
+        try{
+            ResultSet resultSet = sentence.executeQuery();
+            while(resultSet.next()) {
+                if (noDockStation < result.length) {
+                    result[noDockStation][0] = (double) resultSet.getInt(1);
+                    result[noDockStation][1] = resultSet.getDouble(2);
+                    result[noDockStation][2] = resultSet.getDouble(3);
+                    noDockStation++;
+                } else {
+                    //generate new result-tabel with space for 5 new rows
+                    //and copy content over to it
+                    double[][] tempResult = new double[result.length +5][3];
+                    for (int row = 0; row < result.length; row++) {
+                        for (int column = 0; column < result[row].length; column++) {
+                            tempResult[row][column] = result[row][column];
+                        }
+                    }
+                    result = tempResult;
+                    result[noDockStation][0] = (double) resultSet.getInt(1);
+                    result[noDockStation][1] = resultSet.getDouble(2);
+                    result[noDockStation][2] = resultSet.getDouble(3);
+                    noDockStation++;
+                }
+            }
+            //remove rows that does not contain data:
+            double[][] temp = new double[noDockStation][3];
+            for(int row = 0; row <noDockStation; row++){
+                for(int column = 0;column < result[row].length; column++){
+                    temp[row][column] = result[row][column];
+                }
+            }
+            result = temp;
+            if(cleaner.closeResult(resultSet) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
+                return result;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 
 
 
@@ -773,6 +829,13 @@ public class DockingStation {
         ArrayList<Integer> bikes = ds.getBikeIDAtDockingStation(1);
         for(int i = 0;i < bikes.size(); i++){
             System.out.println("bikeID: " + bikes.get(i));
+        }
+        double[][] location = ds.getAllDockingStationLocation();
+        for(int i = 0; i < location.length; i++){
+            System.out.println();
+            for(int column = 0; column < location[i].length; column++){
+                System.out.print(" " + location[i][column]);
+            }
         }
     }
 
