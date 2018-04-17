@@ -7,18 +7,14 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
-
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.JFXPanel;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javax.swing.JButton;
@@ -39,28 +35,12 @@ public class DockStatusMap extends JPanel {
     private JFXPanel jfxPanel;
     private JButton swingButton;
     private WebEngine webEngine;
-    private String google = "https://maps.googleapis.com/maps/api/staticmap?center=Trondheim,+Norge&zoom=13&scale=1&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=color:blue";
-
+    private String google = "https://maps.googleapis.com/maps/api/staticmap?center=Trondheim,+Norge&zoom=12&scale=1&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=color:blue";
+    private int dockID = -1;
 
 
 
     public DockStatusMap(){
-        /*
-        DockingStation dock = new DockingStation();
-        double[][] dockLocation = dock.getAllDockingStationLocation();
-        //starts generating URL adress:
-        for(int row = 0; row < dockLocation.length; row++){
-            if(dockLocation[row][1] >0 && dockLocation[row][2] >0){
-                google += "|" + dockLocation[row][1] +","  + dockLocation[row][2];
-            }
-        }
-
-        for(int i = 0; i < 5; i++){
-            System.out.println("dritt");
-        }
-        DockingStation dock = new DockingStation();
-        double[][] dockLocation = dock.getAllDockingStationLocation();
-        */
         initComponents();
     }
 
@@ -75,7 +55,7 @@ public class DockStatusMap extends JPanel {
 
                 frame.getContentPane().add(new DockStatusMap());
 
-                frame.setMinimumSize(new Dimension(640, 600));
+                frame.setMinimumSize(new Dimension(800, 700));
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
 
@@ -100,14 +80,15 @@ public class DockStatusMap extends JPanel {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        webEngine.reload();
+                        generateUrl();
+                        webEngine.load(google);
 
 
                     }
                 });
             }
         });
-        swingButton.setText("Reload");
+        swingButton.setText("Reload, selected dockingstation will have red marker");
 
         add(swingButton, BorderLayout.SOUTH);
 
@@ -125,14 +106,7 @@ public class DockStatusMap extends JPanel {
         PlatformImpl.startup(new Runnable() {
             @Override
             public void run() {
-                DockingStation dock = new DockingStation();
-                double[][] dockLocation = dock.getAllDockingStationLocation();
-                //starts generating URL adress:
-                for(int row = 0; row < dockLocation.length; row++){
-                    if(dockLocation[row][1] >0 && dockLocation[row][2] >0){
-                        google += "|" + dockLocation[row][1] +","  + dockLocation[row][2];
-                    }
-                }
+                generateUrl();
                 stage = new Stage();
 
                 stage.setTitle("Hello Java FX");
@@ -165,6 +139,36 @@ public class DockStatusMap extends JPanel {
             }
 
         });
+
+    }
+    public void setDockID(int newDockID){
+        dockID = newDockID;
+    }
+    private void generateUrl(){
+        google = "https://maps.googleapis.com/maps/api/staticmap?center=Trondheim,+Norge&zoom=13&scale=1&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=color:blue";
+        DockingStation dock = new DockingStation();
+        double[][] dockLocation = dock.getAllDockingStationLocation();
+        //starts generating URL adress:
+        for(int row = 0; row < dockLocation.length; row++) {
+            if (dockLocation[row][1] > 0 && dockLocation[row][2] > 0) {
+                int dockIDList = (int) dockLocation[row][0];
+                if (dockIDList != dockID) {
+                    google += "|" + dockLocation[row][1] + "," + dockLocation[row][2];
+                }
+            }
+        }
+
+        //if the dockID has been set to greater than 0, this will add the selected dock as a red tag
+        if(dockID > 0){
+            for(int row = 0; row < dockLocation.length; row++) {
+                if (dockLocation[row][1] > 0 && dockLocation[row][2] > 0) {
+                    int dockIDList = (int) dockLocation[row][0];
+                    if (dockIDList == dockID) {
+                        google += "&markers=color:red|" + dockLocation[row][1] + "," + dockLocation[row][2];
+                    }
+                }
+            }
+        }
 
     }
 }
