@@ -18,7 +18,7 @@ public class BikeDatabase {
 
 
 
-    public void regBicycle(String make, String modell, String bicycleStatus, int price_of_bike, int nr) {
+    public void regBicycle(String make, String modell, String bicycleStatus, double price_of_bike, int nr) {
         Calendar calendar = Calendar.getInstance();
         java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
 
@@ -31,7 +31,7 @@ public class BikeDatabase {
             regBicycle.setString(2, modell);
             regBicycle.setDate(3, registration_date);
             regBicycle.setString(4, bicycleStatus);
-            regBicycle.setInt(5, price_of_bike);
+            regBicycle.setDouble(5, price_of_bike);
             //RegNewBicycle.executeUpdate();
             for (int i = 0; i < nr; i++){
                 regBicycle.addBatch();

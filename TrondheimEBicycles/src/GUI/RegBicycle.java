@@ -56,11 +56,9 @@ public class RegBicycle {
                 System.out.println(getCurrentValue());
                 String make = textField1.getText();
                 String model = comboBox1.getSelectedItem().toString();
-                int price = Integer.parseInt(textField2.getText());
+                double price = Double.parseDouble(textField2.getText());
                 database.regBicycle(make, model, "not employed", price, currentValue);
                 RegBikeConfirm confirm = new RegBikeConfirm();
-                //database.RegBikeConfirm();
-                confirm.createTable();
                 JFrame frame = new JFrame("Bikes Registered");
                 frame.setContentPane(new RegBikeConfirm().regBikeConfirm);
                 frame.pack();
@@ -78,34 +76,13 @@ public class RegBicycle {
                 }
             }
         });
-
-      /*  confirmButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Bikes Registered");
-                frame.setContentPane(new RegBikeConfirm().regBikeConfirm);
-                frame.pack();
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-                Object source = e.getSource();
-
-                if (source instanceof Component) {
-                    Component c = (Component) source;
-                    Frame frame2 = JOptionPane.getFrameForComponent(c);
-                    if (frame2 != null) {
-                        frame2.dispose();
-
-                    }
-                }
-            }
-        });*/
-
     }
 
     public int getCurrentValue() {
-        return 1;
+        return currentValue;
     }
+
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Register Bike");
         frame.setContentPane(new RegBicycle().regBike);

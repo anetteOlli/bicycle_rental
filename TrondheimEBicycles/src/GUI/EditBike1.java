@@ -35,14 +35,11 @@ public class EditBike1 {
     private JLabel bicycleinfo1;
     private JLabel bicycleinfo2;
     private JLabel bicycleinfo3;
-    private JLabel statusInfo;
     private JLabel bicycleinfo5;
     private JLabel bicycleinfo6;
     private JComboBox comboBox1;
     private JButton editButton;
     private JComboBox comboBox2;
-    private JButton updateButton;
-    private JButton sortButton;
     DefaultListModel<BicycleE> model = new DefaultListModel<>();
 
 
@@ -67,8 +64,7 @@ public class EditBike1 {
     }
 
     public EditBike1() {
-        //createTable();
-
+        createTable();
 
 
         comboBox1.addActionListener(new ActionListener() {
@@ -76,7 +72,6 @@ public class EditBike1 {
             public void actionPerformed(ActionEvent e) {
                 createTable();
                 //for(int i; i < bike.size(); i++){
-
 
 
                 System.out.println(comboBox1.getSelectedItem().toString());
@@ -88,51 +83,27 @@ public class EditBike1 {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-                //try {
-                    BicycleE bicycleE = list.getSelectedValue();
-                    /*String mySQL = "SELECT bicycleStatus FROM Bicycle WHERE bicycle_id = " +bicycleE.getBicycle_id();
-                    PreparedStatement select = connection.createPreparedStatement(con, mySQL);
-                    select.executeQuery();*/
-                    //statusInfo.setText(bicycleE.getBicycleStatus());
-
-                /*} catch (SQLException e1) {
-                    e1.printStackTrace();*/
-
+                BicycleE bicycleE = list.getSelectedValue();
             }
         });
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                BicycleE bicycleE = list.getSelectedValue();
-                String mySQL = "UPDATE Bicycle SET bicycleStatus='" + comboBox2.getSelectedItem().toString() + "' WHERE bicycle_id=" + bicycleE.getBicycle_id();
-                PreparedStatement update = connection.createPreparedStatement(con, mySQL);
-                update.executeUpdate();
+                    BicycleE bicycleE = list.getSelectedValue();
+                    String mySQL = "UPDATE Bicycle SET bicycleStatus='" + comboBox2.getSelectedItem().toString() + "' WHERE bicycle_id=" + bicycleE.getBicycle_id();
+                    PreparedStatement update = connection.createPreparedStatement(con, mySQL);
+                    update.executeUpdate();
 
-                model.get(list.getSelectedIndex()).setBicycleStatus(comboBox2.getSelectedItem().toString());
+                    model.get(list.getSelectedIndex()).setBicycleStatus(comboBox2.getSelectedItem().toString());
 
-                //statusInfo.setText(bicycleE.getBicycleStatus());
                 } catch (SQLException e1) {
                     e1.printStackTrace();
                 }
             }
 
         });
-        /*updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                createTable();
-            }
-        });*/
-      /*  sortButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                bikeModelList.sort();
-            }
-        });*/
-
     }
-
 
 
     public static void main(String[] args) {

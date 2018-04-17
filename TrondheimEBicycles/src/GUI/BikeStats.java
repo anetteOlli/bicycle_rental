@@ -49,7 +49,7 @@ public class BikeStats {
             PreparedStatement names = connection.createPreparedStatement(con, getInfo);
             ResultSet res = names.executeQuery();
             while (res.next()) {
-                BicycleS bike = new BicycleS(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"), res.getInt("totalKM"), res.getInt("nr_of_repairs"), res.getInt("trips"), res.getInt("powerlevel"), res.getInt("price"), res.getInt("price_of_bike"), res.getInt("station_id"), res.getString("name"));
+                BicycleS bike = new BicycleS(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"), res.getDouble("totalKM"), res.getInt("nr_of_repairs"), res.getInt("trips"), res.getInt("powerlevel"), res.getDouble("price"), res.getDouble("price_of_bike"), res.getInt("station_id"), res.getString("name"));
                 model.addElement(bike);
             }
         } catch (SQLException e) {
@@ -69,13 +69,13 @@ public class BikeStats {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 bicycleS = list.getSelectedValue();
-                KM.setText("Total KM: " + Integer.toString(bicycleS.getTotal_km()));
-                Rep.setText("Nr of repairs: " + Integer.toString(bicycleS.getTotal_rep()));
-                Trip.setText("Nr of trips" + Integer.toString(bicycleS.getTotal_trip()));
-                Power.setText("Power: " + Integer.toString(bicycleS.getPowerlevel()));
-                Price.setText("Price per trip: " + Integer.toString(bicycleS.getPrice()));
+                KM.setText("Total KM: " + bicycleS.getTotal_km());
+                Rep.setText("Nr of repairs: " + bicycleS.getTotal_rep());
+                Trip.setText("Nr of trips" + bicycleS.getTotal_trip());
+                Power.setText("Power: " + bicycleS.getPowerlevel());
+                Price.setText("Price per trip: " + bicycleS.getPrice());
                 PDate.setText("Date registered: " + bicycleS.getRegistration_date().toString());
-                DS.setText(bicycleS.getDsName() + " Station ID: " + Integer.toString(bicycleS.getDockingstation()));
+                DS.setText(bicycleS.getDsName() + " Station ID: " + bicycleS.getDockingstation());
                 Status.setText("Bicycle Status: " + bicycleS.getBicycleStatus());
                 Make.setText("Make: " + bicycleS.getMake());
                 Cost.setText("Price of bicycle: " + bicycleS.getPriceBicycle());

@@ -9,16 +9,16 @@ public class BicycleS {
     public String bicycleStatus;
     public Date registration_date;
     public int dock_id;
-    public int total_km;
+    public double total_km;
     public int total_rep;
     public int total_trip;
     public int powerlevel;
-    public int price;
-    public int priceBicycle;
+    public double price;
+    public double priceBicycle;
     public int dockingstation;
     public String dsName;
 
-    public BicycleS(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id, int total_km, int total_rep, int total_trip, int powerlevel, int price, int priceBicycle, int dockingstation, String dsName) {
+    public BicycleS(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id, double total_km, int total_rep, int total_trip, int powerlevel, double price, double priceBicycle, int dockingstation, String dsName) {
         this.bicycle_id = bicycle_id;
         this.make = make;
         this.modell = modell;
@@ -30,7 +30,7 @@ public class BicycleS {
         this.total_trip = total_trip;
         this.powerlevel = powerlevel;
         this.price = price;
-        //this.priceBicycle = priceBicycle;
+        this.priceBicycle = priceBicycle;
         this.dockingstation = dockingstation;
         this.dsName = dsName;
     }
@@ -59,7 +59,7 @@ public class BicycleS {
         return dock_id;
     }
 
-    public int getTotal_km() {
+    public double getTotal_km() {
         return total_km;
     }
 
@@ -75,11 +75,11 @@ public class BicycleS {
         return powerlevel;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public int getPriceBicycle() {
+    public double getPriceBicycle() {
         return priceBicycle;
     }
 
