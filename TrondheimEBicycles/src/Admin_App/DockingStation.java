@@ -24,9 +24,10 @@ public class DockingStation {
      * Method will not register more docks, than the dockingStation has a capacity for
      *  Method used for registerDock at the dockingstation, when a dock is registered it's availability is set to true
      * @param dockingStationID the ID for the dockingstation.
+     * @param numberOfDocks the capacity of the dockingstation. This number will not overrule the given capacity of the dockingstation
      * @return boolean indicating if the method was succesful or not.
      */
-    private boolean registerDock(int dockingStationID) {
+    private boolean registerDock(int dockingStationID, int numberOfDocks) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -43,7 +44,9 @@ public class DockingStation {
                   PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
                   try{
                       sentence.setInt(1,dockingStationID);
-                      sentence.execute();
+                      for(int i = 0; i <= numberOfDocks; i++){
+                          sentence.execute();
+                      }
                       if(cleaner.closeSentence(sentence)) {
 
                       }
@@ -185,32 +188,39 @@ public class DockingStation {
     public int registerDockStation(String name, int capacity, double longitude, double latitude){
         //converts the name to lowercase and trims out whitespace from the name
         //this is done to make searching for dockingStationID easier.
+        int dockStationID= -1;
         String lowName = name.toLowerCase().trim();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
         DatabaseCleanup cleaner = new DatabaseCleanup();
-        int dockStationID = -1;
-        String mysql ="INSERT INTO DockingStation (name, active_status, capacity, longitude, latitude, powerUsage) VALUES (?, TRUE, ?, ?, ?, 0)";
-        try{
-            PreparedStatement sentence = con.prepareStatement(mysql, PreparedStatement.RETURN_GENERATED_KEYS);
-            sentence.setString(1,lowName.trim());
-            sentence.setInt(2, capacity);
-            sentence.setDouble(3, longitude);
-            sentence.setDouble(4,latitude);
-            System.out.println("reg DockStation: kom seg hit 3");
-            sentence.executeUpdate();
-            ResultSet rs = sentence.getGeneratedKeys();
-            if(rs.next()){
-                dockStationID = rs.getInt(1);
+        if(cleaner.setAutoCommit(con, false)) {
+            String mysql = "INSERT INTO DockingStation (name, active_status, capacity, longitude, latitude, powerUsage) VALUES (?, TRUE, ?, ?, ?, 0)";
+            try {
+                PreparedStatement sentence = con.prepareStatement(mysql, PreparedStatement.RETURN_GENERATED_KEYS);
+                sentence.setString(1, lowName.trim());
+                sentence.setInt(2, capacity);
+                sentence.setDouble(3, longitude);
+                sentence.setDouble(4, latitude);
+                System.out.println("reg DockStation: kom seg hit 3");
+                sentence.executeUpdate();
+                ResultSet rs = sentence.getGeneratedKeys();
+                if (rs.next()) {
+                    dockStationID = rs.getInt(1);
+                }
+                System.out.println("reg DockStation: kom seg hit 4");
+                if(dockStationID > 0){
+                    registerDock(dockStationID, capacity);
+                }
+                if(cleaner.commit(con)){
+                    if(cleaner.closeSentence(sentence) && cleaner.closeResult(rs) && cleaner.closeConnection(con)){
+                        return dockStationID;
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            System.out.println("reg DockStation: kom seg hit 4");
-            if(cleaner.closeSentence(sentence) && cleaner.closeResult(rs) && cleaner.closeConnection(con)) {
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-        return dockStationID;
+        return -1;
     }
 
     /** Method tested 2018.04.08
@@ -720,6 +730,62 @@ public class DockingStation {
 
     }
 
+    /**
+     * method collects all activeDockingstations and places then into a table
+     * @return double[]][], double[row][0] = dockingStationID as a double
+     * double[row][1] = latitude, double[row][2] = longitude
+     */
+    public double[][] getAllDockingStationLocation(){
+        //starts off with a table with space for 5 dockingstations.
+        //we know that horizontally we will only have 3 columns
+        double[][] result = new double[5][3];
+        int noDockStation = 0;
+        String sql = "SELECT station_id, latitude, longitude FROM DockingStation WHERE active_status=TRUE";
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
+        PreparedStatement sentence = connection.createPreparedStatement(con, sql);
+        try{
+            ResultSet resultSet = sentence.executeQuery();
+            while(resultSet.next()) {
+                if (noDockStation < result.length) {
+                    result[noDockStation][0] = (double) resultSet.getInt(1);
+                    result[noDockStation][1] = resultSet.getDouble(2);
+                    result[noDockStation][2] = resultSet.getDouble(3);
+                    noDockStation++;
+                } else {
+                    //generate new result-tabel with space for 5 new rows
+                    //and copy content over to it
+                    double[][] tempResult = new double[result.length +5][3];
+                    for (int row = 0; row < result.length; row++) {
+                        for (int column = 0; column < result[row].length; column++) {
+                            tempResult[row][column] = result[row][column];
+                        }
+                    }
+                    result = tempResult;
+                    result[noDockStation][0] = (double) resultSet.getInt(1);
+                    result[noDockStation][1] = resultSet.getDouble(2);
+                    result[noDockStation][2] = resultSet.getDouble(3);
+                    noDockStation++;
+                }
+            }
+            //remove rows that does not contain data:
+            double[][] temp = new double[noDockStation][3];
+            for(int row = 0; row <noDockStation; row++){
+                for(int column = 0;column < result[row].length; column++){
+                    temp[row][column] = result[row][column];
+                }
+            }
+            result = temp;
+            if(cleaner.closeResult(resultSet) && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
+                return result;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 
 
 
@@ -753,7 +819,7 @@ public class DockingStation {
         System.out.println("begynner å registrere docks");
         boolean plass;
         do{
-            plass = ds.registerDock(1);
+            plass = ds.registerDock(1, 15);
         }while(plass);
 
         System.out.println("getNumberOfDocks(1): " + ds.getNumbersOfDocks(1));
@@ -763,6 +829,13 @@ public class DockingStation {
         ArrayList<Integer> bikes = ds.getBikeIDAtDockingStation(1);
         for(int i = 0;i < bikes.size(); i++){
             System.out.println("bikeID: " + bikes.get(i));
+        }
+        double[][] location = ds.getAllDockingStationLocation();
+        for(int i = 0; i < location.length; i++){
+            System.out.println();
+            for(int column = 0; column < location[i].length; column++){
+                System.out.print(" " + location[i][column]);
+            }
         }
     }
 

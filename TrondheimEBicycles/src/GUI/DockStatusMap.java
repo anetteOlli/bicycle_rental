@@ -1,23 +1,20 @@
-
 package GUI;
 
+
+import Admin_App.DockingStation;
 import com.sun.javafx.application.PlatformImpl;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
-
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.JFXPanel;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javax.swing.JButton;
@@ -31,20 +28,19 @@ import javax.swing.SwingUtilities;
 /**
  * SwingFXWebView
  */
-public class GoogleMapsSample extends JPanel {
+public class DockStatusMap extends JPanel {
 
     private Stage stage;
     private WebView browser;
     private JFXPanel jfxPanel;
     private JButton swingButton;
     private WebEngine webEngine;
-    final URL urlGoogleMaps = getClass().getResource("demo.html");
-    //trondheim Torg latitude og longitude er satt som default.
-    public double lat = 63.43049;
-    public double lon = 10.39506;
+    private String google = "https://maps.googleapis.com/maps/api/staticmap?center=Trondheim,+Norge&zoom=12&scale=1&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=color:blue";
+    private int dockID = -1;
 
 
-    public GoogleMapsSample(){
+
+    public DockStatusMap(){
         initComponents();
     }
 
@@ -57,9 +53,9 @@ public class GoogleMapsSample extends JPanel {
             public void run() {
                 final JFrame frame = new JFrame();
 
-                frame.getContentPane().add(new GoogleMapsSample());
+                frame.getContentPane().add(new DockStatusMap());
 
-                frame.setMinimumSize(new Dimension(640, 600));
+                frame.setMinimumSize(new Dimension(800, 700));
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
 
@@ -84,14 +80,15 @@ public class GoogleMapsSample extends JPanel {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        webEngine.reload();
+                        generateUrl();
+                        webEngine.load(google);
 
 
                     }
                 });
             }
         });
-        swingButton.setText("Reload");
+        swingButton.setText("Reload, selected dockingstation will have red marker");
 
         add(swingButton, BorderLayout.SOUTH);
 
@@ -109,7 +106,7 @@ public class GoogleMapsSample extends JPanel {
         PlatformImpl.startup(new Runnable() {
             @Override
             public void run() {
-
+                generateUrl();
                 stage = new Stage();
 
                 stage.setTitle("Hello Java FX");
@@ -122,41 +119,13 @@ public class GoogleMapsSample extends JPanel {
                 // Set up the embedded browser:
                 browser = new WebView();
                 webEngine = browser.getEngine();
-                webEngine.load(urlGoogleMaps.toExternalForm());
+                webEngine.load(google);
                 webEngine.setJavaScriptEnabled(true);
 
 
 
                 ObservableList<Node> children = root.getChildren();
                 children.add(browser);
-
-
-                //this bit of code is supposed to listen for webAlerts: (ex. javascript code that
-                // sends a webalert about something. See demo.html
-                webEngine.setOnAlert(new EventHandler<WebEvent<String>>() {
-                    @Override
-                    public void handle(WebEvent<String> event) {
-                        String event2 = new String(event.getData());
-                        System.out.println(event.getData());
-
-                        //sets the latitude and longitude if the map marker has been moved.
-                        //the webalert that tells us this has happened starts with "location: "
-                        //see demo.html for the webalert code
-                        if(event2.startsWith("location:")){
-                            String[] split = event2.split("[,]");
-                            if(split[0] != null){
-                                String latitude = split[0].replaceAll("[^0-9?!\\.]","");
-                                lat = Double.parseDouble(latitude);
-                            }if(split[1] !=null){
-                                String longitude = split[1].replaceAll("[^0-9?!\\.]","");
-                                lon = Double.parseDouble(longitude);
-                            }
-                        }
-                    }
-                });
-
-
-
 
                 HBox toolbar  = new HBox();
                 //toolbar.getChildren().addAll(latitude, longitude, update);
@@ -172,12 +141,34 @@ public class GoogleMapsSample extends JPanel {
         });
 
     }
-
-    public double getLat() {
-        return lat;
+    public void setDockID(int newDockID){
+        dockID = newDockID;
     }
+    private void generateUrl(){
+        google = "https://maps.googleapis.com/maps/api/staticmap?center=Trondheim,+Norge&zoom=13&scale=1&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=color:blue";
+        DockingStation dock = new DockingStation();
+        double[][] dockLocation = dock.getAllDockingStationLocation();
+        //starts generating URL adress:
+        for(int row = 0; row < dockLocation.length; row++) {
+            if (dockLocation[row][1] > 0 && dockLocation[row][2] > 0) {
+                int dockIDList = (int) dockLocation[row][0];
+                if (dockIDList != dockID) {
+                    google += "|" + dockLocation[row][1] + "," + dockLocation[row][2];
+                }
+            }
+        }
 
-    public double getLon() {
-        return lon;
+        //if the dockID has been set to greater than 0, this will add the selected dock as a red tag
+        if(dockID > 0){
+            for(int row = 0; row < dockLocation.length; row++) {
+                if (dockLocation[row][1] > 0 && dockLocation[row][2] > 0) {
+                    int dockIDList = (int) dockLocation[row][0];
+                    if (dockIDList == dockID) {
+                        google += "&markers=color:red|" + dockLocation[row][1] + "," + dockLocation[row][2];
+                    }
+                }
+            }
+        }
+
     }
 }
