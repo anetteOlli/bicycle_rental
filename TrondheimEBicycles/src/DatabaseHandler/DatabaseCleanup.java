@@ -86,7 +86,7 @@ public class DatabaseCleanup{
      */
     public boolean setAutoCommit(Connection con, boolean b) {
         try {
-            if (con != null && !con.getAutoCommit()) {
+            if (con != null) {
                 con.setAutoCommit(b);
                 return true;
             }
