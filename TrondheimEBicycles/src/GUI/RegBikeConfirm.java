@@ -13,11 +13,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.*;
 
 public class RegBikeConfirm {
+
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
+    Statement stm;
+
 
 
     private JList<Bicycle> list1;
@@ -25,25 +29,53 @@ public class RegBikeConfirm {
     private JTextArea textArea1;
     private JButton bicycleFrontPageButton;
     public JPanel regBikeConfirm;
-    DefaultListModel<Bicycle> model = new DefaultListModel<>();
     BikeDatabase database = new BikeDatabase();
+
+    public void createTable(){
     ArrayList<Bicycle> bicycles = new ArrayList<>();
+    DefaultListModel<Bicycle> model = new DefaultListModel<>();
+    list1.setModel(model);
+        try {
+        RegBicycle regBicycle = new RegBicycle();
+        String mySQL = "SELECT * FROM Bicycle ORDER BY (bicycle_id) DESC LIMIT ?";
+        PreparedStatement SQL = connection.createPreparedStatement(con, mySQL);
+        System.out.println("hei ho" + regBicycle.getCurrentValue());
+        SQL.setInt(1, regBicycle.getCurrentValue());
+        ResultSet res = SQL.executeQuery();
+        while (res.next()) {
+            Bicycle bike = new Bicycle(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"));
+            model.addElement(bike);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+
 
     public RegBikeConfirm() {
-        RegBicycle regBicycle = new RegBicycle();
-        list1.setModel(model);
+        ArrayList<Bicycle> bicycles = new ArrayList<>();
+        DefaultListModel<Bicycle> model = new DefaultListModel<>();
 
-        try{
-            String mySQL = "SELECT * FROM Bicycle ORDER BY (bicycle_id) DESC";
+
+
+        list1.setModel(model);
+        try {
+            RegBicycle regBicycle = new RegBicycle();
+            String mySQL = "SELECT * FROM Bicycle ORDER BY (bicycle_id) DESC LIMIT 20";
             PreparedStatement SQL = connection.createPreparedStatement(con, mySQL);
             ResultSet res = SQL.executeQuery();
-            while(res.next()){
-                Bicycle bike = new Bicycle(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("production_date"), res.getInt("dock_id"));
+            while (res.next()) {
+                Bicycle bike = new Bicycle(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"));
                 model.addElement(bike);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
+
+
 
 
 

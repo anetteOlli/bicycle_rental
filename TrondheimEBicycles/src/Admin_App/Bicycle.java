@@ -7,15 +7,15 @@ public class Bicycle {
     public String make;
     public String modell;
     public String bicycleStatus;
-    public Date production_date;
+    public Date registration_date;
     public int dock_id;
 
-    public Bicycle(int bicycle_id, String make, String modell, String bicycleStatus, Date production_date, int dock_id) {
+    public Bicycle(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id) {
         this.bicycle_id = bicycle_id;
         this.make = make;
         this.modell = modell;
         this.bicycleStatus = bicycleStatus;
-        this.production_date = production_date;
+        this.registration_date = registration_date;
         this.dock_id = dock_id;
     }
 
@@ -51,12 +51,12 @@ public class Bicycle {
         this.bicycleStatus = bicycleStatus;
     }
 
-    public Date getProduction_date() {
-        return production_date;
+    public Date getRegistration_date() {
+        return registration_date;
     }
 
-    public void setProduction_date(Date production_date) {
-        this.production_date = production_date;
+    public void setRegistration_date(Date registration_date) {
+        this.registration_date = registration_date;
     }
 
     public int getDock_id() {
@@ -70,10 +70,7 @@ public class Bicycle {
     @Override
     public String toString() {
         return  bicycle_id +
-                "       |        " + make + '\'' +
-                "       |        " + modell + '\'' +
-                "       |        " + bicycleStatus + '\'' +
-                "       |        " + production_date +
-                "       |        " + dock_id;
+                " - " + modell;
+
     }
 }
