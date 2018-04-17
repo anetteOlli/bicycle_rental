@@ -26,11 +26,14 @@ dock_id INT,
 powerlevel INT,
 make VARCHAR(20),
 model VARCHAR(20),
-production_date DATE,
+registration_date DATE,
 bicycleStatus VARCHAR(20),
 totalKM INT,
 trips INT,
 nr_of_repairs INT,
+price_of_bike INT,
+longitude DOUBLE,
+latitude DOUBLE,
 PRIMARY KEY(bicycle_id)
 );
 
@@ -64,7 +67,7 @@ first_name VARCHAR(100),
 last_name VARCHAR(50),
 phone INT,
 email VARCHAR(50),
-password VARCHAR(20),
+password TEXT,
 PRIMARY KEY(cust_id)
 );
 
@@ -78,7 +81,7 @@ PRIMARY KEY(cardNumber)
 
 CREATE TABLE Employee (
 employee_id INT,
-password VARCHAR(20),
+password TEXT,
 email VARCHAR(50),
 first_name VARCHAR(50),
 last_name VARCHAR(50),
@@ -148,6 +151,5 @@ SELECT * FROM DockingStation;
 
 SELECT station_id FROM DockingStation WHERE active_status=TRUE;
 
-INSERT INTO Bicycle (bicycle_id, dock_id) VALUE (2,1);
 
 SELECT COUNT(*) FROM Bicycle NATURAL JOIN Dock WHERE station_id=1;
