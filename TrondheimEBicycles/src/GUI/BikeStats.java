@@ -1,6 +1,5 @@
 package GUI;
 
-import Admin_App.BicycleE;
 import Admin_App.BicycleS;
 import Admin_App.BikeDatabase;
 import DatabaseHandler.DatabaseCleanup;
@@ -43,7 +42,6 @@ public class BikeStats {
         ArrayList<BicycleS> array = new ArrayList<>();
         list.setModel(model);
         try {
-            //list = new JList<>();
             String getInfo = "SELECT bicycle_id, make, b.model, bicycleStatus, registration_date, b.dock_id, totalKM, nr_of_repairs, trips, powerlevel, price, name, ds.station_id FROM Bicycle b LEFT JOIN Model m ON b.model = m.model LEFT JOIN Dock d ON b.dock_id = d.dock_id LEFT JOIN DockingStation ds ON d.station_id = ds.station_id ORDER BY bicycle_id ASC;";
 
             PreparedStatement names = connection.createPreparedStatement(con, getInfo);
