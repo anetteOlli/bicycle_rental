@@ -132,7 +132,7 @@ public class EmployeeDatabase {
         return false;
     }
 
-   public boolean deleteEmployee(String email, String password){
+    public boolean deleteEmployee(String email, String password){
         try{
             cleaner.setAutoCommit(con, false);
             String deleteSql = "DELETE FROM Employee WHERE email = ? AND password = ?";

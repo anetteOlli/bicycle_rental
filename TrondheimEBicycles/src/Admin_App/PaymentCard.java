@@ -3,7 +3,7 @@ package Admin_App;
 public class PaymentCard {
     private int cardNumber;
     private int custId;
-    private int balance;
+    private double balance;
     private boolean isActive;
 
     public PaymentCard(int cardNumber, int custId){
@@ -21,7 +21,7 @@ public class PaymentCard {
         return custId;
     }
 
-    public int getBalance(){
+    public double getBalance(){
         return balance;
     }
 
@@ -29,7 +29,7 @@ public class PaymentCard {
         return isActive;
     }
 
-    public void setBalance(int newBalance){
+    public void setBalance(double newBalance){
         balance = newBalance;
     }
 
@@ -38,7 +38,7 @@ public class PaymentCard {
     }
 
     public boolean deductFunds(int amount){
-        int newBalance = balance - amount;
+        double newBalance = balance - amount;
         if(newBalance >= 0){
             balance = newBalance;
             return true;

@@ -12,7 +12,7 @@ public class PaymentCardDatabase {
     private static Random random = new Random();
 
     /*Finds a random 6-digit number that does not already exist in the PaymentCard
-    * table. This random number is used as the PaymentCard ID*/
+     * table. This random number is used as the PaymentCard ID*/
     public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
@@ -41,7 +41,7 @@ public class PaymentCardDatabase {
     }
 
     /*Creates a new Payment Card. This method is further called in the
-    * regNewCustomer() method*/
+     * regNewCustomer() method*/
     public boolean regNewPaymentCard(PaymentCard newPaymentCard){
         int active;
         try{
@@ -57,7 +57,7 @@ public class PaymentCardDatabase {
             RegNewCard.executeQuery("SET FOREIGN_KEY_CHECKS = 0"); //Customer and paymentcard are both dependant on eachother, that's why foreign key checks are temporarily disabled when we insert new values.
             RegNewCard.setInt(1, newPaymentCard.getCardNumber());
             RegNewCard.setInt(2, newPaymentCard.getCustId());
-            RegNewCard.setInt(3, newPaymentCard.getBalance());
+            RegNewCard.setDouble(3, newPaymentCard.getBalance());
             RegNewCard.setInt(4, active);
             if(RegNewCard.executeUpdate() != 0){
                 cleaner.commit(con);
@@ -82,7 +82,7 @@ public class PaymentCardDatabase {
 
     /*We do not allow deletion of customer cards or customers from the database.
      * This method sets the payment card associated with a customer as inactive
-      * An inactive paymentcard can not be used (can't add or deduct funds)*/
+     * An inactive paymentcard can not be used (can't add or deduct funds)*/
     public boolean setActiveStatus(int cust_id, boolean status) {
         try {
             int status1;
@@ -197,6 +197,19 @@ public class PaymentCardDatabase {
         }
     }
 
+    public double checkBalance(int cust_id){
+        try{
+            String sentence = "SELECT balance FROM PaymentCard WHERE cust_id = "+cust_id+" AND active_status = 1";
+            PreparedStatement statement = connection.createPreparedStatement(con, sentence);
+            ResultSet res = statement.executeQuery();
+            res.next();
+            return res.getDouble("balance");
+        }catch(SQLException e){
+            e.getMessage();
+            return -1;
+        }
+    }
+
     public static void main(String[] args) {
         PaymentCardDatabase database = new PaymentCardDatabase();
         connection.getConnection();
@@ -204,7 +217,8 @@ public class PaymentCardDatabase {
         //database.regNewPaymentCard(patricksCard);
         //database.setActiveStatus(5416, false);
         //database.setBalance(1274, 300);
-        database.addFunds(4083, 600);
+        database.addFunds(9511, 600);
+        System.out.println(database.checkBalance(9511));
         //database.deductFunds(1274, 200);
         cleaner.closeConnection(con);
     }

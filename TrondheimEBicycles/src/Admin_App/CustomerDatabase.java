@@ -16,7 +16,7 @@ public class CustomerDatabase {
     private static Random random = new Random();
 
     /*Finds a random 4-digit number that does not already exist in the customer table.
-    * This number is used as the customer ID*/
+     * This number is used as the customer ID*/
     public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
@@ -107,7 +107,6 @@ public class CustomerDatabase {
             RegNewCustomer.setInt(5, newCustomer.getCustPhone());
             RegNewCustomer.setString(6, newCustomer.getCustEmail());
             RegNewCustomer.setString(7, PasswordStorage.createHash(password));
-            SendMail send = new SendMail(newCustomer.getCustEmail(), "Welcome to Trondheim Bicycle Rental, "+newCustomer.getFirstName(), "Thank you for registering an account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
             if (RegNewCustomer.executeUpdate() != 0) {
                 cleaner.commit(con);
                 return true;
@@ -209,8 +208,8 @@ public class CustomerDatabase {
         connection.getConnection();
         Customer patrick = new Customer(1, 24, "Patrick", "Thorkildsen", 41146453, "patrick.thorkildsen@gmail.com", "Passord123");
         Customer quan = new Customer(1, 20, "Quan", "Mann", 47867632, "Quan@gmail.com", "Quanpassord123");
-        //database.regNewCustomer(patrick);
-        //database.regNewCustomer(quan);
+        database.regNewCustomer(patrick);
+        database.regNewCustomer(quan);
         //SendMail send = new SendMail("patrick.thorkildsen@gmail.com", "TEstSubject", "Hello");
         //database.getNewCard(8019);
         try {
