@@ -28,10 +28,10 @@ make VARCHAR(20),
 model VARCHAR(20),
 registration_date DATE,
 bicycleStatus VARCHAR(20),
-totalKM INT,
+totalKM DOUBLE,
 trips INT,
 nr_of_repairs INT,
-price_of_bike INT,
+price_of_bike DOUBLE,
 longitude DOUBLE,
 latitude DOUBLE,
 PRIMARY KEY(bicycle_id)
@@ -47,7 +47,7 @@ repair_id INT AUTO_INCREMENT,
 description_before VARCHAR(200),
 date_sent DATE,
 date_received DATE,
-repair_cost INT,
+repair_cost DOUBLE,
 repair_description_after VARCHAR(200),
 employee_id INT,
 bicycle_id INT,
@@ -56,7 +56,7 @@ PRIMARY KEY(repair_id)
 
 CREATE TABLE Model (
 model VARCHAR(20),
-price INT,
+price DOUBLE,
 PRIMARY KEY(model)
 );
 
@@ -74,7 +74,7 @@ PRIMARY KEY(cust_id)
 CREATE TABLE PaymentCard (
 cardNumber INT,
 cust_id INT,
-balance INT,
+balance DOUBLE,
 active_status TINYINT(1),
 PRIMARY KEY(cardNumber)
 );
@@ -100,8 +100,8 @@ time_received TIME,
 time_delivered TIME,
 station_id_received INT,
 station_id_delivered INT,
-tripKM INT,
-sumPayment INT,
+tripKM DOUBLE,
+sumPayment DOUBLE,
 PRIMARY KEY(trip_id)
 );
 
