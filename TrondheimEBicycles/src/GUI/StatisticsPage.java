@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public class StatisticsPage {
     private JButton backButton;
