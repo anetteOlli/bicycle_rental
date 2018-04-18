@@ -10,19 +10,19 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Repair {
-    private final int repairID;
+
+    private int repairID;
     private String description;
-    private int dateBroken; //The date the bicycle got flagged as broken
-    private int dateRepaired; //The date the bicycle got flagged as repaired
+    private Date dateBroken; //The date the bicycle got flagged as broken
+    private Date dateRepaired; //The date the bicycle got flagged as repaired
     private int repairCosts;
     private String repairedDescription;
     private int employeeID;
     private int bicycleID;
 
-    public Repair(int repairID, String description, int dateBroken, int repairCosts, String repairedDescription, int dateRepaired, int employeeID, int bicycleID){
-        if(description == null || repairedDescription == null || repairID < 0 || description.trim().equals("") || repairCosts < 0 || repairedDescription.trim().equals("") || dateBroken < 10000000 || dateRepaired < 10000000 || employeeID < 0 || bicycleID < 0){
-            throw new IllegalArgumentException("Descriptions and dates can not be empty and the IDs and repair costs must have a value over 0!");
-        }
+
+    public Repair(int repairID, String description, Date dateBroken, Date dateRepaired, int repairCosts, String repairedDescription, int employeeID, int bicycleID){
+
         this.repairID = repairID;
         this.description = description;
         this.repairCosts = repairCosts;
@@ -33,20 +33,30 @@ public class Repair {
         this.bicycleID = bicycleID;
     }
 
-    public Repair(int repairID, String description, int dateBroken, int employeeID, int bicycleID){
-        if(description == null || repairID < 0 || description.trim().equals("") || dateBroken < 10000000 || employeeID < 0 || bicycleID < 0){
-            throw new IllegalArgumentException("Description and date can not be empty and the IDs must have a value over 0!");
-        }
+    public Repair(int repairID, String description, Date dateBroken, int bicycleID){
+
         this.repairID = repairID;
         this.description = description;
         this.dateBroken = dateBroken;
-        this.employeeID = employeeID;
         this.bicycleID = bicycleID;
     }
 
-    public Repair(){
-        //
+    public Repair(String description, int bicycleID){
+        this.description = description;
+        this.bicycleID = bicycleID;
     }
+
+    public Repair(Repair newrepair){
+        repairID = newrepair.getRepairID();
+        description = newrepair.getDescription();
+        dateBroken = newrepair.getDateBroken();
+        bicycleID = newrepair.getBicycleID();
+    }
+
+    public Repair(){
+        //Standard construktor
+    }
+
 
     //Get-methods:
     public int getRepairID(){
@@ -55,10 +65,10 @@ public class Repair {
     public String getDescription(){
         return description;
     }
-    public int getDateBroken(){
+    public Date getDateBroken(){
         return dateBroken;
     }
-    public int getDateRepaired(){
+    public Date getDateRepaired(){
         return dateRepaired;
     }
     public int getRepairCosts(){
@@ -74,42 +84,63 @@ public class Repair {
         return bicycleID;
     }
 
-    public void String setDescription(String newDescription) {
+    public void setRepairID(int newrepairID){
+        repairID = newrepairID;
+    }
+    public void setDescription(String newDescription) {
         this.description = newDescription;
     }
-    public void Date setDateBroken(Date newDateBroken) {
+    public void setDateBroken(Date newDateBroken) {
         this.dateBroken = newDateBroken;
     }
-    public void Date setDateRepaired(Date newDateRepaired) {
+    public void setDateRepaired(Date newDateRepaired) {
         this.dateRepaired = newDateRepaired;
     }
-    public void int setRepairCosts(String newRepairCosts) {
+    public void setRepairCosts(int newRepairCosts) {
         this.repairCosts = newRepairCosts;
     }
-    public void String getRepairedDescription(String newRepairedDescription) {
+    public void getRepairedDescription(String newRepairedDescription) {
         this.repairedDescription = newRepairedDescription;
     }
 
     //ToString-method:
     public String toString(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        if(repairCosts >0 && repairedDescription != null && dateRepaired > 10000000) {
-            return "Repair ID: " + repairID +
-                    "\nDescription of damage: " + description +
-                    "\nWritten: " + dateBroken +
-                    "\nRepair costs: " + repairCosts +
-                    "\nDescription after repair: " + repairedDescription +
-                    "\nWritten: " + dateRepaired +
-                    "\nBy employee: " + employeeID +
-                    "\nFor bicycle: " + bicycleID;
+        if(repairCosts >0 && repairedDescription != null) {
+            return  repairID + "       |        " +
+                    description + "       |        " +
+                    dateBroken + "       |        " +
+                    repairCosts + "       |        " +
+                    repairedDescription + "       |        " +
+                    dateRepaired + "       |        " +
+                    employeeID + "       |        " +
+                    bicycleID;
         } else {
-            return "Repair ID: " + repairID +
-                    "\nDescription of damage: " + description +
-                    "\nWritten: " + dateBroken +
-                    "\nBy employee: " + employeeID +
-                    "\nFor bicycle: " + bicycleID;
+            return  repairID + "       |        " +
+                    description + "       |        " +
+                    dateBroken + "       |        " +
+                    bicycleID;
         }
     }
+    /* FINERE
+    public String toString(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        if(repairCosts >0 && repairedDescription != null) {
+            return "Repair ID: " + repairID + "       |        " +
+                    "\nDescription of damage: " + description + "       |        " +
+                    "\nWritten: " + dateBroken + "       |        " +
+                    "\nRepair costs: " + repairCosts + "       |        " +
+                    "\nDescription after repair: " + repairedDescription + "       |        " +
+                    "\nWritten: " + dateRepaired + "       |        " +
+                    "\nBy employee: " + employeeID + "       |        " +
+                    "\nFor bicycle: " + bicycleID;
+        } else {
+            return "Repair ID: " + repairID + "       |        " +
+                    "\nDescription of damage: " + description + "       |        " +
+                    "\nWritten: " + dateBroken + "       |        " +
+                    "\nFor bicycle: " + bicycleID;
+        }
+    }*/
 
     //HER KOMMER REPAIR DATABASE METODENE:
     private Connection forbindelse;
@@ -119,37 +150,50 @@ public class Repair {
 
     DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 
-    public RepairDatabase(String databaseDriver, String databaseNavn) {
-        this.databaseDriver = databaseDriver;
-        this.databaseNavn = databaseNavn;
-        startForbindelse();
-    }
+    public boolean regNewRepair(Repair newRepair) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
+        String mysql = "INSERT INTO Repair (repair_id, description_before, date_sent, bicycle_id) VALUES(DEFAULT, ?, ?, ?)";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date ourJavaDate = new java.sql.Date(calendar.getTime().getTime());
 
-    private void startForbindelse() {
+
         try {
-            Class.forName(databaseDriver);
-            forbindelse = DriverManager.getConnection(databaseNavn);
-            setning = forbindelse.createStatement();
-        } catch (ClassNotFoundException classEx) {
-            System.out.println(classEx.getMessage());
-        } catch (SQLException sqlEx) {
-            System.out.println(sqlEx.getMessage());
-        } catch (Exception e) {
-            System.out.println(3);
+            sentence.setString(1, newRepair.getDescription());
+            sentence.setDate(2, ourJavaDate);
+            sentence.setInt(3, newRepair.getBicycleID());
+            sentence.execute();
+
+            String mysql2 = "SELECT MAX(repair_id) FROM Repair;";
+            PreparedStatement sentence2 = connection.createPreparedStatement(con, mysql2);
+            ResultSet res2 = sentence2.executeQuery();
+            while(res2.next()) {
+                repairID = res2.getInt(1);
+                //Object obj = res2.getDate(3);
+                newRepair.setRepairID(repairID);
+            }
+            String mysql3 = "SELECT date_sent FROM Repair WHERE repair_id LIKE '" + repairID + "';";
+            PreparedStatement sentence3 = connection.createPreparedStatement(con, mysql3);
+            ResultSet res3 = sentence3.executeQuery();
+            while(res3.next()) {
+                dateBroken = res3.getDate(1);
+                newRepair.setDateBroken(dateBroken);
+            }
+        } catch (SQLException e) {
+            return false;
         }
+        if (cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
+            return true;
+        }
+        return false;
+
     }
 
-    public void lukkForbindelse() {
-        try {
-            setning.close();
-            forbindelse.close();
-        } catch (SQLException sqlEx) {
-            System.out.println("Error1");
-        } catch (Exception e) {
-            System.out.println("Error2");
-        }
-    }
 
+
+    /*
     public boolean regNewRepair(String description, int bicycleID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -174,7 +218,7 @@ public class Repair {
         }
         return false;
 
-    }
+    }*/
 
     public boolean regFinishRepair(int repairID, String descriptionAfter, int repairCosts, int employeeID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -182,11 +226,19 @@ public class Repair {
         Connection con = connection.getConnection();
 
         //Sjekker at repairID finnes i tabellen
-        if (repairIDExist(repairID) > 0) {
+        if (repairIDExist(repairID) > 0 && employeeIDExist(employeeID) > 0) {
             String mysql = "UPDATE Repair SET date_received = ? , repair_cost = ? , repair_description_after = ? , employee_id = ? WHERE repair_id = ? ";
             PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
             Calendar calendar = Calendar.getInstance();
             java.sql.Date ourJavaDateAfter = new java.sql.Date(calendar.getTime().getTime());
+
+            this.repairID = repairID;
+            this.dateRepaired = ourJavaDateAfter;
+            this.repairedDescription = descriptionAfter;
+            this.repairCosts = repairCosts;
+            this.employeeID = employeeID;
+
+
             try {
                 sentence.setDate(1, ourJavaDateAfter);
                 sentence.setInt(2, repairCosts);
@@ -194,6 +246,20 @@ public class Repair {
                 sentence.setInt(4, employeeID);
                 sentence.setInt(5, repairID);
                 sentence.execute();
+
+                //Legger variablene inn i objektet
+                /*
+                String mysql2 = "SELECT * FROM Repair WHERE repair_id LIKE '" + repairID + "';";
+                PreparedStatement sentence2 = connection.createPreparedStatement(con, mysql2);
+                ResultSet res = sentence2.executeQuery();
+                while(res.next()){
+                    this.dateRepaired = res.getDate();
+                    repairCosts = res.getInt();
+
+
+                }*/
+
+
             } catch (SQLException e) {
                 return false;
             }
@@ -202,7 +268,7 @@ public class Repair {
             }
             return false;
         }
-        System.out.println("ID finnes ikke i databasen");//Ta denne bort senere
+        System.out.println("RepairID or employeeID don't exist");//Ta denne bort senere
         return false;
     }
 
@@ -217,7 +283,28 @@ public class Repair {
             ResultSet res = sentence.executeQuery();
 
             if (res.next() && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
-                System.out.println("ID finnes!"); //Ta bort denne senere
+                System.out.println("RepID finnes!"); //Ta bort denne senere
+                return 1;
+            } else {
+                return -1;
+            }
+        } catch (SQLException e) {
+            return -2;
+        }
+    }
+
+    public int employeeIDExist(int employeeID) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
+
+        String mysql = "SELECT employee_id FROM Employee WHERE employee_id = '" + employeeID + "';";
+        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
+        try {
+            ResultSet res = sentence.executeQuery();
+
+            if (res.next() && cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
+                System.out.println("EmpID finnes!"); //Ta bort denne senere
                 return 1;
             } else {
                 return -1;
@@ -242,8 +329,6 @@ public class Repair {
         try {
             ResultSet res1 = sentence1.executeQuery();
 
-
-
             while (res1.next()) {
                 String ID = res1.getObject(1).toString();
                 String DescrB = res1.getObject(2).toString();
@@ -255,9 +340,6 @@ public class Repair {
                 String Bicycle = res1.getObject(8).toString();
                 theTable += (ID + ", " + DescrB + ", " + DateS + ", " + DateR + ", " + Cost + ", " + DescA + ", " + Employee + ", " + Bicycle + "\n");
             }
-
-
-
 
         } catch (SQLException e) {
             return null;
@@ -271,6 +353,7 @@ public class Repair {
 
     }
 
+    /*
     public int nrRepairs(int bicycleID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -297,26 +380,33 @@ public class Repair {
         }
         System.out.println("ikke Error");
         return antRepairs;
-    }
+    } */
 
 
-    //TestClass-method:
-    //public static void main(String[]args){
-        //Repair repair1 = new Repair(1, "This bike have a broken seat.", 20180605, 345, "Repaired the seat.", 20180608, 1, 4);
-        //Repair repair3 = new Repair(3, "This bike is dangerous!", 20180410, 3, 5);
-        /*
-        System.out.println(repair1.getRepairID());
-        System.out.println(repair1.getDescription());
-        System.out.println(repair1.getDateBroken());
-        System.out.println(repair1.getRepairCosts());
-        System.out.println(repair1.getRepairedDescription());
-        System.out.println(repair1.getDateRepaired());
-        System.out.println(repair1.getEmployeeID());
-        System.out.println(repair1.getBicycleID());
-        System.out.println();
-        System.out.println(repair1.toString());
-        System.out.println();
-        System.out.println(repair3.toString());
-        */
-    //}
+    //TestClass-method: OK
+    /*
+    public static void main(String[]args){
+
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
+
+        //Repair repair1 = new Repair(1, "This bike have a broken seat.", registration_date, 345, "Repaired the seat.", registration_date, 1, 4);
+        //Repair repair3 = new Repair(3, "This bike is dangerous!", registration_date, 3, 5);
+        Repair repair2 = new Repair("Dette er noe dritt", 2);
+        repair2.regNewRepair(repair2);
+
+        System.out.println(repair2.getRepairID());
+        System.out.println(repair2.getDescription());
+        System.out.println(repair2.getDateBroken());
+
+
+        repair2.regFinishRepair(12, "Dette fungerer bedre", 110, 1);
+
+        System.out.println(repair2.getRepairID());
+        System.out.println(repair2.getRepairCosts());
+        System.out.println(repair2.getRepairedDescription());
+        System.out.println(repair2.getDateRepaired());
+        System.out.println(repair2.getEmployeeID());
+        System.out.println(repair2.getBicycleID());
+    }*/
 }

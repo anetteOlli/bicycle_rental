@@ -55,7 +55,7 @@ public class EditBike {
 
             }
         });
-        editButton.addActionListener(new ActionListener() {
+       /* editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Edit Bike");
@@ -75,7 +75,7 @@ public class EditBike {
                     }
                 }
             }
-        });
+        });*/
 
         BikeNR.addListSelectionListener(new ListSelectionListener() {
             @Override
