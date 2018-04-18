@@ -129,7 +129,7 @@ ADD FOREIGN KEY (bicycle_id) REFERENCES Bicycle(bicycle_id),
 ADD FOREIGN KEY (station_id_received) REFERENCES DockingStation(station_id),
 ADD FOREIGN KEY (station_id_delivered) REFERENCES DockingStation(station_id);
 
-INSERT INTO bicycleStatus VALUES('in dock'), ('DBR'), ('lost'), ('need repair'), ('not in dock'), ('not employed');
+INSERT INTO bicycleStatus VALUES('in dock'), ('DBR'), ('lost'), ('need repair'), ('not in dock'), ('in storage');
 
 INSERT INTO Model VALUES('family', 100), ('cargo', 150), ('regular', 100) ;
 
