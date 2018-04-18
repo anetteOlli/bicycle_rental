@@ -8,6 +8,9 @@ import DatabaseHandler.DatabaseConnection;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +29,7 @@ public class BikeStats {
     private JLabel PDate;
     private JLabel DS;
     private JScrollPane scroll;
-    private JPanel panel;
+    public JPanel panel;
     private JLabel Status;
     private JLabel Make;
     private JLabel Cost;
@@ -42,7 +45,7 @@ public class BikeStats {
         ArrayList<BicycleS> array = new ArrayList<>();
         list.setModel(model);
         try {
-            String getInfo = "SELECT bicycle_id, make, b.model, bicycleStatus, registration_date, b.dock_id, totalKM, nr_of_repairs, trips, powerlevel, price, name, ds.station_id FROM Bicycle b LEFT JOIN Model m ON b.model = m.model LEFT JOIN Dock d ON b.dock_id = d.dock_id LEFT JOIN DockingStation ds ON d.station_id = ds.station_id ORDER BY bicycle_id ASC;";
+            String getInfo = "SELECT bicycle_id, make, b.model, bicycleStatus, registration_date, b.dock_id, totalKM, nr_of_repairs, trips, powerlevel, price, name, ds.station_id, price_of_bike FROM Bicycle b LEFT JOIN Model m ON b.model = m.model LEFT JOIN Dock d ON b.dock_id = d.dock_id LEFT JOIN DockingStation ds ON d.station_id = ds.station_id ORDER BY bicycle_id ASC;";
 
             PreparedStatement names = connection.createPreparedStatement(con, getInfo);
             ResultSet res = names.executeQuery();
@@ -79,13 +82,39 @@ public class BikeStats {
                 Cost.setText("Price of bicycle: " + bicycleS.getPriceBicycle());
             }
         });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Bicycle");
+                frame.setContentPane(new BikeMain().bikeMain);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                frame.setExtendedState(frame.MAXIMIZED_BOTH);
+
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Bike Statistics");
+        JFrame frame = new JFrame("Bike Stats");
         frame.setContentPane(new BikeStats().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.setExtendedState(frame.MAXIMIZED_BOTH);
+
+
     }
 }

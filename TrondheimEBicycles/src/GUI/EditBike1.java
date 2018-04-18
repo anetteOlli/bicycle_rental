@@ -1,6 +1,5 @@
 package GUI;
 
-//import Admin_App.ListModel;
 import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
 import Admin_App.*;
@@ -22,10 +21,10 @@ public class EditBike1 {
     JFrame frame = new JFrame("Edit bike");
     JList<BicycleE> list;
     ArrayList<BicycleE> bikeList;
-    ListModel bikeModelList;
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
+    BikeDatabase bd = new BikeDatabase();
 
 
     JScrollPane splitpane;
@@ -42,9 +41,21 @@ public class EditBike1 {
     private JComboBox comboBox2;
     DefaultListModel<BicycleE> model = new DefaultListModel<>();
 
+    public void editStatus() {
+        try {
+            BicycleE bicycleE = list.getSelectedValue();
+            String mySQL = "UPDATE Bicycle SET bicycleStatus='" + comboBox2.getSelectedItem().toString() + "' WHERE bicycle_id=" + bicycleE.getBicycle_id();
+            PreparedStatement update = connection.createPreparedStatement(con, mySQL);
+            update.executeUpdate();
 
+            model.get(list.getSelectedIndex()).setBicycleStatus(comboBox2.getSelectedItem().toString());
 
-    public ArrayList<BicycleE> createTable() {
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+   public ArrayList<BicycleE> createTable() {
         ArrayList<BicycleE> array = new ArrayList<>();
         list.setModel(model);
         try {
@@ -65,13 +76,13 @@ public class EditBike1 {
 
     public EditBike1() {
         createTable();
+        list.setModel(model);
 
 
         comboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 createTable();
-                //for(int i; i < bike.size(); i++){
 
 
                 System.out.println(comboBox1.getSelectedItem().toString());
@@ -89,30 +100,34 @@ public class EditBike1 {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    BicycleE bicycleE = list.getSelectedValue();
-                    String mySQL = "UPDATE Bicycle SET bicycleStatus='" + comboBox2.getSelectedItem().toString() + "' WHERE bicycle_id=" + bicycleE.getBicycle_id();
-                    PreparedStatement update = connection.createPreparedStatement(con, mySQL);
-                    update.executeUpdate();
+                editStatus();
 
-                    model.get(list.getSelectedIndex()).setBicycleStatus(comboBox2.getSelectedItem().toString());
-
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
             }
 
         });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Bicycle");
+                frame.setContentPane(new BikeMain().bikeMain);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                frame.setExtendedState(frame.MAXIMIZED_BOTH);
+
+                
+            }
+        });
     }
 
-
-    public static void main(String[] args) {
-
+        public static void main(String[] args) {
             JFrame frame = new JFrame("Edit Bike Status");
             frame.setContentPane(new EditBike1().panel);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
+            frame.setExtendedState(frame.MAXIMIZED_BOTH);
 
 
     }

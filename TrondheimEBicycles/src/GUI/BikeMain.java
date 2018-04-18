@@ -10,7 +10,7 @@ public class BikeMain {
     private JButton editBike;
     private JButton regBike;
     private JButton regRep;
-    private JButton showStatus;
+    private JButton showStats;
     private JButton HOMEButton;
 
     public BikeMain() {
@@ -24,8 +24,9 @@ public class BikeMain {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-                Object source = e.getSource();
+                frame.setExtendedState(frame.MAXIMIZED_BOTH);
 
+                Object source = e.getSource();
                 if (source instanceof Component) {
                     Component c = (Component) source;
                     Frame frame2 = JOptionPane.getFrameForComponent(c);
@@ -39,14 +40,15 @@ public class BikeMain {
         editBike.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Edit Bike");
+                JFrame frame = new JFrame("Edit Bike Status");
                 frame.setContentPane(new EditBike1().panel);
                 frame.pack();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-                Object source = e.getSource();
+                frame.setExtendedState(frame.MAXIMIZED_BOTH);
 
+                Object source = e.getSource();
                 if (source instanceof Component) {
                     Component c = (Component) source;
                     Frame frame2 = JOptionPane.getFrameForComponent(c);
@@ -58,17 +60,18 @@ public class BikeMain {
             }
         });
 
-        showStatus.addActionListener(new ActionListener() {
+        showStats.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Bike Status");
-                frame.setContentPane(new ShowBikeStatus().showBikeStatus);
+                JFrame frame = new JFrame("Bike Stats");
+                frame.setContentPane(new BikeStats().panel);
                 frame.pack();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-                Object source = e.getSource();
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
+                Object source = e.getSource();
                 if (source instanceof Component) {
                     Component c = (Component) source;
                     Frame frame2 = JOptionPane.getFrameForComponent(c);
@@ -88,5 +91,6 @@ public class BikeMain {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setExtendedState(frame.MAXIMIZED_BOTH);
     }
 }

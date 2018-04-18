@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 
 import DatabaseHandler.*;
+import GUI.EditBike1;
 import GUI.RegBicycle;
 
 import javax.swing.*;
@@ -32,7 +33,6 @@ public class BikeDatabase {
             regBicycle.setDate(3, registration_date);
             regBicycle.setString(4, bicycleStatus);
             regBicycle.setDouble(5, price_of_bike);
-            //RegNewBicycle.executeUpdate();
             for (int i = 0; i < nr; i++){
                 regBicycle.addBatch();
             }
@@ -41,28 +41,6 @@ public class BikeDatabase {
 
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-    public void RegBikeConfirm () {
-        ArrayList<Bicycle> bicycles = new ArrayList<>();
-        DefaultListModel<Bicycle> model = new DefaultListModel<>();
-        try {
-            RegBicycle regBicycle = new RegBicycle();
-            String mySQL = "SELECT * FROM Bicycle ORDER BY (bicycle_id) DESC LIMIT ?";
-            PreparedStatement SQL = connection.createPreparedStatement(con, mySQL);
-            System.out.println("hei ho" + regBicycle.getCurrentValue());
-            SQL.setInt(1, regBicycle.getCurrentValue());
-            ResultSet res = SQL.executeQuery();
-            while (res.next()) {
-                Bicycle bike = new Bicycle(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"));
-                model.addElement(bike);
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -82,6 +60,25 @@ public class BikeDatabase {
             e.printStackTrace();
         }
     }
+
+   public ArrayList editBike(String sort) {
+        try {
+
+            String getInfo = "SELECT bicycle_id, make, model, bicycleStatus, registration_date, dock_id  FROM Bicycle ORDER BY ?;";
+            PreparedStatement names = connection.createPreparedStatement(con, getInfo);
+            names.setString(1, sort);
+            ArrayList<BicycleE> bicycleE = new ArrayList<>();
+            ResultSet res = names.executeQuery();
+            while (res.next()) {
+                BicycleE bike = new BicycleE(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
+
 
 
 

@@ -30,8 +30,10 @@ public class RegBicycle {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-                Object source = e.getSource();
+                frame.setExtendedState(frame.MAXIMIZED_BOTH);
 
+                //Close current frame
+                Object source = e.getSource();
                 if (source instanceof Component) {
                     Component c = (Component) source;
                     Frame frame2 = JOptionPane.getFrameForComponent(c);
@@ -47,24 +49,21 @@ public class RegBicycle {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                BikeDatabase database = new BikeDatabase();
                 currentValue = (Integer)spinner1.getValue();
-                if(value == 0) {
-                    value = currentValue;
-                    System.out.println("value" + value);
-                }
-                System.out.println(getCurrentValue());
+
                 String make = textField1.getText();
                 String model = comboBox1.getSelectedItem().toString();
                 double price = Double.parseDouble(textField2.getText());
-                database.regBicycle(make, model, "not employed", price, currentValue);
-                RegBikeConfirm confirm = new RegBikeConfirm();
-                JFrame frame = new JFrame("Bikes Registered");
+                database.regBicycle(make, model, "in storage", price, currentValue);
+                JFrame frame = new JFrame("Registered Bikes");
                 frame.setContentPane(new RegBikeConfirm().regBikeConfirm);
                 frame.pack();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+                frame.setExtendedState(frame.MAXIMIZED_BOTH);
+
+                //Close current frame
                 Object source = e.getSource();
                 if (source instanceof Component) {
                     Component c = (Component) source;
@@ -89,5 +88,6 @@ public class RegBicycle {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.setExtendedState(frame.MAXIMIZED_BOTH);
     }
 }

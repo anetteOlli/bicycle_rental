@@ -9,14 +9,16 @@ public class Bicycle {
     public String bicycleStatus;
     public Date registration_date;
     public int dock_id;
+    public double price;
 
-    public Bicycle(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id) {
+    public Bicycle(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id, double price) {
         this.bicycle_id = bicycle_id;
         this.make = make;
         this.modell = modell;
         this.bicycleStatus = bicycleStatus;
         this.registration_date = registration_date;
         this.dock_id = dock_id;
+        this.price = price;
     }
 
     public int getBicycle_id() {
@@ -65,6 +67,14 @@ public class Bicycle {
 
     public void setDock_id(int dock_id) {
         this.dock_id = dock_id;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
