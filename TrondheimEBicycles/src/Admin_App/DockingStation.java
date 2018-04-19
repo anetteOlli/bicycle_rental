@@ -4,11 +4,8 @@ import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
 
 
+import java.sql.*;
 import java.util.ArrayList;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * This class handles the transactions done to both Dock and DockingStation
@@ -33,18 +30,20 @@ public class DockingStation {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         //tries to turn off autocommit
         if(cleaner.setAutoCommit(con, false)){
+            System.out.println("klarte å sette autocomit");
             //the code below will check that there is room for more docks at the given dockingstation
-            int oldNumberOfDocks = getNumbersOfDocks(dockingStationID);
-            int newNumberOfDocks = oldNumberOfDocks +1;
             //checks that the newDockID doesn't exceeds the dockingstation's capacity
-            if(newNumberOfDocks <= getDockingStationCapacity(dockingStationID)){
+            int dockingStationCapacity = getDockingStationCapacity(dockingStationID);
+            if(numberOfDocks <= dockingStationCapacity){
                 //the dock is initially set to available, as it is assumed that any dock registered to the system
                 //will be available
                   String mysql ="INSERT INTO Dock (dock_id, station_id, isAvailable) VALUES (DEFAULT,?, true)";
                   PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
                   try{
                       sentence.setInt(1,dockingStationID);
-                      for(int i = 0; i <= numberOfDocks; i++){
+
+                      for(int i = 0; i < numberOfDocks; i++){
+                          System.out.println("executing updates");
                           sentence.execute();
                       }
                       if(cleaner.closeSentence(sentence)) {
@@ -193,33 +192,36 @@ public class DockingStation {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
         DatabaseCleanup cleaner = new DatabaseCleanup();
-        if(cleaner.setAutoCommit(con, false)) {
             String mysql = "INSERT INTO DockingStation (name, active_status, capacity, longitude, latitude, powerUsage) VALUES (?, TRUE, ?, ?, ?, 0)";
             try {
-                PreparedStatement sentence = con.prepareStatement(mysql, PreparedStatement.RETURN_GENERATED_KEYS);
+                PreparedStatement sentence = con.prepareStatement(mysql);
                 sentence.setString(1, lowName.trim());
                 sentence.setInt(2, capacity);
                 sentence.setDouble(3, longitude);
                 sentence.setDouble(4, latitude);
                 System.out.println("reg DockStation: kom seg hit 3");
                 sentence.executeUpdate();
-                ResultSet rs = sentence.getGeneratedKeys();
-                if (rs.next()) {
+
+                String sql = "SELECT MAX(station_id) FROM DockingStation WHERE name=?";
+                PreparedStatement query = connection.createPreparedStatement(con, sql);
+                query.setString(1,lowName);
+                ResultSet rs= query.executeQuery();
+                if(rs.next()){
                     dockStationID = rs.getInt(1);
                 }
-                System.out.println("reg DockStation: kom seg hit 4");
+                System.out.println("reg DockStation: dockingstationID: " + dockStationID);
                 if(dockStationID > 0){
                     registerDock(dockStationID, capacity);
                 }
-                if(cleaner.commit(con)){
-                    if(cleaner.closeSentence(sentence) && cleaner.closeResult(rs) && cleaner.closeConnection(con)){
-                        return dockStationID;
-                    }
+
+                if(cleaner.closeSentence(sentence) && cleaner.closeResult(rs) && cleaner.closeConnection(con)){
+                    return dockStationID;
                 }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
+
         return -1;
     }
 

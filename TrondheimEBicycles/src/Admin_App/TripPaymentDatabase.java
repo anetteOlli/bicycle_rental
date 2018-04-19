@@ -9,9 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TripPaymentDatabase {
-    static DatabaseCleanup cleaner = new DatabaseCleanup();
-    static DatabaseConnection connection = new DatabaseConnection();
-    private static Connection con = connection.getConnection();
     private static final double ANTALL_TIMER = 1;
     private static final double DEPOSIT = 150;
     private boolean plass;
@@ -21,7 +18,9 @@ public class TripPaymentDatabase {
 
     //Method that starts a new trip
     public int startNewTrip(TripPayment newTripPayment) {
-        connection.getConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         if(paymentCardDatabase.checkBalance(newTripPayment.getCustomerID())>sumPayment(newTripPayment)){
             sufficientBalance = true;
         }
@@ -91,6 +90,9 @@ public class TripPaymentDatabase {
     }
 
     public boolean authorizePayment(TripPayment newTripPayment) {
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
         String update = "UPDATE PaymentCard SET balance = (balance-?) WHERE cardNumber = (SELECT MAX(cardNumber) FROM PaymentCard WHERE cust_id=?;)";
         PreparedStatement authorizeStatement = connection.createPreparedStatement(con, update);
         System.out.println("lagd preparestatement for authorize");
@@ -120,6 +122,9 @@ public class TripPaymentDatabase {
 
 
     public int findAvailableBike(int dockingstation) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int bicycle_id = -2;
         String query = "SELECT bicycle_id FROM Bicycle b JOIN Dock d ON b.dock_id=d.dock_id JOIN DockingStation ds ON d.station_id=ds.station_id WHERE ds.station_id = ? AND b.bicycleStatus = 'in dock';";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -139,6 +144,9 @@ public class TripPaymentDatabase {
     }
 
     public int findDockID(int bicycle_id) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int dock_id = -1;
         String query = "SELECT dock_id FROM Bicycle WHERE bicycle_id=?";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -157,6 +165,9 @@ public class TripPaymentDatabase {
     }
 
     public boolean setDockAvailable(TripPayment newTripPayment) {
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
         String update = "UPDATE Dock SET isAvailable=1 WHERE dock_id=(SELECT dock_id FROM Bicycle WHERE bicycle_id=?);";
         PreparedStatement updateBicycleStatus = connection.createPreparedStatement(con, update);
         System.out.println("lagd preparestatement for setdockavailable");
@@ -177,6 +188,9 @@ public class TripPaymentDatabase {
     }
 
     public boolean setBicycleStatusUnavailable(TripPayment newTripPayment) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         String update = "UPDATE Bicycle SET bicycleStatus='not in dock', dock_id = NULL WHERE bicycle_id=?;";
         PreparedStatement updateBicycleStatus = connection.createPreparedStatement(con, update);
         System.out.println("setBicycleStatusUnAvailable preparedstatement");
@@ -201,6 +215,9 @@ public class TripPaymentDatabase {
 
 
     public boolean endTrip(ReTripPayment newReTripPayment) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         connection.getConnection();
         plass = skjekkPlass(newReTripPayment.getStation_id_delivered());
         if (plass) {
@@ -249,6 +266,9 @@ public class TripPaymentDatabase {
     }
 
     public int getBikeID(ReTripPayment newReTripPayment){
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int bikeID;
         String query = "SELECT bicycle_id FROM TripPayment WHERE trip_id=?";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -267,6 +287,9 @@ public class TripPaymentDatabase {
     }
 
     public int getCustID(ReTripPayment newReTripPayment){
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int custID;
         String query = "SELECT cust_id FROM TripPayment WHERE trip_id=?";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -284,6 +307,9 @@ public class TripPaymentDatabase {
         return -1;
     }
     public boolean assignBicycletoDock(ReTripPayment newReTripPayment) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         String update = "UPDATE Bicycle SET dock_id=(SELECT MIN(d.dock_id) FROM Dock d JOIN DockingStation ds ON d.station_id=ds.station_id WHERE ds.station_id=? AND d.isAvailable=1) WHERE bicycle_id=(SELECT bicycle_id FROM TripPayment WHERE trip_id=?);";
         PreparedStatement sentence = connection.createPreparedStatement(con, update);
         System.out.println("assign prepared");
@@ -310,8 +336,11 @@ public class TripPaymentDatabase {
     }
 
     public boolean skjekkPlass(int dockingstation) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int plasser;
-        String query = "SELECT (capacity-COUNT(dock_id)) FROM DockingStation ds JOIN Dock d ON ds.station_id=d.station_id WHERE ds.station_id=?;";
+        String query = "SELECT COUNT(*) FROM Dock NATURAL JOIN DockingStation  WHERE Dock.isAvailable=TRUE && Dock.station_id=?;";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
         try {
             sentence.setInt(1, dockingstation);
@@ -331,26 +360,23 @@ public class TripPaymentDatabase {
     }
 
     public boolean setBicycleStatusAvailable(ReTripPayment newReTripPayment) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         String update = "UPDATE Bicycle SET bicycleStatus='in dock' WHERE bicycle_id=(SELECT bicycle_id FROM TripPayment WHERE trip_id=?);";
         PreparedStatement updateBicycleStatus = connection.createPreparedStatement(con, update);
         System.out.println("setBicycleStatusAvailable preparedStatement");
         try {
-            cleaner.setAutoCommit(con, false);
+
             updateBicycleStatus.setInt(1, newReTripPayment.getTrip_id());
             System.out.println("setBicycleStatusAvailable--- Trip_id: " + newReTripPayment.getTrip_id());
-            if (updateBicycleStatus.executeUpdate() != 0) {
-                cleaner.commit(con);
-                System.out.println("setBicycleStatusAvailable gokjent");
-                return true;
-            } else {
-                cleaner.rollback(con);
-                System.out.println("setBicycleStatusAvailable rollback");
-                return false;
-            }
+            updateBicycleStatus.execute();
+            System.out.println("setBicycleStatusAvailable gokjent");
         } catch (SQLException e) {
             System.out.println("setBicycleStatusAvailable SQL-feil" + e.getMessage());
             return false;
         }
+        return true;
     }
 
 
@@ -367,6 +393,9 @@ public class TripPaymentDatabase {
     }
 
     public double sumPayment(TripPayment newTripPayment) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         double price = -1;
         String query = "SELECT price FROM Model WHERE model=(SELECT model FROM Bicycle WHERE bicycle_id=?)";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -387,6 +416,9 @@ public class TripPaymentDatabase {
 
 
     public int findTripID(TripPayment start) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int trip_id = -1;
         String query = "SELECT trip_id FROM TripPayment WHERE cust_id =? AND bicycle_id = ? AND time_delivered IS NULL";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -406,6 +438,9 @@ public class TripPaymentDatabase {
     }
 
     public int findTripIDfromCustomer(int cust_id) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         int trip_id = -1;
         String query = "SELECT trip_id FROM TripPayment WHERE cust_id =? AND time_delivered IS NULL";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
@@ -424,6 +459,9 @@ public class TripPaymentDatabase {
     }
 
     public boolean setDockUnavailable(ReTripPayment newReTripPayment) {
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         String update = "UPDATE Dock SET isAvailable=0 WHERE dock_id = (SELECT b.dock_id FROM Bicycle b JOIN TripPayment t ON b.bicycle_id=t.bicycle_id WHERE t.trip_id=?);";
         PreparedStatement updateDockStatus = connection.createPreparedStatement(con, update);
         System.out.println("lagd preparestatement for setdockunavailable");
@@ -446,6 +484,9 @@ public class TripPaymentDatabase {
         }
     }
     public boolean fixDocks(){
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         try{
             for(int i=1; i<1000; i++) {
                 String update = "UPDATE Dock SET isAvailable=1 WHERE dock_id=" + i+";";
@@ -466,6 +507,9 @@ public class TripPaymentDatabase {
     }
 
     public boolean fixBicycles(){
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection con = connection.getConnection();
         try{
             for(int i=1; i<26; i++) {
                 String update = "UPDATE Bicycle SET dock_id=NULL WHERE bicycleStatus != 'in dock' AND bicycle_id=?";

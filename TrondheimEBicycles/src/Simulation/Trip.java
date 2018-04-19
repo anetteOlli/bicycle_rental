@@ -13,18 +13,18 @@ public class Trip extends Thread{
     private int fromDockstation;
     private int toDockStation;
     private int bike = -1;
-    private double DURATION = 30;
-    private int time;
+    private double duration;
+    private int time = 0;
 
 
 
 
 
-    public Trip(int customer, int fromDockStation, int toDockStation, int time){
+    public Trip(int customer, int fromDockStation, int toDockStation, double duration){
         this.customer = customer;
         this.fromDockstation = fromDockStation;
         this.toDockStation = toDockStation;
-        this.time = time;
+        this.duration = duration;
     }
 
     @Override
@@ -32,6 +32,7 @@ public class Trip extends Thread{
         TripPaymentDatabase database = new TripPaymentDatabase();
         DockingStation dockingStation = new DockingStation();
         bike = database.findAvailableBike(fromDockstation);
+        if(bike > 0){
         BikeDatabase bikeDatabase = new BikeDatabase();
         TripPayment start = new TripPayment(customer, bike, fromDockstation);
         double fromLatitude= -1;
@@ -40,22 +41,22 @@ public class Trip extends Thread{
         double toLongtitude = -1;
         double deltaLatitude = -1;
         double deltaLongitude = -1;
-        if(database.startNewTrip(start) != 0){
+        if(database.startNewTrip(start) != 0) {
             double[] fromLocation = dockingStation.getDockingStationLocation(fromDockstation);
             double[] toLocation = dockingStation.getDockingStationLocation(toDockStation);
-            if(fromLocation != null && toLocation != null && fromDockstation != toDockStation){
+            if (fromLocation != null && toLocation != null && fromDockstation != toDockStation) {
                 fromLatitude = fromLocation[0];
                 fromLongitude = fromLocation[1];
                 toLatitude = toLocation[0];
                 toLongtitude = toLocation[1];
-                deltaLatitude = (toLatitude - fromLatitude)/DURATION;
-                deltaLongitude = (toLongtitude - fromLongitude)/DURATION;
+                deltaLatitude = (toLatitude - fromLatitude) / duration;
+                deltaLongitude = (toLongtitude - fromLongitude) / duration;
 
 
                 //starts on moving bikecycle around
-                while (time < DURATION) {
+                while (time <= duration) {
                     bikeDatabase.setLocation(bike, fromLatitude, fromLongitude);
-                    System.out.println("latitude: " + fromLatitude+ ", longitude: "+ fromLongitude+ ", bikeID: " + bike);
+                    System.out.println("latitude: " + fromLatitude + ", longitude: " + fromLongitude + ", bikeID: " + bike);
                     fromLatitude += deltaLatitude;
                     fromLongitude += deltaLongitude;
                     time++;
@@ -66,19 +67,21 @@ public class Trip extends Thread{
                     }
                 }
                 //done cycling over to the other station
-                ReTripPayment end = new ReTripPayment(database.findTripIDfromCustomer(customer),toDockStation, 10);
+                ReTripPayment end = new ReTripPayment(database.findTripIDfromCustomer(customer), toDockStation, 10);
+                database.endTrip(end);
 
-            //if the location is missing or we are starting and going to the same dockingstation,
+                //if the location is missing or we are starting and going to the same dockingstation,
                 //a default trip is set.
-            }else{
+            } else {
 
             }
+        }
         }
 
     }
 
     public static void main(String[] args) {
-        (new Trip(5540, 2,5,10)).start();
+        (new Trip(5540, 1,17,2)).start();
     }
 
 }
