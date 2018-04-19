@@ -40,7 +40,7 @@ public class Trip extends Thread{
         double toLongtitude = -1;
         double deltaLatitude = -1;
         double deltaLongitude = -1;
-        if(database.startNewTrip(start)){
+        if(database.startNewTrip(start) != 0){
             double[] fromLocation = dockingStation.getDockingStationLocation(fromDockstation);
             double[] toLocation = dockingStation.getDockingStationLocation(toDockStation);
             if(fromLocation != null && toLocation != null && fromDockstation != toDockStation){

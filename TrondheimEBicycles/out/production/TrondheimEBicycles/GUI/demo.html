@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java-Buddy: Google Maps</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script async defer src = "src=https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ03xYdwKId_uPT5oaCOxNZaKvI2nQR9M&callback=initMap"></script>
+    <style>#mapcanvas { height: 600px; width: 100%}</style>
+
+
+
+</head>
+<body>
+<div id="mapcanvas">
+
+    <script type="text/javascript">
+        document.map = new google.maps.Map(document.getElementById("mapcanvas"));
+        var latlng = new google.maps.LatLng(63.43049, 10.39506);
+        var Options = {
+            zoom: 15,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("mapcanvas"), Options);
+
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(63.43049, 10.39506),
+            map: map,
+            draggable: false,
+            title: "",
+            autoPan: true
+        });
+        var infobulle = new google.maps.InfoWindow({
+            content: "ddddd"
+        });
+        google.maps.event.addListener(marker, 'mouseover', function() {
+            infobulle.open(map, marker);
+        });
+
+        google.maps.event.addListener(map, 'click', function(e) {
+            marker.setPosition(e.latLng);
+            map.setCenter(e.latLng);
+            window.alert("location: " + e.latLng);
+        });
+
+        document.helloWorld = function(){
+            window.alert("hello world");
+        }
+
+
+        document.goToLocation = function(x, y) {
+            alert("goToLocation, x: " + x +", y:" + y);
+            var latLng = new google.maps.LatLng(x, y);
+            marker.setPosition(latLng);
+            map.setCenter(latLng);
+        }
+
+        document.myFunction =  function(x, y) {
+
+            new google.maps.Marker({
+                position: new google.maps.LatLng(x, y),
+                map: map,
+                draggable: true,
+                title: "",
+                autoPan: true
+            });
+        }
+    </script>
+
+
+</div>
+</body>
+</html>

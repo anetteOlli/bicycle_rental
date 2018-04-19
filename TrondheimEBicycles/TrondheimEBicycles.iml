@@ -26,5 +26,11 @@
     <orderEntry type="library" name="javax.mail" level="project" />
     <orderEntry type="library" name="jcommon-1.0.23" level="project" />
     <orderEntry type="library" name="jfreechart-1.0.19" level="project" />
+    <orderEntry type="library" name="activation1" level="project" />
+    <orderEntry type="library" name="jcommon-1.0.231" level="project" />
+    <orderEntry type="library" name="jfreechart-1.0.191" level="project" />
+    <orderEntry type="library" name="junit-4.12" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.45-bin1" level="project" />
+    <orderEntry type="library" name="javax.mail1" level="project" />
   </component>
 </module>
