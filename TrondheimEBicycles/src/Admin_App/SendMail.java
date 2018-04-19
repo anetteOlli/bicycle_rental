@@ -2,7 +2,7 @@ package Admin_App;
 
 import javax.mail.*;
 import javax.mail.internet.*;
-import java.util.*;
+import java.util.Properties;
 
 public class SendMail {
 

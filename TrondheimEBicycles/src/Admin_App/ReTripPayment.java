@@ -1,15 +1,17 @@
 package Admin_App;
 
-import java.sql.Time;
+//import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalTime;
+import java.util.Calendar;
 
 public class ReTripPayment {
     private int trip_id;
     private LocalTime time_delivered;
     private int station_id_delivered;
     private int tripKM; //antall km turen varte, hentet fra gps simulator
-    private static final int ANTALL_TIMER = 3;
-    private static final int TIMEPRIS = 150;
+    //private static final int ANTALL_TIMER = 3;
+    //private static final int TIMEPRIS = 150;
 
     //Når sykkel leveres(etter)
     public ReTripPayment(int trip_id, int station_id_delivered, int tripKM){
@@ -22,8 +24,10 @@ public class ReTripPayment {
         return trip_id;
     }
 
-    public Time getTime_delivered() {
-        return java.sql.Time.valueOf(time_delivered);
+    public Timestamp getTime_delivered() {
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Timestamp tripDate = new java.sql.Timestamp(calendar.getTime().getTime());
+        return tripDate;
     }
 
     public int getTripKM() {
@@ -36,7 +40,7 @@ public class ReTripPayment {
     }
 
 
-    public int sumPayment() {
+   /* public int sumPayment() {
         return TIMEPRIS * ANTALL_TIMER; // hente timepris fra bicycle
     }
 
@@ -45,7 +49,7 @@ public class ReTripPayment {
     }
 
 
-   /* public long findTripTime(){
+    public long findTripTime(){
         return long noOfHours = ChronoUnit.HOURS.between(time_received, LocalTime.now());
     }
 

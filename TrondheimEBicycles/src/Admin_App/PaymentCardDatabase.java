@@ -144,12 +144,12 @@ public class PaymentCardDatabase {
     }
 
     /* Adds funds to the balance of the payment card associated with a customer */
-    public boolean addFunds(int cust_id, int amount){
+    public boolean addFunds(int cust_id, double amount){
         try{
             cleaner.setAutoCommit(con, false);
             String updateSql = "UPDATE PaymentCard SET balance = balance + ? WHERE cust_id = ? AND active_status = 1";
             PreparedStatement update = connection.createPreparedStatement(con, updateSql);
-            update.setInt(1, amount);
+            update.setDouble(1, amount);
             update.setInt(2, cust_id);
             if(update.executeUpdate() != 0){
                 cleaner.commit(con);
@@ -171,12 +171,12 @@ public class PaymentCardDatabase {
     }
 
     /* Deducts funds from the balance of a payment card associated with a customer */
-    public boolean deductFunds (int cust_id, int amount){
+    public boolean deductFunds (int cust_id, double amount){
         try{
             cleaner.setAutoCommit(con, false);
             String updateSql = "UPDATE PaymentCard SET balance = balance - ? WHERE cust_id = ? AND active_status = 1";
             PreparedStatement update = connection.createPreparedStatement(con, updateSql);
-            update.setInt(1, amount);
+            update.setDouble(1, amount);
             update.setInt(2, cust_id);
             if(update.executeUpdate() != 0){
                 cleaner.commit(con);

@@ -1,70 +1,97 @@
 package Admin_App;
 
-import java.sql.*;
+import DatabaseHandler.DatabaseCleanup;
+import DatabaseHandler.DatabaseConnection;
 
-import DatabaseHandler.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class TripPaymentDatabase {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
-    private static final int ANTALL_TIMER = 1;
-    private String make;
-    private Date production_date;
-    private String bicycleStatus;
+    private static final double ANTALL_TIMER = 1;
+    private static final double DEPOSIT = 150;
     private boolean plass;
-    private boolean betalt;
+    private boolean paid;
+    private boolean sufficientBalance = false;
+    PaymentCardDatabase paymentCardDatabase = new PaymentCardDatabase();
 
     //Method that starts a new trip
     public boolean startNewTrip(TripPayment newTripPayment) {
-        betalt = authorizePayment(newTripPayment);
-        if (betalt) {
-            //inserts the information from a TripPayment-object into the database
-            String insert = "INSERT INTO TripPayment(trip_id, cust_id, bicycle_id, time_received, station_id_received, sumPayment) VALUES(DEFAULT, ?, ?, ?, ?, ?);";
-            PreparedStatement startNewTrip = connection.createPreparedStatement(con, insert);
-            System.out.println("lagd første PreparedStatement");
-            try {
-                cleaner.setAutoCommit(con, false);
 
-                startNewTrip.setInt(1, newTripPayment.getCustomerID());
-                startNewTrip.setInt(2, newTripPayment.getBikeID());
-                startNewTrip.setTime(3, newTripPayment.getTime_received());
-                startNewTrip.setInt(4, newTripPayment.getStation_id_received());
-                startNewTrip.setInt(5, sumPayment(newTripPayment));
-                System.out.println("Cust: " + newTripPayment.getCustomerID() + " Bike: " + newTripPayment.getBikeID() + " Time: " + newTripPayment.getTime_received() + " Station: " + newTripPayment.getStation_id_received());
+        if(paymentCardDatabase.checkBalance(newTripPayment.getCustomerID())>sumPayment(newTripPayment)){
+            sufficientBalance = true;
+        }
 
 
-                if (startNewTrip.executeUpdate() != 0) {
-                    setDockAvailable(newTripPayment);
-                    System.out.println("Hent sykkel på dock: " + findDockID(newTripPayment.getBikeID()));
-                    setBicycleStatusUnavailable(newTripPayment);
-                    cleaner.commit(con);
-                    System.out.println("startTrip gokjent");
-                    return true;
+        if (sufficientBalance) {
+            if (findAvailableBike(newTripPayment.getStation_id_received()) > 0) {
+                if (setDockAvailable(newTripPayment)) {
+                    if (setBicycleStatusUnavailable(newTripPayment)) {
+                        String insert = "INSERT INTO TripPayment(trip_id, cust_id, bicycle_id, time_received, station_id_received, sumPayment) VALUES(DEFAULT, ?, ?, ?, ?, ?);";
+                        PreparedStatement startNewTrip = connection.createPreparedStatement(con, insert);
+                        System.out.println("lagd første PreparedStatement");
+                        try {
+                            cleaner.setAutoCommit(con, false);
+
+                            startNewTrip.setInt(1, newTripPayment.getCustomerID());
+                            startNewTrip.setInt(2, newTripPayment.getBikeID());
+                            startNewTrip.setTimestamp(3, newTripPayment.getTime_received());
+                            startNewTrip.setInt(4, newTripPayment.getStation_id_received());
+                            startNewTrip.setDouble(5, sumPayment(newTripPayment));
+                            System.out.println("Cust: " + newTripPayment.getCustomerID() + " Bike: " + newTripPayment.getBikeID() + " Time: " + newTripPayment.getTime_received() + " Station: " + newTripPayment.getStation_id_received());
+
+
+                            if (startNewTrip.executeUpdate() != 0) {
+                                //setDockAvailable(newTripPayment);
+                                //setBicycleStatusUnavailable(newTripPayment);
+                                paid = paymentCardDatabase.deductFunds(newTripPayment.getCustomerID(), sumPayment(newTripPayment) + DEPOSIT);
+                                if (paid) {
+                                    cleaner.commit(con);
+                                    System.out.println("startTrip godkjent");
+                                    return true;
+                                } else {
+                                    System.out.println("Payment failed");
+                                    return false;
+                                }
+                            } else {
+                                cleaner.rollback(con);
+                                System.out.println("Ruller tilbake startTrip");
+                                return false;
+                            }
+                        } catch (SQLException e) {
+                            System.out.println("SQL-feil i startTrip" + e.getMessage());
+                            return false;
+                        }
+                    } else {
+                        System.out.println("Didnt manage to set bikestatus to unavailable");
+                        return false;
+                    }
                 } else {
-                    cleaner.rollback(con);
-                    System.out.println("Ruller tilbake startTrip");
+                    System.out.println("didnt manage to set dock to available");
                     return false;
                 }
-            } catch (SQLException e) {
-                System.out.println("SQL-feil i startTrip" + e.getMessage());
+            } else {
+                System.out.println("Didnt find a bike");
                 return false;
             }
-        }
-        else{
-            System.out.println("Noe gikk galt med betaling");
+        } else {
+            System.out.println("Not enough funds to continue");
             return false;
         }
     }
 
-    public boolean authorizePayment(TripPayment newTripPayment){
-        String update = "UPDATE PaymentCard SET balance = (balance-?) WHERE cardNumber=(SELECT MAX(cardNumber) FROM cardNumber WHERE cust_id=?);";
+    public boolean authorizePayment(TripPayment newTripPayment) {
+        String update = "UPDATE PaymentCard SET balance = (balance-?) WHERE cardNumber = (SELECT MAX(cardNumber) FROM PaymentCard WHERE cust_id=?;)";
         PreparedStatement authorizeStatement = connection.createPreparedStatement(con, update);
         System.out.println("lagd preparestatement for authorize");
         try {
             cleaner.setAutoCommit(con, false);
             cleaner.setSerializable(con);
-            authorizeStatement.setInt(1, sumPayment(newTripPayment));
+            authorizeStatement.setDouble(1, sumPayment(newTripPayment));
             authorizeStatement.setInt(2, newTripPayment.getCustomerID());
             System.out.println("authorize --- sumPayment: " + sumPayment(newTripPayment) + " Customer: " + newTripPayment.getCustomerID());
             if (authorizeStatement.executeUpdate() != 0) {
@@ -104,6 +131,7 @@ public class TripPaymentDatabase {
             return -1;
         }
     }
+
     public int findDockID(int bicycle_id) {
         int dock_id = -1;
         String query = "SELECT dock_id FROM Bicycle WHERE bicycle_id=?";
@@ -127,15 +155,12 @@ public class TripPaymentDatabase {
         PreparedStatement updateBicycleStatus = connection.createPreparedStatement(con, update);
         System.out.println("lagd preparestatement for setdockavailable");
         try {
-            cleaner.setAutoCommit(con, false);
             updateBicycleStatus.setInt(1, newTripPayment.getBikeID());
             System.out.println("setDockAvailable--- BikeID: " + newTripPayment.getBikeID());
             if (updateBicycleStatus.executeUpdate() != 0) {
-                cleaner.commit(con);
                 System.out.println("setdockavailable godkjent");
                 return true;
             } else {
-                cleaner.rollback(con);
                 System.out.println("setdockavailable rollback");
                 return false;
             }
@@ -150,15 +175,15 @@ public class TripPaymentDatabase {
         PreparedStatement updateBicycleStatus = connection.createPreparedStatement(con, update);
         System.out.println("setBicycleStatusUnAvailable preparedstatement");
         try {
-            cleaner.setAutoCommit(con, false);
+
             updateBicycleStatus.setInt(1, newTripPayment.getBikeID());
             System.out.println("SetBicycleStatusUnavailable BikeID: " + newTripPayment.getBikeID());
             if (updateBicycleStatus.executeUpdate() != 0) {
-                cleaner.commit(con);
+
                 System.out.println("setBicycleStatusUnavailable() godkjent");
                 return true;
             } else {
-                cleaner.rollback(con);
+
                 System.out.println("setBicycleStatusUnavailable() rollback");
                 return false;
             }
@@ -172,6 +197,7 @@ public class TripPaymentDatabase {
     public boolean endTrip(ReTripPayment newReTripPayment) {
         plass = skjekkPlass(newReTripPayment.getStation_id_delivered());
         if (plass) {
+            BikeDatabase bike = new BikeDatabase();
 
 
             String insert2 = "UPDATE TripPayment SET time_delivered=?, station_id_delivered=?, tripKM=? WHERE trip_id=?;";
@@ -181,7 +207,7 @@ public class TripPaymentDatabase {
             try {
                 cleaner.setAutoCommit(con, false);
 
-                endTrip.setTime(1, newReTripPayment.getTime_delivered());
+                endTrip.setTimestamp(1, newReTripPayment.getTime_delivered());
                 endTrip.setInt(2, newReTripPayment.getStation_id_delivered());
                 endTrip.setInt(3, newReTripPayment.getTripKM());
                 endTrip.setInt(4, newReTripPayment.getTrip_id());
@@ -191,6 +217,9 @@ public class TripPaymentDatabase {
                     setBicycleStatusAvailable(newReTripPayment);
                     assignBicycletoDock(newReTripPayment);
                     setDockUnavailable(newReTripPayment);
+                    bike.UpdateKM(getBikeID(newReTripPayment));
+                    bike.RegTrips(getBikeID(newReTripPayment));
+                    paymentCardDatabase.addFunds(getCustID(newReTripPayment), DEPOSIT);
                     cleaner.commit(con);
                     System.out.println("endTrip() godkjent");
                     return true;
@@ -208,6 +237,41 @@ public class TripPaymentDatabase {
         return false;
     }
 
+    public int getBikeID(ReTripPayment newReTripPayment){
+        int bikeID;
+        String query = "SELECT bicycle_id FROM TripPayment WHERE trip_id=?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, query);
+        System.out.println("getBikeID preparedstatement");
+        try{
+            sentence.setInt(1, newReTripPayment.getTrip_id());
+            ResultSet rs = sentence.executeQuery();
+            if(rs.next()) {
+                bikeID = rs.getInt(1);
+                return bikeID;
+            }
+        }catch(SQLException e){
+            e.getMessage();
+        }
+        return -1;
+    }
+
+    public int getCustID(ReTripPayment newReTripPayment){
+        int custID;
+        String query = "SELECT cust_id FROM TripPayment WHERE trip_id=?";
+        PreparedStatement sentence = connection.createPreparedStatement(con, query);
+        System.out.println("getBikeID preparedstatement");
+        try{
+            sentence.setInt(1, newReTripPayment.getTrip_id());
+            ResultSet rs = sentence.executeQuery();
+            if(rs.next()) {
+                custID = rs.getInt(1);
+                return custID;
+            }
+        }catch(SQLException e){
+            e.getMessage();
+        }
+        return -1;
+    }
     public boolean assignBicycletoDock(ReTripPayment newReTripPayment) {
         String update = "UPDATE Bicycle SET dock_id=(SELECT MIN(d.dock_id) FROM Dock d JOIN DockingStation ds ON d.station_id=ds.station_id WHERE ds.station_id=? AND d.isAvailable=1) WHERE bicycle_id=(SELECT bicycle_id FROM TripPayment WHERE trip_id=?);";
         PreparedStatement sentence = connection.createPreparedStatement(con, update);
@@ -291,8 +355,8 @@ public class TripPaymentDatabase {
         }
     }
 
-    public int sumPayment(TripPayment newTripPayment) {
-        int price=-1;
+    public double sumPayment(TripPayment newTripPayment) {
+        double price = -1;
         String query = "SELECT price FROM Model WHERE model=(SELECT model FROM Bicycle WHERE bicycle_id=?)";
         PreparedStatement sentence = connection.createPreparedStatement(con, query);
         System.out.println("sumPayment prepared bicycle_id: " + newTripPayment.getBikeID());
@@ -301,15 +365,14 @@ public class TripPaymentDatabase {
             ResultSet rs = sentence.executeQuery();
             if (rs.next()) {
                 price = rs.getInt(1);
-                System.out.println("sumpayment godkjent pris: " + price*ANTALL_TIMER);
+                System.out.println("sumpayment godkjent pris: " + price * ANTALL_TIMER);
             }
-            return price*ANTALL_TIMER;
+            return price * ANTALL_TIMER;
         } catch (SQLException e) {
             System.out.println("SQL-feil sumpayment" + e.getMessage());
             return -1;
         }
     }
-
 
 
     public int findTripID(TripPayment start) {
@@ -371,29 +434,57 @@ public class TripPaymentDatabase {
             return false;
         }
     }
+    public boolean fixDocks(){
+        try{
+            for(int i=1; i<1000; i++) {
+                String update = "UPDATE Dock SET isAvailable=1 WHERE dock_id=" + i+";";
+                PreparedStatement sentence = connection.createPreparedStatement(con, update);
+                sentence.executeUpdate();
+            }
+            for(int i=1; i<1000; i++) {
+                String update = "UPDATE Dock SET isAvailable=0 WHERE dock_id=(SELECT dock_id FROM Bicycle WHERE bicycle_id = ? AND bicycleStatus='in dock')";
+                PreparedStatement sentence = connection.createPreparedStatement(con, update);
+                sentence.setInt(1, i);
+                sentence.executeUpdate();
+            }
+
+        }catch (SQLException e){
+            e.getMessage();
+        }
+        return false;
+    }
+
+    public boolean fixBicycles(){
+        try{
+            for(int i=1; i<26; i++) {
+                String update = "UPDATE Bicycle SET dock_id=NULL WHERE bicycleStatus != 'in dock' AND bicycle_id=?";
+                PreparedStatement sentence = connection.createPreparedStatement(con, update);
+                sentence.setInt(1, i);
+                sentence.executeUpdate();
+            }
+
+        }catch (SQLException e){
+            e.getMessage();
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
         connection.getConnection();
-        //DockingStation ds = new DockingStation();
-        //System.out.println(ds.getBikeIDAtDockingStation(1));
-        //System.out.println(ds.getDockingStationCapacity(1));
-        //Bicycle bike = new Bicycle("DBS", 19940707, "DBR");
-        //System.out.println(bike.getBicycleStatus());
         TripPaymentDatabase database = new TripPaymentDatabase();
-        int customer = 1;
-        int startStation = 1;
+        int customer = 5540;
+        int startStation = 2;
         int bike = database.findAvailableBike(startStation);
         int sluttStation = 1;
         TripPayment start = new TripPayment(customer, bike, startStation);
-        //System.out.println(start);
-        //TripPayment start2 = new TripPayment(2, 123, 1);
-        database.startNewTrip(start);
-        //System.out.println(database.findAvailableBike(startStation));
-        //database.startNewTrip(start2);
-        //ReTripPayment slutt2 = new ReTripPayment(database.findTripID(start2), 3, 30);
-        ReTripPayment slutt = new ReTripPayment(database.findTripIDfromCustomer(customer), sluttStation, 10);
-        //database.endTrip(slutt2);
-        database.endTrip(slutt);
+        //database.startNewTrip(start);
+        if (database.startNewTrip(start)) {
+            ReTripPayment slutt = new ReTripPayment(database.findTripIDfromCustomer(customer), sluttStation, 10);
+            database.endTrip(slutt);
+        }
+        //database.fixDocks();
+        //database.fixBicycles();
         cleaner.closeConnection(con);
 
 
