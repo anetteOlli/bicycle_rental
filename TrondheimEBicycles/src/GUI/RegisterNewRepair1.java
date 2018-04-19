@@ -1,4 +1,4 @@
-package GUI;
+/*package GUI;
 
 import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
@@ -187,7 +187,7 @@ public class RegisterNewRepair1 {
      * DO NOT edit this method OR call it in your code!
      *
      * @noinspection ALL
-     */
+     *//*
     private void $$$setupUI$$$() {
         panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
@@ -219,8 +219,9 @@ public class RegisterNewRepair1 {
 
     /**
      * @noinspection ALL
-     */
+     *//*
     public JComponent $$$getRootComponent$$$() {
         return panel1;
     }
 }
+*/

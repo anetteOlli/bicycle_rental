@@ -1,7 +1,7 @@
 package GUI;
 
 
-import Admin_App.BicycleE2;
+import Admin_App.BicycleE;
 import Admin_App.Repair;
 import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
@@ -33,6 +33,8 @@ public class RegisterFinishedRepair {
     private JTextArea descriptionArea;
     private JTextField employeeIDField;
     private JLabel messageLabel;
+    private JScrollPane scroll1;
+    private JScrollPane scroll2;
     private JComboBox sortComboBox;
 
 
@@ -45,7 +47,7 @@ public class RegisterFinishedRepair {
     private int repairCost;
     private String newDescription;
     private int employeeID;
-    private BicycleE2 bike;
+    private BicycleE bike;
     private String bikeStatus;
     DefaultListModel<Repair> model;
 

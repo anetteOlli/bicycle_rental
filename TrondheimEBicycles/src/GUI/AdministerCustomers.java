@@ -1,18 +1,80 @@
 package GUI;
 
-import java.awt.*;
+import Admin_App.*;
+import DatabaseHandler.DatabaseCleanup;
+import DatabaseHandler.DatabaseConnection;
+
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static javax.swing.JOptionPane.showMessageDialog;
+
 
 public class AdministerCustomers {
-    private JButton backButton;
     public JPanel panel1;
-    private JButton viewCustomerButton;
-    private JButton addCustomerButton;
-    private JList list1;
+    private JButton backButton;
+    private JButton generateNewPaymentcardButton;
+    private JButton addNewCustomerButton;
+    private JLabel customerInfo;
+    private JLabel customerInfo2;
+    private JLabel customerInfo3;
+    private JLabel customerInfo4;
+    private JLabel customerInfo5;
+    private JLabel customerInfo6;
+    static DatabaseCleanup cleaner = new DatabaseCleanup();
+    static DatabaseConnection connection = new DatabaseConnection();
+    private static Connection con = connection.getConnection();
+    JList<Customer> list1;
+    private JLabel cardInfo;
+    private JLabel cardInfo2;
+    private JPanel panel2;
+    DefaultListModel<Customer> model = new DefaultListModel<>();
 
     public AdministerCustomers() {
+        list1.setModel(model);
+        try {
+            String getNames = "SELECT * FROM Customer";
+            PreparedStatement names = connection.createPreparedStatement(con, getNames);
+            ResultSet res = names.executeQuery();
+            while (res.next()) {
+                Customer customer = new Customer(res.getInt("cust_id"), res.getInt("cardNumber"), res.getString("first_name"), res.getString("last_name"), res.getInt("phone"), res.getString("email"), res.getString("password"));
+                model.addElement(customer);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        list1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                try {
+                    Customer customer = list1.getSelectedValue();
+                    String sentence = "SELECT * FROM PaymentCard WHERE cust_id = " + customer.getCustId() + " AND active_status = 1";
+                    PreparedStatement statement = connection.createPreparedStatement(con, sentence);
+                    ResultSet res = statement.executeQuery();
+                    res.next();
+                    int balance = res.getInt("balance");
+                    PaymentCard card = new PaymentCard(res.getInt("cardNumber"), res.getInt("cust_id"));
+                    customerInfo.setText("Customer ID:" + customer.getCustId());
+                    customerInfo2.setText(customer.getFirstName() + " " + customer.getLastName());
+                    customerInfo3.setText("Email: " + customer.getCustEmail());
+                    cardInfo.setText("Card number: " + card.getCardNumber());
+                    cardInfo2.setText("Balance: " + balance);
+                    customerInfo4.setText("Phone: " + customer.getCustPhone());
+                } catch (Exception a) {
+                    System.out.println(a.getMessage());
+                }
+            }
+        });
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,10 +98,10 @@ public class AdministerCustomers {
                 }
             }
         });
-        addCustomerButton.addActionListener(new ActionListener() {
+        addNewCustomerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Add customers");
+                JFrame frame = new JFrame("Add Customer");
                 frame.setContentPane(new AddCustomer().panel1);
                 frame.pack();
                 frame.setSize(700, 500);
@@ -59,10 +121,28 @@ public class AdministerCustomers {
                 }
             }
         });
+
+
+        generateNewPaymentcardButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Customer customer = list1.getSelectedValue();
+                    CustomerDatabase database = new CustomerDatabase();
+                    if (database.getNewCard(customer.getCustId())) {
+                        showMessageDialog(null, "New card generated!");
+                    } else {
+                        showMessageDialog(null, "Something went wrong when registering a new card");
+                    }
+                } catch (Exception a) {
+                    System.out.println(a.getMessage());
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Administer Customers");
+        JFrame frame = new JFrame("Administer customers");
         frame.setContentPane(new AdministerCustomers().panel1);
         frame.pack();
         frame.setVisible(true);
@@ -71,50 +151,5 @@ public class AdministerCustomers {
         frame.setSize(700, 500);
     }
 
-    {
-// GUI initializer generated by IntelliJ IDEA GUI Designer
-// >>> IMPORTANT!! <<<
-// DO NOT EDIT OR ADD ANY CODE HERE!
-        $$$setupUI$$$();
-    }
-
-    /**
-     * Method generated by IntelliJ IDEA GUI Designer
-     * >>> IMPORTANT!! <<<
-     * DO NOT edit this method OR call it in your code!
-     *
-     * @noinspection ALL
-     */
-    private void $$$setupUI$$$() {
-        panel1 = new JPanel();
-        panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
-        backButton = new JButton();
-        backButton.setText("Back");
-        panel1.add(backButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_SOUTHWEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JPanel panel2 = new JPanel();
-        panel2.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
-        panel1.add(panel2, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-        viewCustomerButton = new JButton();
-        viewCustomerButton.setText("View customer");
-        panel2.add(viewCustomerButton, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        addCustomerButton = new JButton();
-        addCustomerButton.setText("Add customer");
-        panel2.add(addCustomerButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        list1 = new JList();
-        final DefaultListModel defaultListModel1 = new DefaultListModel();
-        defaultListModel1.addElement("Cust1");
-        defaultListModel1.addElement("Cust2");
-        defaultListModel1.addElement("Cust4");
-        defaultListModel1.addElement("Custdsm");
-        defaultListModel1.addElement("dkss");
-        list1.setModel(defaultListModel1);
-        panel1.add(list1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
-    }
-
-    /**
-     * @noinspection ALL
-     */
-    public JComponent $$$getRootComponent$$$() {
-        return panel1;
-    }
 }
+
