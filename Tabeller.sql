@@ -44,11 +44,11 @@ PRIMARY KEY(bicycleStatus)
 
 CREATE TABLE Repair (
 repair_id INT AUTO_INCREMENT,
-description_before VARCHAR(200),
+description_before TEXT,
 date_sent DATE,
 date_received DATE,
 repair_cost DOUBLE,
-repair_description_after VARCHAR(200),
+repair_description_after TEXT,
 employee_id INT,
 bicycle_id INT,
 PRIMARY KEY(repair_id)
@@ -96,8 +96,8 @@ CREATE TABLE TripPayment (
 trip_id INT AUTO_INCREMENT,
 cust_id INT,
 bicycle_id INT,
-time_received TIME,
-time_delivered TIME,
+time_received TIMESTAMP,
+time_delivered TIMESTAMP,
 station_id_received INT,
 station_id_delivered INT,
 tripKM DOUBLE,
@@ -109,6 +109,7 @@ ALTER TABLE Dock
 ADD FOREIGN KEY (station_id) REFERENCES DockingStation(station_id);
 
 ALTER TABLE Bicycle
+ADD UNIQUE (dock_id),
 ADD FOREIGN KEY (dock_id) REFERENCES Dock(dock_id),
 ADD FOREIGN KEY (model) REFERENCES Model(model),
 ADD FOREIGN KEY (bicycleStatus) REFERENCES bicycleStatus(bicycleStatus);
@@ -118,7 +119,11 @@ ADD FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
 ADD FOREIGN KEY (bicycle_id) REFERENCES Bicycle(bicycle_id);
 
 ALTER TABLE Customer
+ADD UNIQUE (email),
 ADD FOREIGN KEY (cardNumber) REFERENCES PaymentCard(cardNumber);
+
+ALTER TABLE Employee
+ADD UNIQUE (email);
 
 ALTER TABLE PaymentCard
 ADD FOREIGN KEY (cust_id) REFERENCES Customer(cust_id);
@@ -131,7 +136,7 @@ ADD FOREIGN KEY (station_id_delivered) REFERENCES DockingStation(station_id);
 
 INSERT INTO bicycleStatus VALUES('in dock'), ('DBR'), ('lost'), ('need repair'), ('not in dock'), ('in storage');
 
-INSERT INTO Model VALUES('family', 100), ('cargo', 150), ('regular', 100) ;
+INSERT INTO Model VALUES('family', 100.00), ('cargo', 150.00), ('regular', 100.00) ;
 
 
 
