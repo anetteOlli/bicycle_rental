@@ -20,8 +20,8 @@ public class TripPaymentDatabase {
     PaymentCardDatabase paymentCardDatabase = new PaymentCardDatabase();
 
     //Method that starts a new trip
-    public boolean startNewTrip(TripPayment newTripPayment) {
-
+    public int startNewTrip(TripPayment newTripPayment) {
+        connection.getConnection();
         if(paymentCardDatabase.checkBalance(newTripPayment.getCustomerID())>sumPayment(newTripPayment)){
             sufficientBalance = true;
         }
@@ -52,35 +52,41 @@ public class TripPaymentDatabase {
                                 if (paid) {
                                     cleaner.commit(con);
                                     System.out.println("startTrip godkjent");
-                                    return true;
+                                    startNewTrip.close();
+                                    con.close();
+                                    return newTripPayment.getBikeID();
                                 } else {
                                     System.out.println("Payment failed");
-                                    return false;
+                                    startNewTrip.close();
+                                    con.close();
+                                    return -1;
                                 }
                             } else {
                                 cleaner.rollback(con);
                                 System.out.println("Ruller tilbake startTrip");
-                                return false;
+                                startNewTrip.close();
+                                con.close();
+                                return -1;
                             }
                         } catch (SQLException e) {
                             System.out.println("SQL-feil i startTrip" + e.getMessage());
-                            return false;
+                            return -1;
                         }
                     } else {
                         System.out.println("Didnt manage to set bikestatus to unavailable");
-                        return false;
+                        return -1;
                     }
                 } else {
                     System.out.println("didnt manage to set dock to available");
-                    return false;
+                    return -1;
                 }
             } else {
                 System.out.println("Didnt find a bike");
-                return false;
+                return -1;
             }
         } else {
             System.out.println("Not enough funds to continue");
-            return false;
+            return -1;
         }
     }
 
@@ -195,6 +201,7 @@ public class TripPaymentDatabase {
 
 
     public boolean endTrip(ReTripPayment newReTripPayment) {
+        connection.getConnection();
         plass = skjekkPlass(newReTripPayment.getStation_id_delivered());
         if (plass) {
             BikeDatabase bike = new BikeDatabase();
@@ -222,10 +229,14 @@ public class TripPaymentDatabase {
                     paymentCardDatabase.addFunds(getCustID(newReTripPayment), DEPOSIT);
                     cleaner.commit(con);
                     System.out.println("endTrip() godkjent");
+                    endTrip.close();
+                    con.close();
                     return true;
                 } else {
                     cleaner.rollback(con);
                     System.out.println("endTrip() rollback");
+                    endTrip.close();
+                    con.close();
                     return false;
                 }
             } catch (SQLException e) {
@@ -471,21 +482,19 @@ public class TripPaymentDatabase {
 
 
     public static void main(String[] args) {
-        connection.getConnection();
         TripPaymentDatabase database = new TripPaymentDatabase();
         int customer = 5540;
         int startStation = 2;
-        int bike = database.findAvailableBike(startStation);
-        int sluttStation = 1;
-        TripPayment start = new TripPayment(customer, bike, startStation);
+        //int bike = database.findAvailableBike(startStation);
+        int sluttStation = 2;
+        //TripPayment start = new TripPayment(customer, bike, startStation);
         //database.startNewTrip(start);
-        if (database.startNewTrip(start)) {
+        //if (database.startNewTrip(start)) {
             ReTripPayment slutt = new ReTripPayment(database.findTripIDfromCustomer(customer), sluttStation, 10);
             database.endTrip(slutt);
-        }
+        //}
         //database.fixDocks();
         //database.fixBicycles();
-        cleaner.closeConnection(con);
 
 
     }
