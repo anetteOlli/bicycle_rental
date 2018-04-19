@@ -133,23 +133,5 @@ INSERT INTO bicycleStatus VALUES('in dock'), ('DBR'), ('lost'), ('need repair'),
 
 INSERT INTO Model VALUES('family', 100), ('cargo', 150), ('regular', 100) ;
 
-INSERT INTO DockingStation(name, active_status, capacity) VALUES  ( 'Munkegata', true, 20);
-
-INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'Prinsen', false, 20);
-INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'HJEM', true, 20);
-INSERT INTO DockingStation (name, active_status, capacity) VALUES ( 'nova', false, 20);
-
-SELECT * FROM DockingStation;
-
-UPDATE DockingStation SET name='munkegata' WHERE name='Munkegata';
-
-UPDATE DockingStation SET powerUsage = 2356.56 WHERE station_id= 1;
-
-UPDATE DockingStation SET latitude=23, longitude=24 WHERE station_id=43;
-
-SELECT * FROM DockingStation;
-
-SELECT station_id FROM DockingStation WHERE active_status=TRUE;
 
 
-SELECT COUNT(*) FROM Bicycle NATURAL JOIN Dock WHERE station_id=1;
