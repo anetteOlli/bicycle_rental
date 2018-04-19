@@ -1,166 +1,110 @@
 package Admin_App;
 
-import DatabaseHandler.DatabaseCleanup;
-import DatabaseHandler.DatabaseConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
+import DatabaseHandler.*;
+import GUI.EditBike1;
+import GUI.RegBicycle;
+
+import javax.swing.*;
+
 public class BikeDatabase {
-    Bikes bikes = new Bikes();
+
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
-    Statement stm;
 
 
-    public boolean regFamily(Bicycle newBicycle, int nr) {
+
+    public void regBicycle(String make, String modell, String bicycleStatus, double price_of_bike, int nr) {
         Calendar calendar = Calendar.getInstance();
         java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
+
         try {
             cleaner.setAutoCommit(con, false);
 
-            String insert2 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, 'family', ?, ?);";
-            PreparedStatement RegNewFamily = connection.createPreparedStatement(con, insert2);
-            RegNewFamily.setString(1, newBicycle.make);
-            RegNewFamily.setDate(2, registration_date);
-            RegNewFamily.setString(3, newBicycle.bicycleStatus);
-            //RegNewBicycle.executeUpdate();
+            String mySQL = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, registration_date, bicycleStatus, price_of_bike) VALUES(DEFAULT, 100, ?, ?, ?, ?,?);";
+            PreparedStatement regBicycle = connection.createPreparedStatement(con, mySQL);
+            regBicycle.setString(1, make);
+            regBicycle.setString(2, modell);
+            regBicycle.setDate(3, registration_date);
+            regBicycle.setString(4, bicycleStatus);
+            regBicycle.setDouble(5, price_of_bike);
             for (int i = 0; i < nr; i++){
-                RegNewFamily.addBatch();
-
+                regBicycle.addBatch();
             }
 
-            RegNewFamily.executeBatch();
+            regBicycle.executeBatch();
+
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
     }
 
-    public boolean regCargo(Bicycle newBicycle, int nr) {
-        Calendar calendar = Calendar.getInstance();
-        java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
-        try {
-            cleaner.setAutoCommit(con, false);
-
-            String insert3 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, 'cargo', ?, ?);";
-            PreparedStatement RegNewCargo = connection.createPreparedStatement(con, insert3);
-            RegNewCargo.setString(1, newBicycle.make);
-            RegNewCargo.setDate(2, registration_date);
-            RegNewCargo.setString(3, newBicycle.bicycleStatus);
-            //RegNewBicycle.executeUpdate();
-            for (int i = 0; i < nr; i++){
-                RegNewCargo.addBatch();
-
-            }
-
-            RegNewCargo.executeBatch();
-            cleaner.commit(con);
-            cleaner.setAutoCommit(con, true);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public boolean regRegular(Bicycle newBicycle, int nr) {
-        Calendar calendar = Calendar.getInstance();
-        java.sql.Date registration_date = new java.sql.Date(calendar.getTime().getTime());
-        try {
-            cleaner.setAutoCommit(con, false);
-
-            String insert4 = "INSERT INTO Bicycle(bicycle_id, powerlevel, make, model, production_date, bicycleStatus) VALUES(DEFAULT, 100, ?, 'regular', ?, ?);";
-            PreparedStatement RegNewRegular = connection.createPreparedStatement(con, insert4);
-            RegNewRegular.setString(1, newBicycle.make);
-            RegNewRegular.setDate(2, registration_date);
-            RegNewRegular.setString(3, newBicycle.bicycleStatus);
-            //RegNewBicycle.executeUpdate();
-            for (int i = 0; i < nr; i++){
-                RegNewRegular.addBatch();
-
-            }
-
-            RegNewRegular.executeBatch();
-            cleaner.commit(con);
-            cleaner.setAutoCommit(con, true);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public boolean UpdateBicycle (int dock_id, String bicycleStatus, int bicycle_id) {
-        String updSetning = "UPDATE Bicycle SET dock_id=?, bicycleStatus=? WHERE bicycle_id=?";
-        PreparedStatement Update = connection.createPreparedStatement(con, updSetning);
-
-
-        try {
-            Update.setInt(1, dock_id);
-            Update.setString(2, bicycleStatus);
-            Update.setInt(3, bicycle_id);
-
-            Update.executeUpdate();
-        } catch (SQLException e) {
-            return false;
-
-        }
-        return true;
-    }
-
-    public void UpdateKM (int bicycle_id){
+    public void UpdateKM (int nr){
         String KM = "UPDATE Bicycle SET totalKM = (SELECT SUM(tripKM) FROM TripPayment WHERE bicycle_id = ?) WHERE bicycle_id = ?;";
         PreparedStatement Mileage = connection.createPreparedStatement(con, KM);
         try {
-        Mileage.setInt(1, bicycle_id);
-        Mileage.setInt(2, bicycle_id);
-
-        Mileage.executeUpdate();
+        Mileage.setInt(1, nr);
+        Mileage.setInt(2, nr);
+        for (int i = 0; i < nr; i++) {
+            Mileage.addBatch();
+        }
+        Mileage.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+   public ArrayList editBike(String sort) {
+        try {
 
-    public int CheckTrip(int bicycle_id){
-        int checked = -1;
-        String checkT = "SELECT COUNT(trip_id) FROM TripPayment WHERE bicycle_id=?";
-        PreparedStatement TripCheck = connection.createPreparedStatement(con, checkT);
-        try{
-            TripCheck.setInt(1, bicycle_id);
-            ResultSet result = TripCheck.executeQuery();
-            if (result.next()){
-                checked = result.getInt(1);
+            String getInfo = "SELECT bicycle_id, make, model, bicycleStatus, registration_date, dock_id  FROM Bicycle ORDER BY ?;";
+            PreparedStatement names = connection.createPreparedStatement(con, getInfo);
+            names.setString(1, sort);
+            ArrayList<BicycleE> bicycleE = new ArrayList<>();
+            ResultSet res = names.executeQuery();
+            while (res.next()) {
+                BicycleE bike = new BicycleE(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"));
             }
-            if (cleaner.closeSentence(TripCheck) && (cleaner.closeResult(result)));
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-        return checked;
+
+        return null;
     }
 
-    public void RegRepairs (int bicycle_id){
+
+
+
+    public void RegRepairs (int nr){
         String RegNrReps = "Update Bicycle SET nr_of_repairs = (SELECT COUNT(repair_id) FROM Repair) WHERE bicycle_id = ?;";
         PreparedStatement Reps = connection.createPreparedStatement(con, RegNrReps);
         try {
-            Reps.setInt(2, bicycle_id);
-            Reps.executeUpdate();
+            Reps.setInt(1, nr);
+            for (int i = 0; i < nr; i++) {
+                Reps.addBatch();
+            }
+            Reps.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void RegTrips (int bicycle_id){
+    public void RegTrips (int nr) {
         String trippe = "Update Bicycle SET trips=(SELECT COUNT(trip_id) FROM TripPayment) WHERE bicycle_id=?;";
         PreparedStatement trip = connection.createPreparedStatement(con, trippe);
-        try{
-            trip.setInt(1, bicycle_id);
-            trip.executeUpdate();
-        } catch (SQLException e) {
+        try {
+            trip.setInt(1, nr);
+            for (int i = 0; i < nr; i++) {
+                trip.addBatch();
+            }
+            } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -171,7 +115,7 @@ public class BikeDatabase {
 
     public static void main(String[] args) {
         BikeDatabase database = new BikeDatabase();
-        Bikes bike = new Bikes();
+
         connection.getConnection();
 
 
@@ -186,6 +130,6 @@ public class BikeDatabase {
        //database.RegRepairs(test6);
        //database.RegTrips(1);
        //System.out.println("Nr of trips for bicycle " + database.CheckTrip(1));
-       cleaner.closeConnection(con);
+       //cleaner.closeConnection(con);
     }
 }

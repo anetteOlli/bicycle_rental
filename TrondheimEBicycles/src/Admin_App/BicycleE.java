@@ -2,23 +2,21 @@ package Admin_App;
 
 import java.util.Date;
 
-public class Bicycle {
+public class BicycleE implements Comparable<BicycleE> {
     public int bicycle_id;
     public String make;
     public String modell;
     public String bicycleStatus;
     public Date registration_date;
     public int dock_id;
-    public double price;
 
-    public Bicycle(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id, double price) {
+    public BicycleE(int bicycle_id, String make, String modell, String bicycleStatus, Date registration_date, int dock_id) {
         this.bicycle_id = bicycle_id;
         this.make = make;
         this.modell = modell;
         this.bicycleStatus = bicycleStatus;
         this.registration_date = registration_date;
         this.dock_id = dock_id;
-        this.price = price;
     }
 
     public int getBicycle_id() {
@@ -69,18 +67,17 @@ public class Bicycle {
         this.dock_id = dock_id;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public int compareTo(BicycleE s){
+        return this.bicycleStatus.compareTo(s.getBicycleStatus());
     }
 
     @Override
     public String toString() {
         return  bicycle_id +
-                " - " + modell;
-
+                " - " + make + '\'' +
+                " - " + modell + '\'' +
+                " - " + bicycleStatus + '\'' +
+                " - " + registration_date +
+                " - " + dock_id;
     }
 }
