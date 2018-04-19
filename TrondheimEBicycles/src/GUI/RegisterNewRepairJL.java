@@ -1,6 +1,6 @@
 package GUI;
 
-import Admin_App.BicycleE2;
+import Admin_App.BicycleE;
 import Admin_App.Repair;
 import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
@@ -23,7 +23,7 @@ public class RegisterNewRepairJL {
     private JComboBox<String> comboBoxSort;
     private JButton backButton;
     private JButton selectButton;
-    private JList<BicycleE2> bicyclelist;
+    private JList<BicycleE> bicyclelist;
     private JPanel midPanel;
     private JPanel regRepairPanel;
     private JTextArea descArea;
@@ -36,12 +36,14 @@ public class RegisterNewRepairJL {
     private JLabel header3Label;
     private JLabel header5Label;
     private JLabel messageLabel;
+    private JScrollPane scroll1;
+    private JScrollPane scroll2;
 
-    private BicycleE2 bicycleE2;
+    private BicycleE bicycleE;
     private String bikeStatus;
     private int bikeID;
     private String description;
-    DefaultListModel<BicycleE2> model;
+    DefaultListModel<BicycleE> model;
 
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
@@ -59,7 +61,7 @@ public class RegisterNewRepairJL {
         String PowerLevel = "";
         String Make = "";
         String Model = "";
-        String ProductionDate = "";
+        String RegistrationDate = "";
         String BicycleStatus = "";
         String TotalKM = "";
         String Trips = "";
@@ -77,14 +79,14 @@ public class RegisterNewRepairJL {
                 PowerLevel = rs.getString("powerlevel");
                 Make = rs.getString("make");
                 Model = rs.getString("model");
-                ProductionDate = rs.getString("production_date");
+                RegistrationDate = rs.getString("registration_date");
                 BicycleStatus = rs.getString("bicycleStatus");
                 TotalKM = rs.getString("totalKM");
                 Trips = rs.getString("trips");
                 NrOfRepairs = rs.getString("nr_of_repairs");
                 //Bicycle bicycle = new Bicycle(bicycleID, DockID, PowerLevel, Make, Model, ProductionDate, BicycleStatus, TotalKM, Trips, NrOfRepairs);
                 //model.addElement(bicycle);
-                BicycleE2 bike = new BicycleE2(rs.getInt("bicycle_id"), rs.getString("make"), rs.getString("model"), rs.getString("bicycleStatus"), rs.getDate("production_date"), rs.getInt("dock_id"));
+                BicycleE bike = new BicycleE(rs.getInt("bicycle_id"), rs.getString("make"), rs.getString("model"), rs.getString("bicycleStatus"), rs.getDate("registration_date"), rs.getInt("dock_id"));
                 model.addElement(bike);
 
             }
@@ -129,9 +131,9 @@ public class RegisterNewRepairJL {
             public void actionPerformed(ActionEvent e) {
                 //showList();
                 //regRepairPanel.setVisible(true);
-                bikeStatus = bicycleE2.getBicycleStatus();
+                bikeStatus = bicycleE.getBicycleStatus();
                 statusField.setText(bikeStatus);
-                bikeID = bicycleE2.getBicycle_id();
+                bikeID = bicycleE.getBicycle_id();
                 bikeIdLable.setText(Integer.toString(bikeID));
             }
         });
@@ -146,7 +148,7 @@ public class RegisterNewRepairJL {
         bicyclelist.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                bicycleE2 = bicyclelist.getSelectedValue();
+                bicycleE = bicyclelist.getSelectedValue();
             }
         });
 

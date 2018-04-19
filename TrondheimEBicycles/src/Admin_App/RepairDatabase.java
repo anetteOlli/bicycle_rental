@@ -1,4 +1,4 @@
-package Admin_App;
+/*package Admin_App;
 
 import DatabaseHandler.DatabaseCleanup;
 import DatabaseHandler.DatabaseConnection;
@@ -149,7 +149,7 @@ public class RepairDatabase {
 
    }
    */
-
+/*
     public String showAllRepairs() {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -169,7 +169,7 @@ public class RepairDatabase {
         String mysqlDescA = "SELECT repair_description_after FROM Repair;";
         String mysqlEmp = "SELECT employee_id FROM Repair;";
         String mysqlBicycle = "SELECT bicycle_id FROM Repair;";
-        */
+        *//*
         PreparedStatement sentence1 = connection.createPreparedStatement(con, heletabellen);
         /*
         PreparedStatement sentence2 = connection.createPreparedStatement(con, mysqlDescB);
@@ -179,7 +179,7 @@ public class RepairDatabase {
         PreparedStatement sentence6 = connection.createPreparedStatement(con, mysqlDescA);
         PreparedStatement sentence7 = connection.createPreparedStatement(con, mysqlEmp);
         PreparedStatement sentence8 = connection.createPreparedStatement(con, mysqlBicycle);
-        */
+        *//*
         try {
             ResultSet res1 = sentence1.executeQuery();
             /*
@@ -196,7 +196,7 @@ public class RepairDatabase {
             //String str1 = String.valueOf(res1.getInt(1));
             //row1.add(str1);
 
-
+/*
             while (res1.next()) {
                 String ID = res1.getObject(1).toString();
                 String DescrB = res1.getObject(2).toString();
@@ -222,7 +222,7 @@ public class RepairDatabase {
 
             //repairs.add(row1);
 
-
+/*
         } catch (SQLException e) {
             return null;
         }
@@ -234,7 +234,7 @@ public class RepairDatabase {
                 cleaner.closeSentence(sentence6) &&
                 cleaner.closeSentence(sentence7) &&
                 cleaner.closeSentence(sentence8) &&*/
-                cleaner.closeConnection(con)) {
+        /*        cleaner.closeConnection(con)) {
             //return repairs
             return theTable;
         }
@@ -291,4 +291,3 @@ public class RepairDatabase {
 
         databasen.lukkForbindelse();
     }*/
-}

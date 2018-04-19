@@ -54,4 +54,13 @@ public class Customer {
     public String getPassword(){
         return custPassword;
     }
+
+    public void setCustCardNumber(int newNumber){
+        custCardNumber = newNumber;
+    }
+
+    @Override
+    public String toString(){
+        return getFirstName() + " " + getLastName();
+    }
 }

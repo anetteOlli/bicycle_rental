@@ -1,4 +1,4 @@
-package GUI;
+/*package GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ public class RegisterRepairCosts {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("RegisterFinishedRepair");
-                frame.setContentPane(new RegisterFinishedRepair().panel1);
+                frame.setContentPane(new RegisterFinishedRepair().);
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
@@ -80,7 +80,7 @@ public class RegisterRepairCosts {
      *
      * @noinspection ALL
      */
-    private void $$$setupUI$$$() {
+/* private void $$$setupUI$$$() {
         panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
         final JPanel panel2 = new JPanel();
@@ -115,7 +115,7 @@ public class RegisterRepairCosts {
     /**
      * @noinspection ALL
      */
-    public JComponent $$$getRootComponent$$$() {
+   /* public JComponent $$$getRootComponent$$$() {
         return panel1;
     }
-}
+*/
