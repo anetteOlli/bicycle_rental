@@ -1,5 +1,8 @@
 package GUI;
 
+import Admin_App.BikeDatabase;
+import Admin_App.TripPaymentDatabase;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,6 +15,7 @@ public class BikeMain {
     private JButton regRep;
     private JButton showStats;
     private JButton HOMEButton;
+    private JButton updateDatabaseButton;
 
     public BikeMain() {
 
@@ -82,26 +86,16 @@ public class BikeMain {
                 }
             }
         });
-        HOMEButton.addActionListener(new ActionListener() {
+        updateDatabaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Front page");
-                frame.setContentPane(new AdminFront().adminFrontPanel);
-                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-
-                //gets rid of the previous frame
-                Object source = e.getSource();
-                if (source instanceof Component) {
-                    Component c = (Component) source;
-                    Frame frame2 = JOptionPane.getFrameForComponent(c);
-                    if (frame2 != null) {
-                        frame2.dispose();
-
-                    }
-                }
+                BikeDatabase db = new BikeDatabase();
+                TripPaymentDatabase tpd = new TripPaymentDatabase();
+                tpd.fixBicycles();
+                tpd.fixDocks();
+                db.UpdateKM(100);
+                db.RegTrips(100);
+                db.RegRepairs(100);
             }
         });
     }

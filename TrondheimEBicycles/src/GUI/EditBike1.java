@@ -24,12 +24,13 @@ public class EditBike1 {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
-    BikeDatabase bd = new BikeDatabase();
+    BikeDatabase bd;
 
 
     JScrollPane splitpane;
     JButton backButton;
-
+    BicycleE bicycleE;
+    TripPaymentDatabase tpb;
     JPanel panel;
     private JLabel bicycleinfo1;
     private JLabel bicycleinfo2;
@@ -39,23 +40,14 @@ public class EditBike1 {
     private JComboBox comboBox1;
     private JButton editButton;
     private JComboBox comboBox2;
+    private JCheckBox takeOutOfDockCheckBox;
+    private JCheckBox setInDockCheckBox;
+    private JTextField stationid;
+    private JLabel station;
     DefaultListModel<BicycleE> model = new DefaultListModel<>();
 
-    public void editStatus() {
-        try {
-            BicycleE bicycleE = list.getSelectedValue();
-            String mySQL = "UPDATE Bicycle SET bicycleStatus='" + comboBox2.getSelectedItem().toString() + "' WHERE bicycle_id=" + bicycleE.getBicycle_id();
-            PreparedStatement update = connection.createPreparedStatement(con, mySQL);
-            update.executeUpdate();
 
-            model.get(list.getSelectedIndex()).setBicycleStatus(comboBox2.getSelectedItem().toString());
-
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-    }
-
-   public ArrayList<BicycleE> createTable() {
+    public ArrayList<BicycleE> createTable() {
         ArrayList<BicycleE> array = new ArrayList<>();
         list.setModel(model);
         try {
@@ -74,9 +66,94 @@ public class EditBike1 {
         return array;
     }
 
+    public void editStatus() {
+        try {
+            BicycleE bicycleE = list.getSelectedValue();
+            String mySQL = "UPDATE Bicycle SET bicycleStatus='" + comboBox2.getSelectedItem().toString() + "' WHERE bicycle_id=" + bicycleE.getBicycle_id();
+            PreparedStatement update = connection.createPreparedStatement(con, mySQL);
+            update.executeUpdate();
+
+            model.get(list.getSelectedIndex()).setBicycleStatus(comboBox2.getSelectedItem().toString());
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+
+
+    public void setInDock(){
+        String inDock = "UPDATE Bicycle SET dock_id=(SELECT MIN(dock_id) FROM Dock WHERE station_id=? AND isAvailable=1), bicycleStatus = 'in dock' WHERE bicycle_id=?;";
+        PreparedStatement update = connection.createPreparedStatement(con, inDock);
+        int Input = Integer.parseInt(stationid.getText());
+        try{
+            update.setInt(1,Input);
+            update.setInt(2, bicycleE.getBicycle_id());
+            update.executeUpdate();
+            model.get(list.getSelectedIndex()).setBicycleStatus("in dock");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void selectInDock(){
+        String inDock = "SELECT dock_id FROM Bicycle WHERE bicycle_id=?;";
+        PreparedStatement select = connection.createPreparedStatement(con, inDock);
+        try{
+            select.setInt(1, bicycleE.getBicycle_id());
+            ResultSet res = select.executeQuery();
+            while(res.next()){
+                model.get(list.getSelectedIndex()).setDock_id(res.getInt("dock_id"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setUnavailable(){
+        String update = "UPDATE Dock SET isAvailable=0 WHERE dock_id=(SELECT dock_id FROM Bicycle WHERE bicycle_id=?);";
+        PreparedStatement set = connection.createPreparedStatement(con, update);
+        try{
+            set.setInt(1, bicycleE.getBicycle_id());
+            set.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void takeOutDock(){
+        String outDock = "Update Bicycle SET dock_id=NULL WHERE bicycle_id=?;";
+        PreparedStatement update = connection.createPreparedStatement(con, outDock);
+        try{
+            update.setInt(1, bicycleE.getBicycle_id());
+            update.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        model.get(list.getSelectedIndex()).setDock_id(0);
+    }
+
+
+    public void setAvailable(){
+        String update = "UPDATE Dock SET isAvailable=1 WHERE dock_id=(SELECT dock_id FROM Bicycle WHERE bicycle_id=?);";
+        PreparedStatement set = connection.createPreparedStatement(con, update);
+        try{
+            set.setInt(1, bicycleE.getBicycle_id());
+            set.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public EditBike1() {
         createTable();
         list.setModel(model);
+        station.setVisible(false);
+        stationid.setVisible(false);
+        setInDockCheckBox.setVisible(false);
+        takeOutOfDockCheckBox.setVisible(false);
 
 
         comboBox1.addActionListener(new ActionListener() {
@@ -93,14 +170,33 @@ public class EditBike1 {
         list.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-                BicycleE bicycleE = list.getSelectedValue();
+                bicycleE = list.getSelectedValue();
+                if(bicycleE.getDock_id() == 0) {
+                    setInDockCheckBox.setVisible(true);
+                    takeOutOfDockCheckBox.setSelected(false);
+                    takeOutOfDockCheckBox.setVisible(false);
+                }else{
+                    setInDockCheckBox.setVisible(false);
+                    setInDockCheckBox.setSelected(false);
+                    takeOutOfDockCheckBox.setVisible(true);
+                }
+
             }
         });
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                editStatus();
+                if(setInDockCheckBox.isSelected()) {
+                    setInDock();
+                    selectInDock();
+                    setUnavailable();
+                }else if(takeOutOfDockCheckBox.isSelected()){
+                    setAvailable();
+                    takeOutDock();
+                    editStatus();
+                } else {
+                    editStatus();
+                }
 
             }
 
@@ -117,6 +213,19 @@ public class EditBike1 {
                 frame.setExtendedState(frame.MAXIMIZED_BOTH);
 
                 
+            }
+        });
+
+        setInDockCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(setInDockCheckBox.isSelected()){
+                    station.setVisible(true);
+                    stationid.setVisible(true);
+                } else {
+                    station.setVisible(false);
+                    stationid.setVisible(false);
+                }
             }
         });
     }
