@@ -786,6 +786,28 @@ public class DockingStation {
         return result;
     }
 
+    /**
+     * Method changes powerusage for a givendockingstation
+     * @param dockingstationID
+     * @param powerUsage
+     */
+    public void setPowerUsage(int dockingstationID, double powerUsage){
+        String sql = "UPDATE  DockingStation SET powerUsage=? WHERE station_id=?";
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        PreparedStatement sentence = connection.createPreparedStatement(con, sql);
+        try{
+            sentence.setDouble(1, powerUsage);
+            sentence.setInt(2, dockingstationID);
+            sentence.executeUpdate();
+            con.close();
+            sentence.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 
