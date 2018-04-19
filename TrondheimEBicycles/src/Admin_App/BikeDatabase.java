@@ -194,6 +194,30 @@ public class BikeDatabase {
         return null;
     }
 
+    /**
+     * method to change a bike's location
+     * @param bikeID
+     * @param latitude
+     * @param longitude
+     */
+    public void setLocation(int bikeID, double latitude, double longitude){
+        String sql = "UPDATE Bicycle SET latitude=?, longitude=? WHERE bicycle_id=?";
+        DatabaseConnection connection = new DatabaseConnection();
+        DatabaseCleanup cleaner = new DatabaseCleanup();
+        Connection con = connection.getConnection();
+        try{
+            PreparedStatement sentence = connection.createPreparedStatement(con, sql);
+            sentence.setDouble(1, latitude);
+            sentence.setDouble(2, longitude);
+            sentence.setInt(3, bikeID);
+            sentence.executeUpdate();
+            sentence.close();
+            con.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 

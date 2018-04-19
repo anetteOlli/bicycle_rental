@@ -146,25 +146,38 @@ public class AdminFront {
     private void $$$setupUI$$$() {
         adminFrontPanel = new JPanel();
         adminFrontPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 7, new Insets(0, 0, 0, 0), -1, -1));
+        adminFrontPanel.setFocusCycleRoot(false);
         adminFrontPanel.setBorder(BorderFactory.createTitledBorder("Admin Front page"));
         toAdminButton = new JButton();
+        Font toAdminButtonFont = this.$$$getFont$$$(null, -1, 24, toAdminButton.getFont());
+        if (toAdminButtonFont != null) toAdminButton.setFont(toAdminButtonFont);
         toAdminButton.setText("Admin Users");
-        adminFrontPanel.add(toAdminButton, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), new Dimension(100, 100), null, 0, false));
+        adminFrontPanel.add(toAdminButton, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
         adminFrontPanel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         toBicyclesButton = new JButton();
+        Font toBicyclesButtonFont = this.$$$getFont$$$(null, -1, 24, toBicyclesButton.getFont());
+        if (toBicyclesButtonFont != null) toBicyclesButton.setFont(toBicyclesButtonFont);
         toBicyclesButton.setText("Admin Bicycles");
         adminFrontPanel.add(toBicyclesButton, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), null, null, 0, false));
         toDockbutton = new JButton();
+        Font toDockbuttonFont = this.$$$getFont$$$(null, -1, 24, toDockbutton.getFont());
+        if (toDockbuttonFont != null) toDockbutton.setFont(toDockbuttonFont);
         toDockbutton.setText("Admin Dockingstations");
         adminFrontPanel.add(toDockbutton, new com.intellij.uiDesigner.core.GridConstraints(1, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), null, null, 0, false));
         paymentsButton = new JButton();
+        Font paymentsButtonFont = this.$$$getFont$$$(null, -1, 24, paymentsButton.getFont());
+        if (paymentsButtonFont != null) paymentsButton.setFont(paymentsButtonFont);
         paymentsButton.setText("View/change Payments");
         adminFrontPanel.add(paymentsButton, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), null, null, 0, false));
         gpsButton = new JButton();
+        Font gpsButtonFont = this.$$$getFont$$$(null, -1, 24, gpsButton.getFont());
+        if (gpsButtonFont != null) gpsButton.setFont(gpsButtonFont);
         gpsButton.setText("GPS system");
         adminFrontPanel.add(gpsButton, new com.intellij.uiDesigner.core.GridConstraints(3, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), null, null, 0, false));
         statisticsButton = new JButton();
+        Font statisticsButtonFont = this.$$$getFont$$$(null, -1, 24, statisticsButton.getFont());
+        if (statisticsButtonFont != null) statisticsButton.setFont(statisticsButtonFont);
         statisticsButton.setText("Statistics");
         adminFrontPanel.add(statisticsButton, new com.intellij.uiDesigner.core.GridConstraints(3, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(40, 40), null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
@@ -179,6 +192,25 @@ public class AdminFront {
         adminFrontPanel.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(1, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
         adminFrontPanel.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(2, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
+        if (currentFont == null) return null;
+        String resultName;
+        if (fontName == null) {
+            resultName = currentFont.getName();
+        } else {
+            Font testFont = new Font(fontName, Font.PLAIN, 10);
+            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
+                resultName = fontName;
+            } else {
+                resultName = currentFont.getName();
+            }
+        }
+        return new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
     }
 
     /**
