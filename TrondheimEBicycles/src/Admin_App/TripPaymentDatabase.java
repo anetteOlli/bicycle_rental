@@ -218,7 +218,6 @@ public class TripPaymentDatabase {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
-        connection.getConnection();
         plass = skjekkPlass(newReTripPayment.getStation_id_delivered());
         if (plass) {
             BikeDatabase bike = new BikeDatabase();
@@ -229,7 +228,7 @@ public class TripPaymentDatabase {
             System.out.println("endTrip preparedstatement");
 
             try {
-                cleaner.setAutoCommit(con, false);
+                //cleaner.setAutoCommit(con, false);
 
                 endTrip.setTimestamp(1, newReTripPayment.getTime_delivered());
                 endTrip.setInt(2, newReTripPayment.getStation_id_delivered());
@@ -244,13 +243,13 @@ public class TripPaymentDatabase {
                     bike.UpdateKM(getBikeID(newReTripPayment));
                     bike.RegTrips(getBikeID(newReTripPayment));
                     paymentCardDatabase.addFunds(getCustID(newReTripPayment), DEPOSIT);
-                    cleaner.commit(con);
+                    //cleaner.commit(con);
                     System.out.println("endTrip() godkjent");
                     endTrip.close();
                     con.close();
                     return true;
                 } else {
-                    cleaner.rollback(con);
+                    //cleaner.rollback(con);
                     System.out.println("endTrip() rollback");
                     endTrip.close();
                     con.close();
@@ -363,7 +362,7 @@ public class TripPaymentDatabase {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
-        String update = "UPDATE Bicycle SET bicycleStatus='in dock' WHERE bicycle_id=(SELECT bicycle_id FROM TripPayment WHERE trip_id=?);";
+        String update = "UPDATE Bicycle SET bicycleStatus='in dock' WHERE bicycle_id=(SELECT DISTINCT bicycle_id FROM TripPayment WHERE trip_id=?);";
         PreparedStatement updateBicycleStatus = connection.createPreparedStatement(con, update);
         System.out.println("setBicycleStatusAvailable preparedStatement");
         try {

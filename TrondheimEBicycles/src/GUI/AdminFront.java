@@ -13,6 +13,7 @@ public class AdminFront {
     private JButton paymentsButton;
     private JButton gpsButton;
     private JButton statisticsButton;
+    private JButton logOutButton;
 
     public AdminFront() {
         toDockbutton.addActionListener(new ActionListener() {
@@ -132,6 +133,33 @@ public class AdminFront {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Statistics");
                 frame.setContentPane(new StatisticsPage().panel1);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
+            }
+        });
+        logOutButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("log in");
+                frame.setContentPane(new LogInPage().panel1);
                 frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();

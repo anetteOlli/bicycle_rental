@@ -97,14 +97,6 @@ public class TRegisterFinishedRepair {
         comboBoxSort.addItem("date_sent");
         comboBoxSort.addItem("date_received");
         comboBoxSort.addItem("bicycle_id");
-
-        comboBoxStatus.addItem("In dock");
-        comboBoxStatus.addItem("Not in dock");
-        comboBoxStatus.addItem("Need repair");
-        comboBoxStatus.addItem("Damage beyond");
-        comboBoxStatus.addItem("Lost");
-        comboBoxStatus.addItem("In storage");
-
         showList();
 
         backButton.addActionListener(new ActionListener() {

@@ -98,6 +98,60 @@ public class BikeMain {
                 db.RegRepairs(100);
             }
         });
+        HOMEButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Dockstation front page");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new AdminFront().adminFrontPanel);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.pack();
+                frame.setVisible(true);
+
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
+            }
+        });
+        regRep.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Dockstation front page");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new RegisterRepairFrontPage().panel1);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.pack();
+                frame.setVisible(true);
+
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {

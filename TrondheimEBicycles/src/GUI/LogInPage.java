@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class LogInPage {
-    private JPanel panel1;
+    public JPanel panel1;
     private JTextField textField1;
     private JPasswordField passwordField1;
     private JButton logInButton;
@@ -30,7 +30,8 @@ public class LogInPage {
             public void actionPerformed(ActionEvent e) {
                 try{
                     PasswordStorage storage = new PasswordStorage();
-                    boolean isAdmin = true;
+                    boolean isAdmin = false;
+                    boolean isTechnician = true;
                     String username = textField1.getText();
                     String password = passwordField1.getText();
                     String sentence = "SELECT * FROM Employee WHERE email = ?";
@@ -39,15 +40,18 @@ public class LogInPage {
                     ResultSet res = statement.executeQuery();
                     if(res.next()){
                         if(storage.verifyPassword(password, res.getString("password"))){
-                            if(res.getInt("isAdmin") != 1){
-                                isAdmin = false;
+                            if(res.getInt("isAdmin") == 1){
+                                isAdmin = true;
                             }
                         }else{
                             showMessageDialog(null, "Incorrect password");
+                            isTechnician = false;
+
                         }
 
                     }else{
                         showMessageDialog(null, "Unknown username");
+                        isTechnician = false;
                     }
                     if(isAdmin){
                         JFrame frame = new JFrame("Front page");
@@ -68,7 +72,7 @@ public class LogInPage {
 
                             }
                         }
-                    }else{
+                    }else if(isTechnician){
                         JFrame frame = new JFrame("Administer Repairs");
                         frame.setContentPane(new TRegisterRepairFrontPage().panel1);
                         frame.pack();
