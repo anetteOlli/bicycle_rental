@@ -143,7 +143,6 @@ public class RegisterFinishedRepair {
                 newDescription = descriptionArea.getText();
                 String employeeIDS = employeeIDField.getText();
                 employeeID = Integer.parseInt(employeeIDS);
-                bikeStatus = comboBoxStatus.getSelectedItem().toString();
 
                 System.out.println(repair.getRepairID());
                 System.out.println(newDescription);
