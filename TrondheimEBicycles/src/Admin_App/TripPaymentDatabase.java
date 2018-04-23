@@ -218,7 +218,8 @@ public class TripPaymentDatabase {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
-        plass = skjekkPlass(newReTripPayment.getStation_id_delivered());
+        //plass = skjekkPlass(newReTripPayment.getStation_id_delivered());
+        plass = true;
         if (plass) {
             BikeDatabase bike = new BikeDatabase();
 
