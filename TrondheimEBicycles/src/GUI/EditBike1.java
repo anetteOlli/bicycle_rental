@@ -212,7 +212,16 @@ public class EditBike1 {
                 frame.setVisible(true);
                 frame.setExtendedState(frame.MAXIMIZED_BOTH);
 
-                
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
             }
         });
 

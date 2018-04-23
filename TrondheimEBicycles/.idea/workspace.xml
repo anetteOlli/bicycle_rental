@@ -4,11 +4,48 @@
     <bookmark url="file://$PROJECT_DIR$/src/DatabaseHandler/CryptAES.java" line="9" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08580399-7db5-4db4-9962-2ef222ee57c6" name="Default" comment="Minor fixes">
+    <list default="true" id="08580399-7db5-4db4-9962-2ef222ee57c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddTechnician.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddTechnician.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockEdit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockReg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockReg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/GPSSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/GPSSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegBicycle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegBicycle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegBikeConfirm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegBikeConfirm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterNewRepairJL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterNewRepairJL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterRepairFrontPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterRepairFrontPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/ShowBikeStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/ShowBikeStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/StatisticsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/StatisticsPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterNewRepairJL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterNewRepairJL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterRepairFrontPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterRepairFrontPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/AdministerAdmins (1).form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AdministerAdmins (1).form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/AdministerCustomers (1).form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AdministerCustomers (1).form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/AdministerTechnicians.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AdministerTechnicians.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BikeMain.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BikeMain.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BikeStats.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BikeStats.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ChangePassword.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ChangePassword.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ChangePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ChangePasswordNew.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ChangePasswordNew.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ChangePrice.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ChangePrice.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/DockFrontPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DockFrontPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/DockStatus.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DockStatus.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/EditBike1.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EditBike1.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/EditBike1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EditBike1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GPSSystem.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GPSSystem.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LogInPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LogInPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/adminUsersFrontPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/adminUsersFrontPage.form" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,14 +71,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AdminFront.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.form">
+      <file leaf-file-name="RegisterFinishedRepair.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterFinishedRepair.form">
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file leaf-file-name="AdministerAdmins (1).form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins (1).form">
+      <file leaf-file-name="RegisterNewRepairJL.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterNewRepairJL.form">
           <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterRepairFrontPage.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="SendCustomerMail.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/SendCustomerMail.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="ShowBikeStatus.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/ShowBikeStatus.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticsPage.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsPage.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="TRegisterFinishedRepair.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterFinishedRepair.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="TRegisterNewRepairJL.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterNewRepairJL.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="TRegisterRepairFrontPage.form" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterRepairFrontPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -71,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/DatabaseHandler/Main.java" />
         <option value="$PROJECT_DIR$/src/DatabaseHandler/DatabaseConEncrypt.java" />
         <option value="$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeepTest.java" />
         <option value="$PROJECT_DIR$/Test/DatabaseHandler/DatabasePasswordKeepTest.java" />
@@ -85,18 +165,44 @@
         <option value="$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java" />
         <option value="$PROJECT_DIR$/src/Simulation/Trip.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ChangePassword.form" />
-        <option value="$PROJECT_DIR$/src/GUI/ChangePassword.java" />
-        <option value="$PROJECT_DIR$/src/GUI/LogInPage.form" />
         <option value="$PROJECT_DIR$/src/GUI/LogInPage.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ChangePasswordNew.form" />
         <option value="$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java" />
         <option value="$PROJECT_DIR$/src/GUI/AdminFront.form" />
-        <option value="$PROJECT_DIR$/src/GUI/SendCustomerMail.form" />
         <option value="$PROJECT_DIR$/src/GUI/ChangePasswordNew.java" />
         <option value="$PROJECT_DIR$/src/GUI/SendCustomerMail.java" />
-        <option value="$PROJECT_DIR$/src/GUI/BikeStats.form" />
         <option value="$PROJECT_DIR$/src/GUI/AdminFront.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AddAdmin.form" />
+        <option value="$PROJECT_DIR$/src/GUI/AddCustomer.form" />
+        <option value="$PROJECT_DIR$/src/GUI/AddTechnician.form" />
+        <option value="$PROJECT_DIR$/src/GUI/DockEdit.form" />
+        <option value="$PROJECT_DIR$/src/GUI/DockReg.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBicycle.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegBikeConfirm.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegisterFinishedRepair.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegisterNewRepairJL.form" />
+        <option value="$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/SendCustomerMail.form" />
+        <option value="$PROJECT_DIR$/src/GUI/ShowBikeStatus.form" />
+        <option value="$PROJECT_DIR$/src/GUI/StatisticsPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/TRegisterFinishedRepair.form" />
+        <option value="$PROJECT_DIR$/src/GUI/TRegisterNewRepairJL.form" />
+        <option value="$PROJECT_DIR$/src/GUI/ChangePrice.form" />
+        <option value="$PROJECT_DIR$/src/GUI/EditBike1.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AdministerAdmins (1).form" />
+        <option value="$PROJECT_DIR$/src/GUI/AdministerCustomers (1).form" />
+        <option value="$PROJECT_DIR$/src/GUI/AdministerTechnicians.form" />
+        <option value="$PROJECT_DIR$/src/GUI/adminUsersFrontPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/BikeMain.form" />
+        <option value="$PROJECT_DIR$/src/GUI/BikeStats.form" />
+        <option value="$PROJECT_DIR$/src/GUI/ChangePassword.form" />
+        <option value="$PROJECT_DIR$/src/GUI/ChangePassword.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ChangePasswordNew.form" />
+        <option value="$PROJECT_DIR$/src/GUI/DockFrontPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/DockStatus.form" />
+        <option value="$PROJECT_DIR$/src/GUI/EditBike1.form" />
+        <option value="$PROJECT_DIR$/src/GUI/GPSSystem.form" />
+        <option value="$PROJECT_DIR$/src/GUI/LogInPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.form" />
       </list>
     </option>
   </component>
@@ -235,7 +341,21 @@
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="AdministerTechnicians" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="adminUsersFrontPage" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="BikeMain" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
@@ -270,6 +390,48 @@
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="DockEdit" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="DockFrontPage" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="DockReg" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="DockStatus" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="EditBike1" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="GPSSystem" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="LogInPage" type="e9f4de52:FormNode" />
             </path>
             <path>
@@ -284,6 +446,34 @@
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="RegBikeConfirm" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="RegisterFinishedRepair" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="RegisterNewRepairJL" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="RegisterRepairFrontPage" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="SendCustomerMail" type="e9f4de52:FormNode" />
             </path>
             <path>
@@ -291,7 +481,35 @@
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="ShowBikeStatus" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="StatisticsPage" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="TRegisterFinishedRepair" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="TRegisterNewRepairJL" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="TRegisterRepairFrontPage" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
@@ -320,6 +538,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="SearchEverywhereHistoryKey" value="statistic&#9;ACTION&#9;ActivateStatisticToolWindow" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="327" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -352,7 +571,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AdministerCustomers">
+  <component name="RunManager" selected="Application.EditBike1">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -378,8 +597,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="BikeStats" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.BikeStats" />
+    <configuration name="EditBike1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.EditBike1" />
       <module name="TrondheimEBicycles" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -467,18 +686,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.AdministerTechnicians" />
-      <item itemvalue="Application.BikeStats" />
       <item itemvalue="Application.LogInPage" />
       <item itemvalue="Application.EmployeeDatabase" />
       <item itemvalue="Application.AdministerCustomers" />
+      <item itemvalue="Application.EditBike1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EditBike1" />
         <item itemvalue="Application.AdministerCustomers" />
         <item itemvalue="Application.LogInPage" />
         <item itemvalue="Application.EmployeeDatabase" />
         <item itemvalue="Application.AdministerTechnicians" />
-        <item itemvalue="Application.BikeStats" />
       </list>
     </recent_temporary>
   </component>
@@ -500,7 +719,7 @@
       <workItem from="1524125448411" duration="596000" />
       <workItem from="1524148618854" duration="3269000" />
       <workItem from="1524225750797" duration="3865000" />
-      <workItem from="1524313543598" duration="16546000" />
+      <workItem from="1524313543598" duration="21367000" />
     </task>
     <task id="LOCAL-00001" summary="tortur">
       <created>1521117026349</created>
@@ -593,7 +812,28 @@
       <option name="project" value="LOCAL" />
       <updated>1524486758175</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Started changing font size on GUI">
+      <created>1524487186612</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524487186612</updated>
+    </task>
+    <task id="LOCAL-00015" summary="GUI font size increased">
+      <created>1524487952165</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524487952165</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Changed more fonts in the GUI">
+      <created>1524490687516</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1524490687516</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -602,7 +842,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56733000" />
+    <option name="totallyTimeSpent" value="61554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -618,11 +858,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.14529915" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4919463" visible="true" weight="0.32621083" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4919463" visible="true" weight="0.14102565" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13892618" />
       <window_info anchor="bottom" id="Statistic" order="13" sideWeight="0.49932885" weight="0.32905984" />
       <window_info anchor="right" id="Database" order="5" weight="0.3295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -684,7 +924,10 @@
     <MESSAGE value="Small changes" />
     <MESSAGE value="Added new page to send newsletter to all registered customers. Also added option to reset password (from login page), and to change password (after login)" />
     <MESSAGE value="Minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes" />
+    <MESSAGE value="Started changing font size on GUI" />
+    <MESSAGE value="GUI font size increased" />
+    <MESSAGE value="Changed more fonts in the GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed more fonts in the GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,152 +953,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConEncrypt.java" />
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeepTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/Main.java" />
-    <entry file="file://$PROJECT_DIR$/Test/DatabaseHandler/DatabasePasswordKeepTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa2700.39637/BibliotekTest.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa2700.39976/Bok.java" />
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseCleanup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/CryptAES.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#encrypt#0;class#CryptAES#0" />
-            <element signature="method#decrypt#0;class#CryptAES#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/ReTripPayment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/TripPayment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/Bicycle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/BicycleS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/BicycleE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/BikeMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="86" column="44" lean-forward="true" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="109" column="55" lean-forward="true" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="104" column="61" selection-start-line="104" selection-start-column="61" selection-end-line="104" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DockStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1054">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DockEdit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1513">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/SingleBikeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Simulation/Charging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="223" column="51" lean-forward="true" selection-start-line="223" selection-start-column="51" selection-end-line="223" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/BikeStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -917,43 +1014,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/ChangePasswordNew.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="51" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/SendCustomerMail.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/BikeStats.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -980,18 +1046,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePasswordNew.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/ChangePrice.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1000,10 +1060,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="208" column="29" lean-forward="true" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
+        <state relative-caret-position="51">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddCustomer.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddTechnician.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1703">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="223" column="17" selection-start-line="223" selection-start-column="17" selection-end-line="223" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1014,6 +1094,108 @@
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins (1).form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers (1).form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BikeMain.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BikeStats.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="162" column="16" selection-start-line="162" selection-start-column="16" selection-end-line="178" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePasswordNew.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePrice.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DockEdit.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DockFrontPage.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DockReg.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DockStatus.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike1.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GPSSystem.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegBikeConfirm.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterFinishedRepair.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterNewRepairJL.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/SendCustomerMail.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ShowBikeStatus.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterNewRepairJL.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterFinishedRepair.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsPage.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>

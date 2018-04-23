@@ -21,7 +21,8 @@
               <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Back"/>
+              <font size="20"/>
+              <text value="HOME"/>
             </properties>
           </component>
           <grid id="3b5e9" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
