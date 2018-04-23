@@ -37,6 +37,12 @@ public class RegBikeConfirm {
     private JLabel price;
     BikeDatabase database = new BikeDatabase();
 
+
+    /**
+     * method creates an ArrayList of the class Bicycle
+     * @return ArrayList for Jlist list1
+     * it shows the 20 last registered bicycles.
+     */
     public ArrayList<Bicycle> createTable(){
     list1.setModel(model);
         try {

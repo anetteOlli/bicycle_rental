@@ -42,6 +42,11 @@ public class BikeStats {
     BicycleS bicycleS;
 
     DefaultListModel<BicycleS> model = new DefaultListModel<>();
+
+    /**
+     * method creates an ArrayList of the class BicycleS. (S stands for Stats)
+     * @return the ArrayList that is used in the JList list.
+     */
     public ArrayList<BicycleS> createTable() {
         ArrayList<BicycleS> array = new ArrayList<>();
         list.setModel(model);

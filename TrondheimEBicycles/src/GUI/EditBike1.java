@@ -46,6 +46,11 @@ public class EditBike1 {
     private JLabel station;
     DefaultListModel<BicycleE> model = new DefaultListModel<>();
 
+    /**
+     * method creates an ArrayList of the class BicycleE. (E stands for Edit)
+     * @return ArrayList for JList list
+     *
+     */
 
     public ArrayList<BicycleE> createTable() {
         ArrayList<BicycleE> array = new ArrayList<>();

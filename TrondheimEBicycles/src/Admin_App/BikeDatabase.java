@@ -1,22 +1,27 @@
 package Admin_App;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 
 import DatabaseHandler.*;
-import GUI.EditBike1;
-import GUI.RegBicycle;
+import jdk.nashorn.internal.scripts.JO;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class BikeDatabase {
-
+    JOptionPane pane = new JOptionPane();
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
 
+    /**
+     * method registers bicycles into the database
+     * @param make the maker of the bicycle, for examble DBS or Diamant
+     * @param modell the model of the bicycle, a combobox given on the GUI
+     * @param bicycleStatus the status of the bicycle. it will automatically be 'in storage'
+     * @param price_of_bike how much the bike cost at purchase
+     * @param nr how many bicycles you want to register of the same make, model and price
+     */
 
 
     public void regBicycle(String make, String modell, String bicycleStatus, double price_of_bike, int nr) {
@@ -38,7 +43,7 @@ public class BikeDatabase {
             }
 
             regBicycle.executeBatch();
-
+            pane.showMessageDialog(null, "Bicycles Successfully Registered", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
         } catch (SQLException e) {
@@ -46,6 +51,10 @@ public class BikeDatabase {
         }
     }
 
+    /**
+     * method will update how far each bike has travelled
+     * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
+     */
     public void UpdateKM (int nr){
         String KM = "UPDATE Bicycle SET totalKM = (SELECT SUM(tripKM) FROM TripPayment WHERE bicycle_id = ?) WHERE bicycle_id = ?;";
         PreparedStatement Mileage = connection.createPreparedStatement(con, KM);
@@ -61,6 +70,10 @@ public class BikeDatabase {
         }
     }
 
+    /**
+     * method updates how many times each bike has been to repair
+     * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
+     */
 
 
 
@@ -78,6 +91,11 @@ public class BikeDatabase {
             e.printStackTrace();
         }
     }
+
+    /**
+     * method updates how many times each bicycle has been on a trip
+     * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
+     */
 
     public void RegTrips (int nr) {
         String trippe = "Update Bicycle SET trips=(SELECT COUNT(trip_id) FROM TripPayment) WHERE bicycle_id=?;";
@@ -146,7 +164,12 @@ public class BikeDatabase {
         }
         return result;
     }
-
+/**
+ * method changes the price per trip of a specific bike model.
+ * @param price is the new price for the model
+ * @param model is the specific model for update
+ *
+ */
     public void changePrice (int price, String model){
         String sql = "UPDATE Model SET price=? WHERE model=?;";
         PreparedStatement trip = connection.createPreparedStatement(con, sql);
@@ -154,6 +177,7 @@ public class BikeDatabase {
             trip.setInt(1, price);
             trip.setString(2, model);
             trip.executeUpdate();
+            pane.showMessageDialog(null, "Price is successfully updated", "Change Price", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
             e.printStackTrace();
         }
