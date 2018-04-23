@@ -46,7 +46,7 @@ public class CustomerDatabase {
 
     public String generateRandomPassword(){
         Random random = new Random();
-        String characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+        String characters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String password = "";
         String[] chars = new String[5];
         for(int i = 0; i < 5; i++){
@@ -56,36 +56,6 @@ public class CustomerDatabase {
         return password;
     }
 
-    public boolean emailPassword(Customer customer){
-        try{
-            String password = generateRandomPassword();
-            String sentence = "INSERT INTO Customer(password) VALUES("+password+") WHERE cust_id = "+customer.getCustId();
-            PreparedStatement statement = connection.createPreparedStatement(con, sentence);
-            statement.executeUpdate();
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-        }
-        String to = customer.getCustEmail();
-        String from = "trondheimbicyclerental@gmail.com";
-        String host = "localhost";
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
-        Session session = Session.getDefaultInstance(properties);
-        try {
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setSubject("Your password for Trondheim Bicycle Rental");
-            message.setText("TestMail");
-            Transport.send(message);
-            System.out.println("Message sent successfully!");
-            return true;
-        }catch(MessagingException e){
-            e.printStackTrace();
-            e.getMessage();
-            return false;
-        }
-    }
 
     /*Creates a new customer, and creates a payment card for that customer*/
     public boolean regNewCustomer(Customer newCustomer) {
@@ -109,6 +79,7 @@ public class CustomerDatabase {
             RegNewCustomer.setString(7, PasswordStorage.createHash(password));
             if (RegNewCustomer.executeUpdate() != 0) {
                 cleaner.commit(con);
+                SendMail send = new SendMail(newCustomer.getCustEmail(), "Welcome to Trondheim Bicycle Rental, "+newCustomer.getFirstName(), "Thank you for registering your account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in. \n \n Your card number is: "+newCustomer.getCustCardNumber());
                 return true;
             } else {
                 cleaner.rollback(con);

@@ -62,9 +62,10 @@ public class EmployeeDatabase {
             RegNewAdmin.setInt(7, newAdmin.getPhone());
             RegNewAdmin.setInt(8, hired);
             RegNewAdmin.setInt(9, 1);
-            SendMail send = new SendMail(newAdmin.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newAdmin.getFirstName(), "Thank you for registering your administrator account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
+            //SendMail send = new SendMail(newAdmin.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newAdmin.getFirstName(), "Thank you for registering your administrator account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
             if(RegNewAdmin.executeUpdate() != 0){
                 cleaner.commit(con);
+                SendMail send = new SendMail(newAdmin.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newAdmin.getFirstName(), "Thank you for registering your administrator account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
                 return true;
             }
             else{
@@ -109,9 +110,10 @@ public class EmployeeDatabase {
             RegNewTechnician.setInt(7, newTechnician.getPhone());
             RegNewTechnician.setInt(8, hired);
             RegNewTechnician.setInt(9, 0);
-            SendMail send = new SendMail(newTechnician.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newTechnician.getFirstName(), "Thank you for registering your employee account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
+            //SendMail send = new SendMail(newTechnician.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newTechnician.getFirstName(), "Thank you for registering your employee account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
             if(RegNewTechnician.executeUpdate() != 0){
                 cleaner.commit(con);
+                SendMail send = new SendMail(newTechnician.getEmail(), "Welcome to Trondheim Bicycle Rental, "+newTechnician.getFirstName(), "Thank you for registering your employee account with Trondheim Bicycle Rental! \n \n Use your email and this temporary password to log in: "+password+". Please change your password the first time you log in");
                 return true;
             }
             else{
@@ -156,11 +158,11 @@ public class EmployeeDatabase {
     public static void main(String[] args){
         EmployeeDatabase database = new EmployeeDatabase();
         connection.getConnection();
-        Admin patrick1 = new Admin(1, "Patrick", "Thorkildsen", 41146453, "Nedre Lunds Vei 3","Patrick.thorkildsen@gmail.com", "Password123");
-        Technician patrick = new Technician(1, "Patrick", "Thorkildsen", 41146453, "Nedre Lunds Vei 3","Patrick.thorkildsen@gmail.com", "Password123");
+        Admin patrick1 = new Admin(1, "Admin", "Admin", 12345678, "Adminvei1","admin@admin.com", "admin");
+        Technician patrick = new Technician(1, "Technician", "Technician", 12345678, "Technicianvei1","technician@technician.com", "technician");
         database.regNewAdmin(patrick1);
         database.regNewTechnician(patrick);
-        database.deleteEmployee("patrick.thorkildsen@gmail.com", "Password123");
+        //database.deleteEmployee("patrick.thorkildsen@gmail.com", "Password123");
         cleaner.closeConnection(con);
     }
 }

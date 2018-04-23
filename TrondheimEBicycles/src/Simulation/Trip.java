@@ -81,8 +81,8 @@ public class Trip extends Thread{
     }
 
     public static void main(String[] args) {
-        (new Trip(1331, 3,1,5)).start();
-       // (new Trip(5025, 3,1,5)).start();
+        (new Trip(1331, 1,6,5)).start();
+       (new Trip(5025, 4,1,5)).start();
     }
 
 }
