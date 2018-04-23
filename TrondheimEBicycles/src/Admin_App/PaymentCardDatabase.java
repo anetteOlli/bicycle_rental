@@ -11,8 +11,10 @@ public class PaymentCardDatabase {
     private static Connection con = connection.getConnection();
     private static Random random = new Random();
 
-    /*Finds a random 6-digit number that does not already exist in the PaymentCard
-     * table. This random number is used as the PaymentCard ID*/
+    /**
+     * @return Finds a random 6-digit number that does not already exist in the PaymentCard
+     *      * table. This random number is used as the PaymentCard ID
+     */
     public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
@@ -40,8 +42,10 @@ public class PaymentCardDatabase {
         return -3;
     }
 
-    /*Creates a new Payment Card. This method is further called in the
-     * regNewCustomer() method*/
+    /**
+     * @param newPaymentCard The PaymentCard object to be inserted into the database
+     * @return Registers a paymentcard in the database
+     */
     public boolean regNewPaymentCard(PaymentCard newPaymentCard){
         int active;
         try{
@@ -80,9 +84,13 @@ public class PaymentCardDatabase {
         return false;
     }
 
-    /*We do not allow deletion of customer cards or customers from the database.
-     * This method sets the payment card associated with a customer as inactive
-     * An inactive paymentcard can not be used (can't add or deduct funds)*/
+    /**
+     * @param cust_id CustomerID of the customer whose paymentcard you want to activate/deactivate
+     * @param status true - set as active, false - set as inactive
+     * @return We do not allow deletion of customer cards or customers from the database.
+     *      * This method sets the payment card associated with a customer as inactive
+     *      * An inactive paymentcard can not be used (can't add or deduct funds)
+     */
     public boolean setActiveStatus(int cust_id, boolean status) {
         try {
             int status1;
@@ -115,7 +123,11 @@ public class PaymentCardDatabase {
         }
     }
 
-    /* Sets the balance of a payment card associated with a customer to a certain number */
+    /**
+     * @param cust_id Customer ID
+     * @param amount The amount to SET the customers balance to
+     * @return Sets the balance of a payment card associated with a customer to a certain number.
+     */
     public boolean setBalance(int cust_id, int amount){
         try{
             cleaner.setAutoCommit(con, false);
@@ -143,7 +155,11 @@ public class PaymentCardDatabase {
         }
     }
 
-    /* Adds funds to the balance of the payment card associated with a customer */
+    /**
+     * @param cust_id Customer ID
+     * @param amount The amount to ADD to the customers balance
+     * @return Adds funds to the balance of the payment card associated with a customer
+     */
     public boolean addFunds(int cust_id, double amount){
         try{
             cleaner.setAutoCommit(con, false);
@@ -170,6 +186,11 @@ public class PaymentCardDatabase {
         }
     }
 
+    /**
+     * @param cust_id Customer ID
+     * @param amount The amount to deduct from the customers balance
+     * @return Deducts funds from the balance of a payment card associated with a customer.
+     */
     /* Deducts funds from the balance of a payment card associated with a customer */
     public boolean deductFunds (int cust_id, double amount){
         try{
@@ -197,6 +218,10 @@ public class PaymentCardDatabase {
         }
     }
 
+    /**
+     * @param cust_id Customer ID
+     * @return Returns the current balance of a given customer
+     */
     public double checkBalance(int cust_id){
         try{
             String sentence = "SELECT balance FROM PaymentCard WHERE cust_id = "+cust_id+" AND active_status = 1";

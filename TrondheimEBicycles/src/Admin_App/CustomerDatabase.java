@@ -15,8 +15,9 @@ public class CustomerDatabase {
     private static Connection con = connection.getConnection();
     private static Random random = new Random();
 
-    /*Finds a random 4-digit number that does not already exist in the customer table.
-     * This number is used as the customer ID*/
+    /**
+     * @return Returns a random 4-digit integer that does not exist as a CustomerID in the database. This integer is to be used as a customer ID
+     */
     public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
@@ -44,6 +45,10 @@ public class CustomerDatabase {
         return -3;
     }
 
+
+    /**
+     * @return Returns a random 5-letter/digit password. To be used as a starting-password or when a password is reset.
+     */
     public String generateRandomPassword(){
         Random random = new Random();
         String characters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -57,6 +62,10 @@ public class CustomerDatabase {
     }
 
 
+    /**
+     * @param newCustomer - A customer object to be registered in the database
+     * @return Registers the Customer object in the database, and creates a payment card for the customer at the same time. Also sends the customer a temporary password on the registered email address
+     */
     /*Creates a new customer, and creates a payment card for that customer*/
     public boolean regNewCustomer(Customer newCustomer) {
         try {
@@ -99,9 +108,12 @@ public class CustomerDatabase {
         return false;
     }
 
-    /*This method sets the card currently in use by the user as inactive,
-    and creates a new, active card. The balance from the old card is also
-    transferred to the new card.*/
+    /**
+     * @param cust_id - Id of the customer to generate a new paymentcard for
+     * @return Sets the card currently in use by the user as inactive,
+     *         and creates a new, active card. The balance from the old card is also
+     *         transferred to the new card.
+     */
     public boolean getNewCard(int cust_id){
         try{
             cleaner.setAutoCommit(con, false);
@@ -146,33 +158,6 @@ public class CustomerDatabase {
         }
         return false;
     }
-
-    //Customers should not be deleted
-  /*  public boolean deleteCustomer(String email, String password){
-        try{
-            cleaner.setAutoCommit(con, false);
-            String deleteSqlCard = "DELETE PaymentCard FROM PaymentCard AS p INNER JOIN Customer AS c ON p.cust_id = c.cust_id WHERE c.email = ? AND c.password = ?";
-            String deleteSql = "DELETE FROM Customer WHERE email = ? AND password = ?";
-            PreparedStatement deleteCustomer = connection.createPreparedStatement(con, deleteSql);
-            deleteCustomer.setString(1, email);
-            deleteCustomer.setString(2, password);
-            PreparedStatement deleteCard = connection.createPreparedStatement(con, deleteSqlCard);
-            deleteCard.setString(1, email);
-            deleteCard.setString(2, password);
-            deleteCard.executeUpdate();
-            if(deleteCustomer.executeUpdate() != 0){
-                cleaner.commit(con);
-                return true;
-            }
-            else{
-                cleaner.rollback(con);
-                return false;
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }*/
 
     public static void main(String[] args) {
         CustomerDatabase database = new CustomerDatabase();

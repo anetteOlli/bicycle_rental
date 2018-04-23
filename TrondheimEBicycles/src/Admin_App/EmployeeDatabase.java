@@ -13,6 +13,9 @@ public class EmployeeDatabase {
     private static Connection con = connection.getConnection();
     private static Random random = new Random();
 
+    /**
+     * @return Returns a random 4-digit integer that does not exist as an EmployeeID in the database. This integer is to be used as an Employee ID
+     */
     public int findRandomId(){
         boolean exists = true;
         int randomNum = 0;
@@ -40,6 +43,10 @@ public class EmployeeDatabase {
         return -3;
     }
 
+    /**
+     * @param newAdmin - An admin object to be registered in the database
+     * @return Registers the Admin object in the database. Also sends the new Admin a temporary password on the registered email
+     */
     public boolean regNewAdmin(Admin newAdmin){
         int hired = 0;
         CustomerDatabase database = new CustomerDatabase();
@@ -88,6 +95,10 @@ public class EmployeeDatabase {
         return false;
     }
 
+    /**
+     * @param newTechnician - A technician object to be registered in the database
+     * @return Registers the Technician object in the database. Also sends the new Technician a temporary password on the registered email
+     */
     public boolean regNewTechnician(Technician newTechnician){
         int hired = 0;
         CustomerDatabase database = new CustomerDatabase();
@@ -136,6 +147,11 @@ public class EmployeeDatabase {
         return false;
     }
 
+    /**
+     * @param email The email connected to the account that wants its password reset
+     * @param email2 Used to confirm the email
+     * @return Creates a new, random password for the provided email address. The password is sent to the email address.
+     */
     public boolean resetPassword(String email, String email2){
         try{
             cleaner.setAutoCommit(con, false);
@@ -174,6 +190,10 @@ public class EmployeeDatabase {
         }
     }
 
+    /**
+     * @param str String to be checked
+     * @return Returns true if the provided string contains at least one lowercase letter, one uppercase letter, and one number. Used to check that a password is strong enough when users choose their own passwords
+     */
     private static boolean checkString(String str) {
         char ch;
         boolean capitalFlag = false;
@@ -195,6 +215,13 @@ public class EmployeeDatabase {
         return false;
     }
 
+    /**
+     * @param email - The email of the account that wants its password changed
+     * @param oldPass - The current password of the account that wants its password changed
+     * @param newPass - The new desired password
+     * @param newPass2 - Repeat the password
+     * @return Changes the password of the account belonging to the email provided if the information provided is valid
+     */
     public boolean changePassword(String email, String oldPass, String newPass, String newPass2){
         try{
             PasswordStorage storage = new PasswordStorage();
@@ -257,26 +284,6 @@ public class EmployeeDatabase {
         }
     }
 
-    public boolean deleteEmployee(String email, String password){
-        try{
-            cleaner.setAutoCommit(con, false);
-            String deleteSql = "DELETE FROM Employee WHERE email = ? AND password = ?";
-            PreparedStatement deleteEmployee = connection.createPreparedStatement(con, deleteSql);
-            deleteEmployee.setString(1, email);
-            deleteEmployee.setString(2, password);
-            if(deleteEmployee.executeUpdate() != 0){
-                cleaner.commit(con);
-                return true;
-            }
-            else{
-                cleaner.rollback(con);
-                return false;
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }
 
     public static void main(String[] args){
         EmployeeDatabase database = new EmployeeDatabase();
