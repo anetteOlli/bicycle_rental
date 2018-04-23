@@ -20,7 +20,6 @@ public class TripPayment {
         this.time_received = LocalTime.now();
     }
 
-
     public int getTripID(){
         return tripID;
     }
@@ -28,6 +27,7 @@ public class TripPayment {
     /*public Time getTime_received() {
         return java.sql.Time.valueOf(time_received);
     }*/
+
 
     public java.sql.Timestamp getTime_received(){
         Calendar calendar = Calendar.getInstance();

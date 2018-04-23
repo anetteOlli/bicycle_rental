@@ -16,7 +16,11 @@ public class TripPaymentDatabase {
     private boolean sufficientBalance = false;
     PaymentCardDatabase paymentCardDatabase = new PaymentCardDatabase();
 
-    //Method that starts a new trip
+    /**
+     * Method that starts a new trip
+     * @param newTripPayment information needed to start a new trip, a TripPayment object
+     * @return bicycle_id if it succeeds, -1 if it doesn't
+     */
     public int startNewTrip(TripPayment newTripPayment) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -76,7 +80,11 @@ public class TripPaymentDatabase {
         }
     }
 
-    // finds an available bie from the dockingstation
+    /**
+     * Method that finds an available bike from a given dockingstation
+     * @param dockingstation used as station_id
+     * @return bicycle_id if it succeeds, -1 if it doesnt
+     */
     public int findAvailableBike(int dockingstation) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -118,6 +126,12 @@ public class TripPaymentDatabase {
     }
 
     //changes isAvailable to 1 when a bicycle is taken out of the dock
+
+    /**
+     * Method that changes isAvailable in a dock to 1 when a bicycle is taken out of the dock
+     * @param newTripPayment TripPayment object with information needed to find out which dock
+     * @return true if it succeeds, false if it doesnt
+     */
     public boolean setDockAvailable(TripPayment newTripPayment) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -140,7 +154,11 @@ public class TripPaymentDatabase {
         }
     }
 
-    //Sets the bicycleStatus to 'not in dock' when a trip starts
+    /**
+     * Method that sets bicycleStatus to 'not in dock'
+     * @param newTripPayment TripPayment object with information needed to find out which bicycle
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean setBicycleStatusUnavailable(TripPayment newTripPayment) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -159,7 +177,11 @@ public class TripPaymentDatabase {
         }
     }
 
-    // method to end a trip
+    /**
+     * Method that ends a trip
+     * @param newReTripPayment ReTripPayment object with information required to end a trip
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean endTrip(ReTripPayment newReTripPayment) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -198,7 +220,11 @@ public class TripPaymentDatabase {
         return false;
     }
 
-    // gets which bicycle is used in the trip, this is used in endTrip()
+    /**
+     * Method that gets a bicycle_id
+     * @param newReTripPayment ReTripPayment object with information required to end a trip
+     * @return bicycle_id if it succeeds, -1 if it doesnt
+     */
     public int getBikeID(ReTripPayment newReTripPayment){
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -218,7 +244,11 @@ public class TripPaymentDatabase {
         return -1;
     }
 
-    //gets the customer that is used in a trip, used in endTrip()
+    /**
+     * Method that gets the cust_id from a ReTripPayment object
+     * @param newReTripPayment ReTripPayment object with information needed to find a customer
+     * @return cust_id if it succeeds, -1 if it doesn't
+     */
     public int getCustID(ReTripPayment newReTripPayment){
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -238,7 +268,11 @@ public class TripPaymentDatabase {
         return -1;
     }
 
-    //sets a dock_id to bicycle when the trip is over, used in endTrip()
+    /**
+     * Method that assigns a dock to a bicycle after a trip ends
+     * @param newReTripPayment ReTripPayment object with information to assign a bicycle a dock
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean assignBicycletoDock(ReTripPayment newReTripPayment) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -263,7 +297,11 @@ public class TripPaymentDatabase {
         }
     }
 
-    //checks if there is enough space in the dockingstation, used in endTrip()
+    /**
+     * Method that checks if there is space in the chosen dockingstation
+     * @param dockingstation which station_id that's checked for space
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean checkSpace(int dockingstation) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -285,7 +323,12 @@ public class TripPaymentDatabase {
         }
         return false;
     }
-    //sets bicycleStatus to 'in dock' when its placed in a dock
+
+    /**
+     * Method that sets bicycleStatus of a bicycle to 'in dock'
+     * @param newReTripPayment ReTripPayment object with information to find which bicycle
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean setBicycleStatusAvailable(ReTripPayment newReTripPayment) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -301,7 +344,12 @@ public class TripPaymentDatabase {
         return true;
     }
 
-
+    /**
+     * Method to find the amount of hours a trip lasted
+     * @param startTrip TripPayment object with information about the start of the trip
+     * @param sluttTrip ReTripPayment object with information about the end of the trip
+     * @return number of hours
+     */
     public long getNoOfHours(TripPayment startTrip, ReTripPayment sluttTrip) {
         return sluttTrip.getTime_delivered().getHours() - startTrip.getTime_received().getHours();
     }
@@ -314,7 +362,11 @@ public class TripPaymentDatabase {
         }
     }
 
-    // calculates the price of the trip
+    /**
+     * Method that calculates the price of a trip, based on what model the bicycle is
+     * @param newTripPayment TripPayment object with information to find which model
+     * @return price if it succeeds, -1 if it doesn't
+     */
     public double sumPayment(TripPayment newTripPayment) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -354,7 +406,11 @@ public class TripPaymentDatabase {
         }
     }
 
-
+    /**
+     * Method that finds trip_id
+     * @param cust_id which cust_id to use
+     * @return trip_id if it succeeds, -1 if it doesn't
+     */
     public int findTripIDfromCustomer(int cust_id) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -374,6 +430,11 @@ public class TripPaymentDatabase {
         }
     }
 
+    /**
+     * Method that sets isAvailable in a dock to 0
+     * @param newReTripPayment ReTripPayment object with information needed to find out which dock_id to use
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean setDockUnavailable(ReTripPayment newReTripPayment) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -395,6 +456,11 @@ public class TripPaymentDatabase {
         }
     }
     //if there is some wrong data in the database, fixDocks() and fixBicycles() can clean it up a little bit, rather than having to do it manually
+
+    /**
+     * Method that fixes some wrong data in the database connected to docks
+     * @return
+     */
     public boolean fixDocks(){
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -417,6 +483,10 @@ public class TripPaymentDatabase {
         return false;
     }
 
+    /**
+     * Method that fixes some wrong data in the database connected to bicycles
+     * @return
+     */
     public boolean fixBicycles(){
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
