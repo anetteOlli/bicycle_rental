@@ -15,6 +15,7 @@ public class AdminFront {
     private JButton statisticsButton;
     private JButton logOutButton;
     private JButton changePasswordButton;
+    private JButton sendCustomerNewsletterButton;
 
     public AdminFront() {
         toDockbutton.addActionListener(new ActionListener() {
@@ -182,7 +183,7 @@ public class AdminFront {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Change password");
-                frame.setContentPane(new ChangePassword().panel1);
+                frame.setContentPane(new ChangePasswordNew().panel1);
                 frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
@@ -210,6 +211,28 @@ public class AdminFront {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
+        });
+        sendCustomerNewsletterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Send newsletter");
+                frame.setContentPane(new SendCustomerMail().panel1);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
+                }
             }
         });
     }
