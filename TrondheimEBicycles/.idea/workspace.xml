@@ -5,119 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99991094-73a6-48ef-b121-a91fc504fe79" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/Admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/Bicycle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/BicycleE.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/BicycleS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/BikeDatabase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/Customer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/CustomerDatabase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/DockingStation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/EmployeeDatabase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/PasswordStorage.CannotPerformOperationException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/PasswordStorage.InvalidHashException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/PasswordStorage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/PaymentCard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/PaymentCardDatabase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/ReTripPayment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/Repair.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/SendMail.SMTPAuthenticator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/SendMail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/Technician.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/TripPayment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/TripPaymentDatabase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Admin_App/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/DatabaseHandler/DatabaseCleanup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/DatabaseHandler/DatabaseConnection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/DatabaseHandler/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/DatabaseHandler/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/DatabaseHandler/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AddAdmin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AddCustomer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AddTechnician.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AdminFront.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AdministerAdmins.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AdministerCustomers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AdministerTechnicians.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/AllBikeMap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/BikeMain.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/BikeRepairChart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/BikeStats.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/BikeTripChart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/ChangePassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/ChangePasswordNew.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/ChangePrice.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/DockEdit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/DockFrontPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/DockReg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/DockStatus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/DockStatusMap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/EditBike1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/GPSSystem.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/GoogleMapsSample.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/KmTripChart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/LogInPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/Main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/RegBicycle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/RegBikeConfirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/RegisterFinishedRepair.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/RegisterNewRepairJL.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/RegisterRepairFrontPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/SendCustomerMail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/ShowBikeStatus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/SingleBikeMap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/StatisticsPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/TRegisterFinishedRepair.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/TRegisterNewRepairJL.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/TRegisterRepairFrontPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/adminUsersFrontPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/GUI/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Simulation/Charging.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Simulation/Trip.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Simulation/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Simulation/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/Simulation/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/constant-values.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/deprecated-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-14.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-15.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-16.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-17.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-18.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-19.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-20.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/overview-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/package-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ .gitlab-ci.yml " beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/TripPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/TripPayment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/TripPaymentDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/TripPaymentDatabase.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -146,8 +35,8 @@
       <file leaf-file-name="Repair.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin_App/Repair.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="254" column="13" lean-forward="true" selection-start-line="254" selection-start-column="13" selection-end-line="254" selection-end-column="13" />
+            <state relative-caret-position="119">
+              <caret line="56" column="30" lean-forward="true" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -292,11 +181,6 @@
             <path>
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="javadoc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -304,6 +188,11 @@
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -326,7 +215,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javax.mail.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -504,7 +393,7 @@
       <workItem from="1524148618854" duration="3269000" />
       <workItem from="1524225750797" duration="3865000" />
       <workItem from="1524313543598" duration="28090000" />
-      <workItem from="1524509211870" duration="1287000" />
+      <workItem from="1524509211870" duration="4831000" />
     </task>
     <task id="LOCAL-00001" summary="tortur">
       <created>1521117026349</created>
@@ -653,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524509524219</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added javadoc folder">
+      <created>1524510556391</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1524510556391</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -662,11 +558,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70954000" />
+    <option name="totallyTimeSpent" value="74498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="4" />
@@ -751,7 +646,8 @@
     <MESSAGE value="Java doc for repair" />
     <MESSAGE value="Java doc for repair with returns" />
     <MESSAGE value="Added javadoc folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added javadoc folder" />
+    <MESSAGE value="kdskjadksja" />
+    <option name="LAST_COMMIT_MESSAGE" value="kdskjadksja" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -933,10 +829,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JAVA/GUI">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>GUI</OriginalElement>
+          <nodes>
+            <node x="" y="">GUI.adminUsersFrontPage</node>
+            <node x="" y="">GUI.EditBike1</node>
+            <node x="" y="">GUI.RegBicycle</node>
+            <node x="" y="">GUI.DockFrontPage</node>
+            <node x="" y="">GUI.AllBikeMap</node>
+            <node x="" y="">GUI.SingleBikeMap</node>
+            <node x="" y="">GUI.TRegisterRepairFrontPage</node>
+            <node x="" y="">GUI.LogInPage</node>
+            <node x="" y="">GUI.AddCustomer</node>
+            <node x="" y="">GUI.BikeStats</node>
+            <node x="" y="">GUI.ChangePassword</node>
+            <node x="" y="">GUI.AdminFront</node>
+            <node x="" y="">GUI.GoogleMapsSample</node>
+            <node x="" y="">GUI.RegisterFinishedRepair</node>
+            <node x="" y="">GUI.AdministerTechnicians</node>
+            <node x="" y="">GUI.DockStatusMap</node>
+            <node x="" y="">GUI.AdministerAdmins</node>
+            <node x="" y="">GUI.ShowBikeStatus</node>
+            <node x="" y="">GUI.RegisterNewRepairJL</node>
+            <node x="" y="">GUI.AddTechnician</node>
+            <node x="" y="">GUI.DockStatus</node>
+            <node x="" y="">GUI.SendCustomerMail</node>
+            <node x="" y="">GUI.RegisterRepairFrontPage</node>
+            <node x="" y="">GUI.DockReg</node>
+            <node x="" y="">GUI.Main</node>
+            <node x="" y="">GUI.KmTripChart</node>
+            <node x="" y="">GUI.BikeTripChart</node>
+            <node x="" y="">GUI.AdministerCustomers</node>
+            <node x="" y="">GUI.StatisticsPage</node>
+            <node x="" y="">GUI.BikeRepairChart</node>
+            <node x="" y="">GUI.TRegisterFinishedRepair</node>
+            <node x="" y="">GUI.AddAdmin</node>
+            <node x="" y="">GUI.TRegisterNewRepairJL</node>
+            <node x="" y="">GUI.DockEdit</node>
+            <node x="" y="">GUI.RegBikeConfirm</node>
+            <node x="" y="">GUI.ChangePrice</node>
+            <node x="" y="">GUI.BikeMain</node>
+            <node x="" y="">GUI.ChangePasswordNew</node>
+            <node x="" y="">GUI.GPSSystem</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="1295.2857142857142" y="1232.142857142857" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/DatabaseHandler">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>DatabaseHandler</OriginalElement>
+          <nodes>
+            <node x="" y="">DatabaseHandler.DatabasePasswordKeep</node>
+            <node x="" y="">DatabaseHandler.CryptAES</node>
+            <node x="" y="">DatabaseHandler.DatabaseConnection</node>
+            <node x="" y="">DatabaseHandler.DatabaseCleanup</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="87.5" y="479.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Admin_App">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Admin_App</OriginalElement>
+          <nodes>
+            <node x="" y="">Admin_App.ReTripPayment</node>
+            <node x="" y="">Admin_App.CustomerDatabase</node>
+            <node x="" y="">Admin_App.Repair</node>
+            <node x="" y="">Admin_App.TripPaymentDatabase</node>
+            <node x="" y="">Admin_App.Bicycle</node>
+            <node x="" y="">Admin_App.PaymentCard</node>
+            <node x="" y="">Admin_App.BicycleE</node>
+            <node x="" y="">Admin_App.Customer</node>
+            <node x="" y="">Admin_App.EmployeeDatabase</node>
+            <node x="" y="">Admin_App.SendMail</node>
+            <node x="" y="">Admin_App.PaymentCardDatabase</node>
+            <node x="" y="">Admin_App.Employee</node>
+            <node x="" y="">Admin_App.BicycleS</node>
+            <node x="" y="">Admin_App.Admin</node>
+            <node x="" y="">Admin_App.TripPayment</node>
+            <node x="" y="">Admin_App.BikeDatabase</node>
+            <node x="" y="">Admin_App.DockingStation</node>
+            <node x="" y="">Admin_App.PasswordStorage</node>
+            <node x="" y="">Admin_App.Technician</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="622.6666666666665" y="2222.333333333333" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin_App/Repair.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="254" column="13" lean-forward="true" selection-start-line="254" selection-start-column="13" selection-end-line="254" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="56" column="30" lean-forward="true" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
         </state>
       </provider>
     </entry>
