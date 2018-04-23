@@ -18,7 +18,7 @@ public class BikeDatabase {
     private static Connection con = connection.getConnection();
 
     /**
-     *
+     * method registers bicycles into the database
      * @param make the maker of the bicycle, for examble DBS or Diamant
      * @param modell the model of the bicycle, a combobox given on the GUI
      * @param bicycleStatus the status of the bicycle. it will automatically be 'in storage'
@@ -55,9 +55,8 @@ public class BikeDatabase {
     }
 
     /**
-     *
+     * method will update how far each bike has travelled
      * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
-     *      it will update the amount of km each bike has travelled.
      */
     public void UpdateKM (int nr){
         String KM = "UPDATE Bicycle SET totalKM = (SELECT SUM(tripKM) FROM TripPayment WHERE bicycle_id = ?) WHERE bicycle_id = ?;";
@@ -75,9 +74,8 @@ public class BikeDatabase {
     }
 
     /**
-     *
+     * method updates how many times each bike has been to repair
      * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
-     *              how many times each bike has been to repair
      */
 
 
@@ -98,9 +96,8 @@ public class BikeDatabase {
     }
 
     /**
-     *
+     * method updates how many times each bicycle has been on a trip
      * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
-     *              how many times each bike has been on a trip
      */
 
     public void RegTrips (int nr) {
@@ -170,9 +167,10 @@ public class BikeDatabase {
         }
         return result;
     }
-/** change the price per trip of a specific bike model.
-* @param price is the new price for the model
-* @param model is the specific model for update
+/**
+ * method changes the price per trip of a specific bike model.
+ * @param price is the new price for the model
+ * @param model is the specific model for update
  *
  */
     public void changePrice (int price, String model){
