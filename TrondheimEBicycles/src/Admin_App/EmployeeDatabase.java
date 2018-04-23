@@ -4,6 +4,8 @@ import DatabaseHandler.*;
 import java.sql.*;
 import java.util.Random;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 
 public class EmployeeDatabase {
     static DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -134,6 +136,43 @@ public class EmployeeDatabase {
         return false;
     }
 
+    public boolean resetPassword(String email, String email2){
+        try{
+            cleaner.setAutoCommit(con, false);
+            if(email == email2){
+                PasswordStorage storage = new PasswordStorage();
+                CustomerDatabase database = new CustomerDatabase();
+                String newPassword = database.generateRandomPassword();
+                String sentence = "UPDATE Employee SET password = '"+storage.createHash(newPassword)+"' WHERE email = '"+email+"'";
+                PreparedStatement statement = connection.createPreparedStatement(con, sentence);
+                if(statement.executeUpdate() != 0){
+                    cleaner.commit(con);
+                    SendMail send = new SendMail(email, "Password reset requested", "You just requested a password reset for your employee account. Here is your new password: "+newPassword);
+                    return true;
+                }
+                else{
+                    cleaner.rollback(con);
+                    return false;
+                }
+            }else{
+                showMessageDialog(null, "Email does not match, please try again");
+                return false;
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return false;
+        }catch(PasswordStorage.CannotPerformOperationException a){
+            System.out.println(a.getMessage());
+            return false;
+        }finally {
+            try{
+                cleaner.setAutoCommit(con, true);
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
     public boolean deleteEmployee(String email, String password){
         try{
             cleaner.setAutoCommit(con, false);
@@ -158,10 +197,11 @@ public class EmployeeDatabase {
     public static void main(String[] args){
         EmployeeDatabase database = new EmployeeDatabase();
         connection.getConnection();
-        Admin patrick1 = new Admin(1, "Admin", "Admin", 12345678, "Adminvei1","admin@admin.com", "admin");
-        Technician patrick = new Technician(1, "Technician", "Technician", 12345678, "Technicianvei1","technician@technician.com", "technician");
-        database.regNewAdmin(patrick1);
-        database.regNewTechnician(patrick);
+       //Admin patrick1 = new Admin(1, "Admin", "Admin", 12345678, "Adminvei1","admin@admin.com", "admin");
+        //Technician patrick = new Technician(1, "Technician", "Technician", 12345678, "Technicianvei1","technician@technician.com", "technician");
+        //database.regNewAdmin(patrick1);
+        database.resetPassword("patrick.thorkildsen@gmail.com", "patrick.thorkildsen@gmail.com");
+        //database.regNewTechnician(patrick);
         //database.deleteEmployee("patrick.thorkildsen@gmail.com", "Password123");
         cleaner.closeConnection(con);
     }

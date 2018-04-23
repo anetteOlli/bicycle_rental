@@ -4,50 +4,23 @@
     <bookmark url="file://$PROJECT_DIR$/src/DatabaseHandler/CryptAES.java" line="9" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08580399-7db5-4db4-9962-2ef222ee57c6" name="Default" comment="missing forms">
+    <list default="true" id="08580399-7db5-4db4-9962-2ef222ee57c6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/GUI/ChangePassword.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/ChangePassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/DockingStation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/DockingStation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/CustomerDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/CustomerDatabase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/EmployeeDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/EmployeeDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/TripPaymentDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Admin_App/TripPaymentDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/DatabaseHandler/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdminFront.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterFinishedRepair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterRepairFrontPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/RegisterRepairFrontPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/TRegisterFinishedRepair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Simulation/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/Simulation/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simulation/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/AdminFront.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AdminFront.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/AdminFront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AdminFront.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LogInPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LogInPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LogInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LogInPage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,61 +46,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AdministerTechnicians.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.java">
+      <file leaf-file-name="ChangePassword.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="154" column="42" lean-forward="true" selection-start-line="154" selection-start-column="42" selection-end-line="154" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerDatabase.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state relative-caret-position="136">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Admin_App/Customer.java">
+      <file leaf-file-name="AdminFront.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="AdminFront.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="391">
+              <caret line="199" column="17" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeDatabase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java">
+      <file leaf-file-name="LogInPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1142">
-              <caret line="112" column="14" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
+            <state relative-caret-position="-102">
+              <caret line="112" column="39" lean-forward="true" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trip.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Simulation/Trip.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-            </state>
-          </provider>
+      <file leaf-file-name="LogInPage.form" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file leaf-file-name="TripPaymentDatabase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="223" column="51" lean-forward="true" selection-start-line="223" selection-start-column="51" selection-end-line="223" selection-end-column="51" />
-            </state>
-          </provider>
+      <file leaf-file-name="ChangePassword.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -168,11 +131,16 @@
         <option value="$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/ReTripPayment.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/TripPayment.java" />
-        <option value="$PROJECT_DIR$/src/GUI/LogInPage.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java" />
         <option value="$PROJECT_DIR$/src/Simulation/Trip.java" />
-        <option value="$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AdminFront.form" />
+        <option value="$PROJECT_DIR$/src/GUI/ChangePassword.form" />
+        <option value="$PROJECT_DIR$/src/GUI/AdminFront.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ChangePassword.java" />
+        <option value="$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java" />
+        <option value="$PROJECT_DIR$/src/GUI/LogInPage.form" />
+        <option value="$PROJECT_DIR$/src/GUI/LogInPage.java" />
       </list>
     </option>
   </component>
@@ -268,6 +236,27 @@
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminFront" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="adminUsersFrontPage" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="ChangePassword" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Simulation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -323,7 +312,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AdministerTechnicians">
+  <component name="RunManager" selected="Application.LogInPage">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -349,8 +338,19 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="RegisterRepairFrontPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.RegisterRepairFrontPage" />
+    <configuration name="EmployeeDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Admin_App.EmployeeDatabase" />
+      <module name="TrondheimEBicycles" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Admin_App.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="LogInPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.LogInPage" />
       <module name="TrondheimEBicycles" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -373,17 +373,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="adminUsersFrontPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.adminUsersFrontPage" />
-      <module name="TrondheimEBicycles" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -437,19 +426,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list>
-      <item itemvalue="Application.adminUsersFrontPage" />
-      <item itemvalue="Application.RegisterRepairFrontPage" />
       <item itemvalue="Application.AdministerTechnicians" />
       <item itemvalue="Application.BikeStats" />
       <item itemvalue="Application.Trip" />
+      <item itemvalue="Application.LogInPage" />
+      <item itemvalue="Application.EmployeeDatabase" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LogInPage" />
+        <item itemvalue="Application.EmployeeDatabase" />
         <item itemvalue="Application.AdministerTechnicians" />
         <item itemvalue="Application.BikeStats" />
         <item itemvalue="Application.Trip" />
-        <item itemvalue="Application.adminUsersFrontPage" />
-        <item itemvalue="Application.RegisterRepairFrontPage" />
       </list>
     </recent_temporary>
   </component>
@@ -471,7 +460,7 @@
       <workItem from="1524125448411" duration="596000" />
       <workItem from="1524148618854" duration="3269000" />
       <workItem from="1524225750797" duration="3865000" />
-      <workItem from="1524313543598" duration="1944000" />
+      <workItem from="1524313543598" duration="6310000" />
     </task>
     <task id="LOCAL-00001" summary="tortur">
       <created>1521117026349</created>
@@ -529,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521461993964</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Small changes">
+      <created>1524470217220</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524470217220</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -538,39 +534,38 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42131000" />
+    <option name="totallyTimeSpent" value="46497000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="8" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.49731544" weight="0.32478634" />
-      <window_info anchor="right" id="Palette&#9;" order="11" />
-      <window_info id="Image Layers" order="11" />
-      <window_info anchor="right" id="Capture Analysis" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50067115" side_tool="true" weight="0.32905984" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32980332" />
-      <window_info anchor="bottom" id="Database Changes" order="17" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32905984" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4919463" visible="true" weight="0.32621083" />
-      <window_info anchor="bottom" id="Terminal" order="15" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info id="Designer" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.27248323" />
-      <window_info anchor="bottom" id="Statistic" order="18" sideWeight="0.49932885" weight="0.32905984" />
-      <window_info anchor="right" id="Database" order="10" weight="0.3295302" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info id="UI Designer" order="10" />
-      <window_info anchor="right" id="Theme Preview" order="13" />
-      <window_info id="Favorites" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49932885" weight="0.3988604" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49731544" weight="0.32478634" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32905984" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32980332" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4919463" weight="0.32621083" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="5" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
+      <window_info anchor="bottom" id="Statistic" order="13" sideWeight="0.49932885" weight="0.32905984" />
+      <window_info anchor="right" id="Database" order="5" weight="0.3295302" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.3988604" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="17" weight="0.3294539" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3294539" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -617,7 +612,8 @@
     <MESSAGE value="DatabasePasswordKeep and CryptAES created and tested. S" />
     <MESSAGE value="Initilizing tripPayment branch" />
     <MESSAGE value="Trying to push" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to push" />
+    <MESSAGE value="Small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -643,42 +639,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseCleanup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="141" column="24" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabasePasswordKeep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1315">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/DatabaseHandler/DatabasePasswordKeepTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseCleanup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/DatabaseHandler/DatabaseConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1325">
@@ -815,6 +775,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -846,13 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
@@ -864,13 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="104" column="61" selection-start-line="104" selection-start-column="61" selection-end-line="104" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -909,38 +860,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Simulation/Trip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/BikeStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="110" column="48" lean-forward="true" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1142">
-          <caret line="112" column="14" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="154" column="42" lean-forward="true" selection-start-line="154" selection-start-column="42" selection-end-line="154" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -953,15 +876,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java">
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simulation/Trip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/PasswordStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <caret line="27" column="78" lean-forward="true" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/CustomerDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1949">
+          <caret line="176" column="44" lean-forward="true" selection-start-line="176" selection-start-column="44" selection-end-line="176" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="154" column="42" lean-forward="true" selection-start-line="154" selection-start-column="42" selection-end-line="154" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/EmployeeDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-669">
+          <caret line="149" column="114" selection-start-line="149" selection-start-column="114" selection-end-line="149" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="199" column="17" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="112" column="39" lean-forward="true" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">

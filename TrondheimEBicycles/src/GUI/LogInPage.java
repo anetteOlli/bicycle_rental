@@ -20,6 +20,7 @@ public class LogInPage {
     private JTextField textField1;
     private JPasswordField passwordField1;
     private JButton logInButton;
+    private JButton forgotPasswordButton;
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
@@ -98,6 +99,28 @@ public class LogInPage {
                     System.out.println(h.getMessage());
                 }catch(PasswordStorage.CannotPerformOperationException o){
                     System.out.println(o.getMessage());
+                }
+            }
+        });
+        forgotPasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Change password");
+                frame.setContentPane(new ChangePassword().panel1);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+
+                //gets rid of the previous frame
+                Object source = e.getSource();
+                if (source instanceof Component) {
+                    Component c = (Component) source;
+                    Frame frame2 = JOptionPane.getFrameForComponent(c);
+                    if (frame2 != null) {
+                        frame2.dispose();
+
+                    }
                 }
             }
         });
