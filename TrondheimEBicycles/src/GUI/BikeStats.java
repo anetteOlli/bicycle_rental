@@ -81,6 +81,7 @@ public class BikeStats {
                 Status.setText("Bicycle Status: " + bicycleS.getBicycleStatus());
                 Make.setText("Make: " + bicycleS.getMake());
                 Cost.setText("Price of bicycle: " + bicycleS.getPriceBicycle());
+                map.setBikeID(bicycleS.getBicycle_id());
             }
         });
 

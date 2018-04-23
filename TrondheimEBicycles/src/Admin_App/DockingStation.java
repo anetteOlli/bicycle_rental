@@ -300,34 +300,6 @@ public class DockingStation {
             return false;
         }
 
-    /*
-     *  This method is used for setting the activeStatus for the dockingStation
-     * @param name name of the dockingStation
-     * @param activeStatus is 0 for inactive and 1 for active
-     * @return true if it successfully updates the dockingsstation.
-     */
-
-    //DEPRECATED, BETTER METHOD IMPLEMENTED
-    public boolean editExistingDockingStation(String name, int activeStatus){
-        String lowName = name.toLowerCase().trim();
-        DatabaseConnection connection = new DatabaseConnection();
-        DatabaseCleanup cleaner = new DatabaseCleanup();
-        Connection con = connection.getConnection();
-        String mysql = "UPDATE DockingStation SET active_status=? WHERE name=?";
-        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
-        try{
-            sentence.setInt(1, activeStatus);
-            sentence.setString(2,lowName);
-            sentence.execute();
-        }catch (SQLException e){
-            return false;
-        }
-        if (cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
-            return true;
-        }
-        //something went wrong when closing the resources
-        return false;
-    }
 
     /**
      * Method tested and verified 2018.04.08
@@ -481,54 +453,6 @@ public class DockingStation {
         }catch (SQLException e){
             return null;
         }
-    }
-
-
-
-    /*
-     * This methods set the active status of a specific dock at the dockingsstation.
-     * It will return true if it was a success or false if it failed.
-     * Failure can happen due to the dockID given not existing.
-     * @param active true if the dock needs to be set as active, false if the dock is going to be set as false
-     * @param DockId dockID of the dock to be changed
-     *
-     */
-
-    //should this method become DEPRECATED?? Method should only be used by bicycle class??
-    public boolean setDockAvailable(boolean active, int DockId) {
-        DatabaseConnection connection = new DatabaseConnection();
-        DatabaseCleanup cleaner = new DatabaseCleanup();
-        Connection con = connection.getConnection();
-        String mysql1 = "SELECT COUNT(*) FROM Dock WHERE dock_id=?";
-        String mysql2 = "UPDATE Dock SET isAvailable=? WHERE dock_id=?";
-        Boolean success = false;
-        if (cleaner.setAutoCommit(con, false)) try {
-            PreparedStatement sentence = connection.createPreparedStatement(con, mysql1);
-            sentence.setInt(1, DockId);
-            ResultSet result = sentence.executeQuery();
-            //if this query returns a row, it means that the dockID exists, and the update sentence can be used
-            //if not the update sentence should not be used, and a rollback should be performed
-            if (result.next()) {
-                PreparedStatement sentence2 = connection.createPreparedStatement(con, mysql2);
-                sentence2.setBoolean(1, active);
-                sentence2.setInt(2, DockId);
-                sentence2.execute();
-                if (cleaner.commit(con) && cleaner.setAutoCommit(con, true)) {
-                    success = true;
-                }
-            } else {
-                if (cleaner.rollback(con) && cleaner.setAutoCommit(con, true)) {
-
-                }
-            }
-            if (cleaner.closeResult(result) && cleaner.closeConnection(con)) {
-
-            }
-
-        } catch (SQLException e) {
-            return false;
-        }
-        return success;
     }
 
     /**

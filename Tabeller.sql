@@ -119,14 +119,17 @@ ADD FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
 ADD FOREIGN KEY (bicycle_id) REFERENCES Bicycle(bicycle_id);
 
 ALTER TABLE Customer
-ADD UNIQUE (email),
+ADD UNIQUE (email);
 ADD FOREIGN KEY (cardNumber) REFERENCES PaymentCard(cardNumber);
+
+ALTER TABLE PaymentCard
+ADD FOREIGN KEY (cust_id) REFERENCES Customer(cust_id);
+
 
 ALTER TABLE Employee
 ADD UNIQUE (email);
 
-ALTER TABLE PaymentCard
-ADD FOREIGN KEY (cust_id) REFERENCES Customer(cust_id);
+
 
 ALTER TABLE TripPayment
 ADD FOREIGN KEY (cust_id) REFERENCES Customer(cust_id),
