@@ -14,7 +14,9 @@
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model/>
+        </properties>
       </component>
       <component id="8313d" class="javax.swing.JButton" binding="registerMoreBikesButton" default-binding="true">
         <constraints>

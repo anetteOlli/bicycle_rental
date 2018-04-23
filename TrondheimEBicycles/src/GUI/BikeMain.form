@@ -13,6 +13,7 @@
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
+          <font size="24"/>
           <text value="Edit Bike"/>
         </properties>
       </component>
@@ -31,6 +32,7 @@
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
+          <font size="24"/>
           <text value="Register New Bike"/>
         </properties>
       </component>
@@ -40,6 +42,7 @@
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
+          <font size="24"/>
           <text value="Register Repair"/>
         </properties>
       </component>
@@ -49,6 +52,7 @@
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
+          <font size="24"/>
           <text value="Show Statistics"/>
         </properties>
       </component>
