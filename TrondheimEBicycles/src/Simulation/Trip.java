@@ -26,12 +26,21 @@ public class Trip extends Thread{
         this.toDockStation = toDockStation;
         this.duration = duration;
     }
+    public Trip(int customer, int fromDockstation, int toDockStation, double duration, int bikeID){
+        this.customer = customer;
+        this.fromDockstation = fromDockstation;
+        this.toDockStation = toDockStation;
+        this.duration = duration;
+        this.bike = bikeID;
+    }
 
     @Override
     public void run() {
         TripPaymentDatabase database = new TripPaymentDatabase();
         DockingStation dockingStation = new DockingStation();
-        bike = database.findAvailableBike(fromDockstation);
+        if(bike <= 0){
+            bike = database.findAvailableBike(fromDockstation);
+        }
         if(bike > 0){
             BikeDatabase bikeDatabase = new BikeDatabase();
             TripPayment start = new TripPayment(customer, bike, fromDockstation);
@@ -81,8 +90,8 @@ public class Trip extends Thread{
     }
 
     public static void main(String[] args) {
-        (new Trip(1331, 1,6,5)).start();
-       (new Trip(5025, 4,1,5)).start();
+        (new Trip(1331, 1,6,5, 36)).start();
+       (new Trip(5025, 4,1,5,6)).start();
     }
 
 }

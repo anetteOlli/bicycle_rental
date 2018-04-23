@@ -152,8 +152,9 @@ public class SingleBikeMap extends JPanel {
         BikeDatabase bike = new BikeDatabase();
         double[] bikeLocation = bike.getLocationSpecificBike(bikeID);
         //starts generating URL adress:
-        if(bikeLocation.length == 1){
+        if(bikeLocation.length> 1){
             google += "|" +bikeLocation[0] + "," + bikeLocation[1];
+            System.out.println(bikeID);
         }
 
     }
