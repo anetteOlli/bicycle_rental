@@ -25,7 +25,7 @@ public class AddCustomer {
                 JFrame frame = new JFrame("Administer customers");
                 frame.setContentPane(new AdministerCustomers().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

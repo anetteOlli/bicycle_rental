@@ -25,7 +25,7 @@ public class AddTechnician {
                 JFrame frame = new JFrame("Administer technicians");
                 frame.setContentPane(new AdministerTechnicians().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

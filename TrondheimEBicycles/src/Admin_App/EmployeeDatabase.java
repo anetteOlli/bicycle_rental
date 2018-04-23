@@ -21,7 +21,7 @@ public class EmployeeDatabase {
             try{
                 String sentence = "SELECT * FROM Employee WHERE employee_id = '"+randomNum+"';";
                 PreparedStatement randomID = connection.createPreparedStatement(con, sentence);
-                ResultSet res = randomID.executeQuery();
+                ResultSet res = randomID.   executeQuery();
                 exists=false;
                 while(res.next()){
                     exists = true;

@@ -34,11 +34,9 @@ public class SendCustomerMail {
                     PreparedStatement statement = connection.createPreparedStatement(con, sentence);
                     ResultSet res = statement.executeQuery();
                     while(res.next()){
-                        System.out.println("hei");
                         emailList.add(res.getString("email"));
                     }
                     for(int i = 0; i < emailList.size(); i++){
-                        System.out.println(i);
                         SendMail send = new SendMail(emailList.get(i), subject.getText(), textArea1.getText());
                     }
                 }catch(SQLException a){
