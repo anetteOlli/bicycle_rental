@@ -27,28 +27,5 @@ public class ChangePrice {
                 bd.changePrice(newPrice ,model);
             }
         });
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Front page");
-                frame.setContentPane(new AdminFront().adminFrontPanel);
-                frame.pack();
-                frame.setSize(700, 500);
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-                //gets rid of the previous frame
-                Object source = e.getSource();
-                if (source instanceof Component) {
-                    Component c = (Component) source;
-                    Frame frame2 = JOptionPane.getFrameForComponent(c);
-                    if (frame2 != null) {
-                        frame2.dispose();
-
-                    }
-                }
-            }
-        });
     }
 }

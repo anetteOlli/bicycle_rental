@@ -1,18 +1,15 @@
 package Admin_App;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 
 import DatabaseHandler.*;
-import GUI.EditBike1;
-import GUI.RegBicycle;
+import jdk.nashorn.internal.scripts.JO;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class BikeDatabase {
-
+    JOptionPane pane = new JOptionPane();
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
@@ -46,7 +43,7 @@ public class BikeDatabase {
             }
 
             regBicycle.executeBatch();
-
+            pane.showMessageDialog(null, "Bicycles Successfully Registered", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
             cleaner.commit(con);
             cleaner.setAutoCommit(con, true);
         } catch (SQLException e) {
@@ -180,6 +177,7 @@ public class BikeDatabase {
             trip.setInt(1, price);
             trip.setString(2, model);
             trip.executeUpdate();
+            pane.showMessageDialog(null, "Price is successfully updated", "Change Price", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
             e.printStackTrace();
         }
