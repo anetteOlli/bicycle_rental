@@ -61,23 +61,6 @@ public class BikeDatabase {
         }
     }
 
-   public ArrayList editBike(String sort) {
-        try {
-
-            String getInfo = "SELECT bicycle_id, make, model, bicycleStatus, registration_date, dock_id  FROM Bicycle ORDER BY ?;";
-            PreparedStatement names = connection.createPreparedStatement(con, getInfo);
-            names.setString(1, sort);
-            ArrayList<BicycleE> bicycleE = new ArrayList<>();
-            ResultSet res = names.executeQuery();
-            while (res.next()) {
-                BicycleE bike = new BicycleE(res.getInt("bicycle_id"), res.getString("make"), res.getString("model"), res.getString("bicycleStatus"), res.getDate("registration_date"), res.getInt("dock_id"));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return null;
-    }
 
 
 
