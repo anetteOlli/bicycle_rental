@@ -118,7 +118,7 @@ public class BikeDatabase {
         //we know that horizontally we will only have 3 columns
         double[][] result = new double[5][3];
         int noDockStation = 0;
-        String sql = "SELECT bicycle_id, latitude, longitude FROM Bicycle";
+        String sql = "SELECT bicycle_id, longitude, latitude FROM Bicycle";
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
@@ -164,6 +164,19 @@ public class BikeDatabase {
         return result;
     }
 
+    public void changePrice (int price, String model){
+        String sql = "UPDATE Model SET price=? WHERE model=?;";
+        PreparedStatement trip = connection.createPreparedStatement(con, sql);
+        try{
+            trip.setInt(1, price);
+            trip.setString(2, model);
+            trip.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /**
      * method collects the latitude and longitude of a specific bike
      * @param bikeID
@@ -172,7 +185,7 @@ public class BikeDatabase {
      */
     public double[] getLocationSpecificBike(int bikeID){
         double[] result = new double[2];
-        String sql = "SELECT latitude, longitude FROM Bicycle WHERE bicycle_id=?";
+        String sql = "SELECT longitude, latitude FROM Bicycle WHERE bicycle_id=?";
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
         Connection con = connection.getConnection();
