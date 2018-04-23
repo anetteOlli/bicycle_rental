@@ -42,6 +42,11 @@ public class BikeStats {
     BicycleS bicycleS;
 
     DefaultListModel<BicycleS> model = new DefaultListModel<>();
+
+    /**
+     *
+     * @return the Array that is used in the JList list.
+     */
     public ArrayList<BicycleS> createTable() {
         ArrayList<BicycleS> array = new ArrayList<>();
         list.setModel(model);

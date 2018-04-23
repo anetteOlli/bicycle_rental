@@ -37,6 +37,11 @@ public class RegBikeConfirm {
     private JLabel price;
     BikeDatabase database = new BikeDatabase();
 
+
+    /**
+     *
+     * @return arraylist for Jlist list1
+     */
     public ArrayList<Bicycle> createTable(){
     list1.setModel(model);
         try {

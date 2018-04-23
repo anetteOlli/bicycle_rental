@@ -17,6 +17,14 @@ public class BikeDatabase {
     static DatabaseConnection connection = new DatabaseConnection();
     private static Connection con = connection.getConnection();
 
+    /**
+     *
+     * @param make the maker of the bicycle, for examble DBS or Diamant
+     * @param modell the model of the bicycle, a combobox given on the GUI
+     * @param bicycleStatus the status of the bicycle. it will automatically be 'in storage'
+     * @param price_of_bike how much the bike cost at purchase
+     * @param nr how many bicycles you want to register of the same make, model and price
+     */
 
 
     public void regBicycle(String make, String modell, String bicycleStatus, double price_of_bike, int nr) {
@@ -46,6 +54,11 @@ public class BikeDatabase {
         }
     }
 
+    /**
+     *
+     * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
+     *      it will update the amount of km each bike has travelled.
+     */
     public void UpdateKM (int nr){
         String KM = "UPDATE Bicycle SET totalKM = (SELECT SUM(tripKM) FROM TripPayment WHERE bicycle_id = ?) WHERE bicycle_id = ?;";
         PreparedStatement Mileage = connection.createPreparedStatement(con, KM);
@@ -61,6 +74,11 @@ public class BikeDatabase {
         }
     }
 
+    /**
+     *
+     * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
+     *              how many times each bike has been to repair
+     */
 
 
 
@@ -78,6 +96,12 @@ public class BikeDatabase {
             e.printStackTrace();
         }
     }
+
+    /**
+     *
+     * @param nr how many times you want to run the method. the run will increase the value of i by 1, and i is the bicycle ID
+     *              how many times each bike has been on a trip
+     */
 
     public void RegTrips (int nr) {
         String trippe = "Update Bicycle SET trips=(SELECT COUNT(trip_id) FROM TripPayment) WHERE bicycle_id=?;";
@@ -146,7 +170,11 @@ public class BikeDatabase {
         }
         return result;
     }
-
+/** change the price per trip of a specific bike model.
+* @param price is the new price for the model
+* @param model is the specific model for update
+ *
+ */
     public void changePrice (int price, String model){
         String sql = "UPDATE Model SET price=? WHERE model=?;";
         PreparedStatement trip = connection.createPreparedStatement(con, sql);
