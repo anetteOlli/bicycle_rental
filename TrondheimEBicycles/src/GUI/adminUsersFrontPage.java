@@ -20,7 +20,7 @@ public class adminUsersFrontPage {
                 JFrame frame = new JFrame("Administer Bike Technicians");
                 frame.setContentPane(new AdministerTechnicians().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +43,7 @@ public class adminUsersFrontPage {
                 JFrame frame = new JFrame("Administer Bike Technicians");
                 frame.setContentPane(new AdministerAdmins().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +66,7 @@ public class adminUsersFrontPage {
                 JFrame frame = new JFrame("Administer customers");
                 frame.setContentPane(new AdministerCustomers().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

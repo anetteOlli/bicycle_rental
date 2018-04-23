@@ -87,7 +87,7 @@ public class AdministerAdmins {
                 JFrame frame = new JFrame("Usertypes");
                 frame.setContentPane(new adminUsersFrontPage().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,7 +110,7 @@ public class AdministerAdmins {
                 JFrame frame = new JFrame("Add admin");
                 frame.setContentPane(new AddAdmin().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

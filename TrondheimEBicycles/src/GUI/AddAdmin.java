@@ -26,7 +26,7 @@ public class AddAdmin {
                 JFrame frame = new JFrame("Administer admins");
                 frame.setContentPane(new AdministerAdmins().panel1);
                 frame.pack();
-                frame.setSize(700, 500);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
