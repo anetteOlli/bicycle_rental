@@ -153,7 +153,7 @@ public class Repair {
     /**
      *
      * @param newRepair is the new repair object
-     * @return
+     * @return true if it succeeds, false if it doesn't
      */
     public boolean regNewRepair(Repair newRepair) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -231,7 +231,7 @@ public class Repair {
      * @param descriptionAfter is the description of the repairs done on the bicycle
      * @param repairCosts is how much the repair cost
      * @param employeeID is the id of the employee that repaired the bicycle
-     * @return
+     * @return true if it succeeds, false if it doesn't
      */
     public boolean regFinishRepair(int repairID, String descriptionAfter, int repairCosts, int employeeID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -288,7 +288,7 @@ public class Repair {
     /**
      *
      * @param repairID is the id of the repair you want to check if exist in the database
-     * @return
+     * @return 1 if it exist, below 0 if it doesn't
      */
     public int repairIDExist(int repairID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -314,7 +314,7 @@ public class Repair {
     /**
      *
      * @param employeeID is the id of the employee you want to check if exist in the database
-     * @return
+     * @return 1 if it exist, below 0 if it doesn't
      */
     public int employeeIDExist(int employeeID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
@@ -340,7 +340,7 @@ public class Repair {
 
     /**
      * Is only used for the test-method
-     * @return
+     * @return a string with all the repairs
      */
     public String showAllRepairs() {
         DatabaseCleanup cleaner = new DatabaseCleanup();
