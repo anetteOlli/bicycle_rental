@@ -33,6 +33,7 @@ public class BikeStats {
     private JLabel Status;
     private JLabel Make;
     private JLabel Cost;
+    private SingleBikeMap map;
 
     static DatabaseCleanup cleaner = new DatabaseCleanup();
     static DatabaseConnection connection = new DatabaseConnection();

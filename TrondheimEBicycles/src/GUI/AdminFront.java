@@ -210,7 +210,7 @@ public class AdminFront {
                 frame.setSize(700, 500);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
         });
         sendCustomerNewsletterButton.addActionListener(new ActionListener() {
