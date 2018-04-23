@@ -122,25 +122,7 @@ public class Repair {
                     bicycleID;
         }
     }
-    /* FINERE
-    public String toString(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        if(repairCosts >0 && repairedDescription != null) {
-            return "Repair ID: " + repairID + "       |        " +
-                    "\nDescription of damage: " + description + "       |        " +
-                    "\nWritten: " + dateBroken + "       |        " +
-                    "\nRepair costs: " + repairCosts + "       |        " +
-                    "\nDescription after repair: " + repairedDescription + "       |        " +
-                    "\nWritten: " + dateRepaired + "       |        " +
-                    "\nBy employee: " + employeeID + "       |        " +
-                    "\nFor bicycle: " + bicycleID;
-        } else {
-            return "Repair ID: " + repairID + "       |        " +
-                    "\nDescription of damage: " + description + "       |        " +
-                    "\nWritten: " + dateBroken + "       |        " +
-                    "\nFor bicycle: " + bicycleID;
-        }
-    }*/
+
 
     //HER KOMMER REPAIR DATABASE METODENE:
     private Connection forbindelse;
@@ -198,32 +180,7 @@ public class Repair {
 
 
 
-    /*
-    public boolean regNewRepair(String description, int bicycleID) {
-        DatabaseCleanup cleaner = new DatabaseCleanup();
-        DatabaseConnection connection = new DatabaseConnection();
-        Connection con = connection.getConnection();
-        String mysql = "INSERT INTO Repair (repair_id, description_before, date_sent, bicycle_id) VALUES(DEFAULT, ?, ?, ?)";
-        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
-        Calendar calendar = Calendar.getInstance();
-        java.sql.Date ourJavaDate = new java.sql.Date(calendar.getTime().getTime());
 
-
-        try {
-            sentence.setString(1, description);
-            sentence.setDate(2, ourJavaDate);
-            sentence.setInt(3, bicycleID);
-            sentence.execute();
-
-        } catch (SQLException e) {
-            return false;
-        }
-        if (cleaner.closeSentence(sentence) && cleaner.closeConnection(con)) {
-            return true;
-        }
-        return false;
-
-    }*/
 
     /**
      *
@@ -260,17 +217,7 @@ public class Repair {
                 sentence.setInt(5, repairID);
                 sentence.execute();
 
-                //Legger variablene inn i objektet
-                /*
-                String mysql2 = "SELECT * FROM Repair WHERE repair_id LIKE '" + repairID + "';";
-                PreparedStatement sentence2 = connection.createPreparedStatement(con, mysql2);
-                ResultSet res = sentence2.executeQuery();
-                while(res.next()){
-                    this.dateRepaired = res.getDate();
-                    repairCosts = res.getInt();
 
-
-                }*/
 
 
             } catch (SQLException e) {
