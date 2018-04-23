@@ -177,6 +177,18 @@ public class AdminFront {
                 }
             }
         });
+        paymentsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Change price per trip");
+                frame.setContentPane(new ChangePrice().panel);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
+        });
     }
 
     {
