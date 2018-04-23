@@ -89,7 +89,7 @@ public class AllBikeMap extends JPanel {
                 });
             }
         });
-        swingButton.setText("Reload, selected dockingstation will have red marker");
+        swingButton.setText("Reload to update bike positions");
 
         add(swingButton, BorderLayout.SOUTH);
 
