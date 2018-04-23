@@ -4,33 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/DatabaseHandler/CryptAES.java" line="9" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08580399-7db5-4db4-9962-2ef222ee57c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../ .gitlab-ci.yml " beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddAdmin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddAdmin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddCustomer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddCustomer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddTechnician$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AddTechnician$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerAdmins$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerAdmins$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerAdmins$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerAdmins$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerAdmins.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerAdmins.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerCustomers$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerCustomers$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerCustomers$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerCustomers$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerCustomers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerCustomers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerTechnicians$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerTechnicians$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerTechnicians$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerTechnicians$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerTechnicians.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/AdministerTechnicians.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/BikeStats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockFrontPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockFrontPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/DockStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/EditBike1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/GPSSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/GPSSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/LogInPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrondheimEBicycles/GUI/adminUsersFrontPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/AllBikeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AllBikeMap.java" afterDir="false" />
+    <list default="true" id="99991094-73a6-48ef-b121-a91fc504fe79" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../ .gitlab-ci.yml " afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Admin_App/Repair.java" afterPath="$PROJECT_DIR$/src/Admin_App/Repair.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,93 +32,13 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AdministerTechnicians.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.java">
+    <leaf>
+      <file leaf-file-name="Repair.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Admin_App/Repair.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminUsersFrontPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-332">
-              <caret line="68" column="62" lean-forward="true" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterRepairFrontPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllBikeMap.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AllBikeMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddAdmin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddAdmin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddCustomer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddCustomer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddTechnician.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddTechnician.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdministerAdmins.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="115" column="68" lean-forward="true" selection-start-line="115" selection-start-column="68" selection-end-line="115" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdministerCustomers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminFront.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="220" column="16" lean-forward="true" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="62" />
+            <state relative-caret-position="2633">
+              <caret line="342" column="44" lean-forward="false" selection-start-line="342" selection-start-column="44" selection-end-line="342" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,10 +67,14 @@
       </map>
     </option>
   </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Admin_App/ReTripPayment.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/TripPayment.java" />
         <option value="$PROJECT_DIR$/src/Admin_App/TripPaymentDatabase.java" />
         <option value="$PROJECT_DIR$/src/Simulation/Trip.java" />
@@ -224,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/GUI/AdministerTechnicians.java" />
         <option value="$PROJECT_DIR$/src/GUI/adminUsersFrontPage.java" />
         <option value="$PROJECT_DIR$/src/GUI/AllBikeMap.java" />
+        <option value="$PROJECT_DIR$/src/Admin_App/Repair.java" />
       </list>
     </option>
   </component>
@@ -269,11 +171,19 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -290,11 +200,6 @@
             <path>
               <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -303,247 +208,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Admin_App" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DatabaseHandler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AddAdmin" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AddCustomer" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AddTechnician" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AdminFront" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AdministerAdmins" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AdministerCustomers" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="AdministerTechnicians" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="adminUsersFrontPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="BikeMain" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="BikeStats" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="ChangePassword" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="ChangePasswordNew" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="ChangePrice" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="DockEdit" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="DockFrontPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="DockReg" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="DockStatus" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="EditBike1" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="GPSSystem" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="LogInPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="RegBicycle" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="RegBikeConfirm" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="RegisterNewRepairJL" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="RegisterRepairFrontPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="SendCustomerMail" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="ShowBikeStatus" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="StatisticsPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="TRegisterFinishedRepair" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="TRegisterNewRepairJL" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="TRegisterRepairFrontPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Simulation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrondheimEBicycles" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrondheimEBicycles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -588,66 +257,122 @@
   <component name="RunManager" selected="Application.AddAdmin">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <option name="HEIGHT" value="0" />
+      <module />
     </configuration>
     <configuration name="AddAdmin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.AddAdmin" />
-      <module name="TrondheimEBicycles" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="MAIN_CLASS_NAME" value="GUI.AddAdmin" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TrondheimEBicycles" />
+      <envs />
     </configuration>
     <configuration name="AdministerCustomers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.AdministerCustomers" />
-      <module name="TrondheimEBicycles" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="MAIN_CLASS_NAME" value="GUI.AdministerCustomers" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TrondheimEBicycles" />
+      <envs />
     </configuration>
     <configuration name="EditBike1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.EditBike1" />
-      <module name="TrondheimEBicycles" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="MAIN_CLASS_NAME" value="GUI.EditBike1" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TrondheimEBicycles" />
+      <envs />
     </configuration>
     <configuration name="EmployeeDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Admin_App.EmployeeDatabase" />
-      <module name="TrondheimEBicycles" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="Admin_App.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="MAIN_CLASS_NAME" value="Admin_App.EmployeeDatabase" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TrondheimEBicycles" />
+      <envs />
     </configuration>
     <configuration name="LogInPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.LogInPage" />
-      <module name="TrondheimEBicycles" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="MAIN_CLASS_NAME" value="GUI.LogInPage" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TrondheimEBicycles" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -657,13 +382,24 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
+      <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -676,21 +412,17 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
+      <envs />
       <properties />
       <listeners />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -698,22 +430,25 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list>
-      <item itemvalue="Application.LogInPage" />
-      <item itemvalue="Application.EmployeeDatabase" />
-      <item itemvalue="Application.AdministerCustomers" />
-      <item itemvalue="Application.EditBike1" />
-      <item itemvalue="Application.AddAdmin" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.LogInPage" />
+      <item index="1" class="java.lang.String" itemvalue="Application.EmployeeDatabase" />
+      <item index="2" class="java.lang.String" itemvalue="Application.AdministerCustomers" />
+      <item index="3" class="java.lang.String" itemvalue="Application.EditBike1" />
+      <item index="4" class="java.lang.String" itemvalue="Application.AddAdmin" />
     </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Application.AddAdmin" />
-        <item itemvalue="Application.EditBike1" />
-        <item itemvalue="Application.AdministerCustomers" />
-        <item itemvalue="Application.LogInPage" />
-        <item itemvalue="Application.EmployeeDatabase" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.AddAdmin" />
+        <item index="1" class="java.lang.String" itemvalue="Application.EditBike1" />
+        <item index="2" class="java.lang.String" itemvalue="Application.AdministerCustomers" />
+        <item index="3" class="java.lang.String" itemvalue="Application.LogInPage" />
+        <item index="4" class="java.lang.String" itemvalue="Application.EmployeeDatabase" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -861,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524502616666</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Java doc for repair">
+      <created>1524507678113</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1524507678113</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -870,42 +612,62 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68277000" />
+    <option name="totallyTimeSpent" value="68919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="bottom" id="TODO" order="4" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49731544" weight="0.32478634" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32905984" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32980332" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.35327634" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4919463" visible="true" weight="0.2991453" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13892618" />
-      <window_info anchor="bottom" id="Statistic" order="13" sideWeight="0.49932885" weight="0.32905984" />
-      <window_info anchor="right" id="Database" order="5" weight="0.3295302" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.3988604" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3294539" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.50067115" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.49932885" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295302" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3988604" sideWeight="0.49932885" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32478634" sideWeight="0.49731544" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35327634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2991453" sideWeight="0.4919463" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294539" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13892618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -956,7 +718,8 @@
     <MESSAGE value="GUI font size increased" />
     <MESSAGE value="Changed more fonts in the GUI" />
     <MESSAGE value="Made all GUI pages fullscreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made all GUI pages fullscreen" />
+    <MESSAGE value="Java doc for repair" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java doc for repair" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -972,7 +735,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.java</url>
           <line>109</line>
-          <properties class="GUI.adminUsersFrontPage" method="main">
+          <properties class="GUI.adminUsersFrontPage">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="2" />
@@ -980,19 +743,20 @@
       </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GUI/ChangePasswordNew.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="51" selection-end-column="13" />
+          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="51" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1006,126 +770,30 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddCustomer.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddTechnician.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/EditBike1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="223" column="17" selection-start-line="223" selection-start-column="17" selection-end-line="223" selection-end-column="17" />
+          <caret line="223" column="17" lean-forward="false" selection-start-line="223" selection-start-column="17" selection-end-line="223" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerAdmins (1).form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers (1).form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/adminUsersFrontPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/BikeMain.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/BikeStats.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePassword.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePasswordNew.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ChangePrice.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DockEdit.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DockFrontPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DockReg.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DockStatus.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/EditBike1.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GPSSystem.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/LogInPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegBicycle.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegBikeConfirm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterFinishedRepair.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterNewRepairJL.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/SendCustomerMail.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ShowBikeStatus.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterNewRepairJL.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterFinishedRepair.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/SendCustomerMail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-23">
           <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TRegisterRepairFrontPage.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/ChangePrice.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1133,9 +801,6 @@
           <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAdmin.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AdminFront.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1178,7 +843,7 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/AddTechnician.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1192,14 +857,14 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/AdministerCustomers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-289">
-          <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
+          <caret line="109" column="50" lean-forward="false" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AdministerTechnicians.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
-          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+          <caret line="87" column="62" lean-forward="false" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1213,7 +878,7 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/RegisterRepairFrontPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1221,6 +886,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_App/Repair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2633">
+          <caret line="342" column="44" lean-forward="false" selection-start-line="342" selection-start-column="44" selection-end-line="342" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

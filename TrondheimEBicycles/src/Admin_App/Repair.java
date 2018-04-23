@@ -150,6 +150,11 @@ public class Repair {
 
     DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 
+    /**
+     *
+     * @param newRepair is the new repair object
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean regNewRepair(Repair newRepair) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -220,6 +225,14 @@ public class Repair {
 
     }*/
 
+    /**
+     *
+     * @param repairID is the id for the repair you want to update
+     * @param descriptionAfter is the description of the repairs done on the bicycle
+     * @param repairCosts is how much the repair cost
+     * @param employeeID is the id of the employee that repaired the bicycle
+     * @return true if it succeeds, false if it doesn't
+     */
     public boolean regFinishRepair(int repairID, String descriptionAfter, int repairCosts, int employeeID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -272,6 +285,11 @@ public class Repair {
         return false;
     }
 
+    /**
+     *
+     * @param repairID is the id of the repair you want to check if exist in the database
+     * @return 1 if it exist, below 0 if it doesn't
+     */
     public int repairIDExist(int repairID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -293,6 +311,11 @@ public class Repair {
         }
     }
 
+    /**
+     *
+     * @param employeeID is the id of the employee you want to check if exist in the database
+     * @return 1 if it exist, below 0 if it doesn't
+     */
     public int employeeIDExist(int employeeID) {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -315,7 +338,10 @@ public class Repair {
     }
 
 
-
+    /**
+     * Is only used for the test-method
+     * @return a string with all the repairs
+     */
     public String showAllRepairs() {
         DatabaseCleanup cleaner = new DatabaseCleanup();
         DatabaseConnection connection = new DatabaseConnection();
@@ -353,37 +379,8 @@ public class Repair {
 
     }
 
-    /*
-    public int nrRepairs(int bicycleID) {
-        DatabaseCleanup cleaner = new DatabaseCleanup();
-        DatabaseConnection connection = new DatabaseConnection();
-        Connection con = connection.getConnection();
 
-        int antRepairs = -1;
-
-        String mysql = "SELECT COUNT(*) as 'Antall repairs' FROM Repair WHERE bicycle_id LIKE ?";
-        PreparedStatement sentence = connection.createPreparedStatement(con, mysql);
-
-        try {
-            sentence.setInt(1, bicycleID);
-            ResultSet res = sentence.executeQuery();
-            if(res.next()){
-                antRepairs = res.getInt(1);
-            }
-
-        }catch(SQLException e){
-            System.out.println("Error");
-            return antRepairs;
-        }
-        if(cleaner.closeSentence(sentence)&&cleaner.closeConnection(con)){
-            return antRepairs;
-        }
-        System.out.println("ikke Error");
-        return antRepairs;
-    } */
-
-
-    //TestClass-method: OK
+    //Test-method: OK
     /*
     public static void main(String[]args){
 
