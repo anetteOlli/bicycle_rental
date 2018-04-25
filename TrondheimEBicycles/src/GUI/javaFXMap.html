@@ -23,7 +23,13 @@
         var map = new google.maps.Map(document.getElementById("mapcanvas"), Options);
 
 
-
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(63.43049, 10.39506),
+            map: map,
+            draggable: false,
+            title: "",
+            autoPan: true
+        });
         marker.setMap(null);
         var infobulle = new google.maps.InfoWindow({
             content: "ddddd"
