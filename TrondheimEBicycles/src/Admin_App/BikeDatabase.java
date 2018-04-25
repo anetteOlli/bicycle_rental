@@ -244,8 +244,30 @@ public class BikeDatabase {
 
     public static void main(String[] args) {
         BikeDatabase database = new BikeDatabase();
+        DockingStation dock = new DockingStation();
+        double[] pos1 = dock.getDockingStationLocation(7);
+        double lat1 = pos1[0];
+        double long1 = pos1[1];
 
         connection.getConnection();
+        for(int i = 240; i < 341; i++){
+            database.setLocation(i, lat1, long1);
+        }
+
+
+        /*for(int i = 41; i < 80; i++){
+
+        }
+        for(int i = 81; i < 120; i++){
+
+        }
+        for(int i = 121; i < 160; i++){
+
+        }
+        for(int i = 161; i < 200; i++){
+
+        }*/
+
 
 
        //Bicycle test3 = new Bicycle("DBS", "not employed");
